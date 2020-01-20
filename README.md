@@ -7,9 +7,7 @@ Ogni gruppo deve realizzare 2 giochi, usando due diverse modalità
 (ad esempio drag&drop/completamento, ecc...), sugli argomenti seguenti:
         
         1.  sillabe - doppie
-        
         2.  articoli - preposizioni
-        
         3.  nomi - sinonimi e contrari
 
 I gruppi devono realizzare una webapp con home page condivisa, login e pannello di selezione dei giochi.
@@ -17,9 +15,7 @@ I gruppi devono realizzare una webapp con home page condivisa, login e pannello 
 I profili dovranno essere di 3 tipologie (amministratore, docente, alunno):
 
         • Gli amministratori hanno pieno controllo;
-
         • I docenti devono poter inserire nuovi record, vedere i report dei risultati,  stampare resoconto ecc…
-
         • Gli alunni possono utilizzare i giochi e visualizzare lo storico dei loro punteggi.
 
 Ogni gruppo deve scegliere inoltre i nomi di ciascun gioco e relativo logo.
