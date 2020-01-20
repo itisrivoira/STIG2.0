@@ -3,6 +3,7 @@ Progetto trasversale Sistemi e Reti, TPSIT, Informatica, GPOI classe 5C
 
 Materia di riferimento: ITALIANO
 Ogni gruppo deve realizzare 2 giochi, usando due diverse modalità 
+
 (ad esempio drag&drop/completamento, ecc...), sugli argomenti seguenti:
         1.  sillabe - doppie
         2.  articoli - preposizioni
