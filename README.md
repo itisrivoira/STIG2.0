@@ -26,6 +26,7 @@ Ogni gruppo deve scegliere inoltre i nomi di ciascun gioco e relativo logo.
 I gruppi devono anche scegliere un nome per l'intero progetto ed il logo della webapp che dovrà avere una grafica accattivante oltre che intuitiva.
 
 Suddivisione in gruppi:
-    1. Mattio, Roberto, Scaparrotta, Ficetti, Bima
-    2. Fasano, Audisio, Quaranta, Botta, Sharma
-    3. Manescotto, Pesacane, Battisti, Cerato, Barroero
+
+        1. Mattio, Roberto, Scaparrotta, Ficetti, Bima
+        2. Fasano, Audisio, Quaranta, Botta, Sharma
+        3. Manescotto, Pesacane, Battisti, Cerato, Barroero
