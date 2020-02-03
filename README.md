@@ -27,7 +27,8 @@ Suddivisione in gruppi:
         2. Fasano, Audisio, Quaranta, Botta, Sharma
         3. Manescotto, Pesacane, Battisti, Cerato, Barroero
 
-Funzionalità indispensabili::
+Funzionalità indispensabili:
+
         • Possibilità per gli studenti di vedere il punteggio e gli eventuali errori al termine di ogni esercizio;
         • Possibilità di selezionare differenti livelli di difficoltà per ogni gioco;
         • Il docente deve poter visualizzare un report generale della classe con l’indicazione degli errori più comuni;
