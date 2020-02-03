@@ -6,9 +6,9 @@ Materia di riferimento: ITALIANO
 Ogni gruppo deve realizzare 2 giochi, usando due diverse modalità 
 (ad esempio drag&drop/completamento, ecc...), sugli argomenti seguenti:
         
-        1.  sillabe - doppie
+        1.  sinonimi e contrari – verbo indicativo
         2.  articoli - preposizioni
-        3.  nomi - sinonimi e contrari
+        3.  nomi - aggettivi
 
 I gruppi devono realizzare una webapp con home page condivisa, login e pannello di selezione dei giochi.
 
@@ -26,3 +26,9 @@ Suddivisione in gruppi:
         1. Mattio, Roberto, Scaparrotta, Ficetti, Bima
         2. Fasano, Audisio, Quaranta, Botta, Sharma
         3. Manescotto, Pesacane, Battisti, Cerato, Barroero
+
+Funzionalità indispensabili::
+        • Possibilità per gli studenti di vedere il punteggio e gli eventuali errori al termine di ogni esercizio;
+        • Possibilità di selezionare differenti livelli di difficoltà per ogni gioco;
+        • Il docente deve poter visualizzare un report generale della classe con l’indicazione degli errori più comuni;
+        • Il docente deve poter visualizzare un report sugli errori più ripetuti  di ogni singolo studente in modo da poter               effettuare un potenziamento sugli errori. 
