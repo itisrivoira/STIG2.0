@@ -6,9 +6,9 @@ Materia di riferimento: ITALIANO
 Ogni gruppo deve realizzare 2 giochi, usando due diverse modalità 
 (ad esempio drag&drop/completamento, ecc...), sugli argomenti seguenti:
         
-        1.  sinonimi e contrari – verbo indicativo
-        2.  articoli - preposizioni
-        3.  nomi - aggettivi
+        1.  Verbo indicarivo – sinonimi & contrari
+        2.  Articoli - preposizioni
+        3.  Nomi - aggettivi
 
 I gruppi devono realizzare una webapp con home page condivisa, login e pannello di selezione dei giochi.
 
