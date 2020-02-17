@@ -105,8 +105,27 @@
     float:left;
     list-style-type:none;
 
-    width:42%;
-    height:7.5em;
+    width:100%;
+    height:3em;
+    overflow-y:auto;
+
+    margin:0 0.5em 0.5em 0;
+    padding:0.5em;
+
+    border:2px solid #888;
+    border-radius:0.2em;
+
+    background:#ddd;
+    color:#555;
+}
+
+[data-draggable="targetdiv"]
+{
+    float:left;
+    list-style-type:none;
+
+    width:100%;
+    height: 30em;
     overflow-y:auto;
 
     margin:0 0.5em 0.5em 0;
@@ -183,53 +202,65 @@
           <tbody>
             <tr>
               <th scope="row" class="text-center">IO</th>
-              <td>...</td>
+              <td>
+                <ol data-draggable="target" class="text-center">
+                </ol>
+              </td>
             </tr>
             <tr>
               <th scope="row" class="text-center">TU</th>
-              <td>...</td>
+              <td>
+                <ol data-draggable="target" class="text-center">
+                </ol>
+              </td>
             </tr>
             <tr>
               <th scope="row" class="text-center">EGLI</th>
-              <td>...</td>
+              <td>
+                <ol data-draggable="target" class="text-center">
+                </ol>
+              </td>
             </tr>
             <tr>
               <th scope="row" class="text-center">NOI</th>
-              <td>...</td>
+              <td>
+                <ol data-draggable="target" class="text-center">
+                </ol>
+              </td>
             </tr>
             <tr>
               <th scope="row" class="text-center">VOI</th>
-              <td>...</td>
+              <td>
+                <ol data-draggable="target" class="text-center">
+                </ol>
+              </td>
             </tr>
             <tr>
               <th scope="row" class="text-center">ESSI</th>
-              <td>...</td>
+              <td>
+                <ol data-draggable="target" class="text-center">
+                </ol>
+              </td>
             </tr>
           </tbody>
         </table>
         </div>
       <div class="col-3">
+        <div class="container">
+          <ol data-draggable="targetdiv">
+            <li data-draggable="item" draggable="true">sono</li>
+            <li data-draggable="item" draggable="true">sei</li>
+            <li data-draggable="item" draggable="true">è</li>
+            <li data-draggable="item" draggable="true">siamo</li>
+            <li data-draggable="item" draggable="true">siete</li>
+            <li data-draggable="item" draggable="true">sono</li>
+          </ol>
+        </div>
       </div>
     </div>
   </div>
 
-  <div class="container">
-    <ol data-draggable="target">
-      <li data-draggable="item" draggable="true">Item 0</li>
-    </ol>
 
-    <ol data-draggable="target">
-      <li data-draggable="item" draggable="true">Item 5</li>
-    </ol>
-
-    <ol data-draggable="target">
-      <li data-draggable="item" draggable="true">Item 6</li>
-    </ol>
-
-    <ol data-draggable="target">
-      <li data-draggable="item" draggable="true">Item 8</li>
-    </ol>
-  </div>
 
 
   <!-- Footer -->
