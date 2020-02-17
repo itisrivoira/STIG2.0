@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Layout</string>
+    <string name="txtTitoloMain">Titolo</string>
+    <string name="txtTitoloIntent"> </string>
+    <string name="txtTitoloHelp">Istruzioni</string>
+    <string name="txtHelpSinonimi">Istruzioni sinonimi</string>
+    <string name="txtHelpVerbi">Istruzioni verbi</string>
+</resources>
