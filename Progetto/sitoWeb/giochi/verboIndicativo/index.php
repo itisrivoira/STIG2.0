@@ -186,79 +186,84 @@
       <div class="divider-custom-line"></div>
     </div>
   </div>
-
-  <div class="container">
-    <div class="row">
-      <div class="col-3">
+  <form action="../../utente/utente.html" method="post">
+    <div class="container">
+      <div class="row">
+        <div class="col-3">
+        </div>
+        <div class="col-6">
+          <p class="lead text-center">ESSERE PRESENTE</p>
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th scope="col" class="text-center">Persona</th>
+                <th scope="col">First</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row" class="text-center">IO</th>
+                <td>
+                  <ol data-draggable="target" class="text-center">
+                  </ol>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row" class="text-center">TU</th>
+                <td>
+                  <ol data-draggable="target" class="text-center">
+                  </ol>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row" class="text-center">EGLI</th>
+                <td>
+                  <ol data-draggable="target" class="text-center">
+                  </ol>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row" class="text-center">NOI</th>
+                <td>
+                  <ol data-draggable="target" class="text-center">
+                  </ol>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row" class="text-center">VOI</th>
+                <td>
+                  <ol data-draggable="target" class="text-center">
+                  </ol>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row" class="text-center">ESSI</th>
+                <td>
+                  <ol data-draggable="target" class="text-center">
+                  </ol>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          </div>
+        <div class="col-3">
+          <div class="container">
+            <ol data-draggable="targetdiv">
+              <li data-draggable="item" draggable="true">SONO</li>
+              <li data-draggable="item" draggable="true">SEI</li>
+              <li data-draggable="item" draggable="true">È</li>
+              <li data-draggable="item" draggable="true">SIAMO</li>
+              <li data-draggable="item" draggable="true">SIETE</li>
+              <li data-draggable="item" draggable="true">SONO</li>
+            </ol>
+          </div>
+        </div>
       </div>
-      <div class="col-6">
-        <table class="table table-hover">
-          <thead>
-            <tr>
-              <th scope="col" class="text-center">Persona</th>
-              <th scope="col">First</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <th scope="row" class="text-center">IO</th>
-              <td>
-                <ol data-draggable="target" class="text-center">
-                </ol>
-              </td>
-            </tr>
-            <tr>
-              <th scope="row" class="text-center">TU</th>
-              <td>
-                <ol data-draggable="target" class="text-center">
-                </ol>
-              </td>
-            </tr>
-            <tr>
-              <th scope="row" class="text-center">EGLI</th>
-              <td>
-                <ol data-draggable="target" class="text-center">
-                </ol>
-              </td>
-            </tr>
-            <tr>
-              <th scope="row" class="text-center">NOI</th>
-              <td>
-                <ol data-draggable="target" class="text-center">
-                </ol>
-              </td>
-            </tr>
-            <tr>
-              <th scope="row" class="text-center">VOI</th>
-              <td>
-                <ol data-draggable="target" class="text-center">
-                </ol>
-              </td>
-            </tr>
-            <tr>
-              <th scope="row" class="text-center">ESSI</th>
-              <td>
-                <ol data-draggable="target" class="text-center">
-                </ol>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-        </div>
-      <div class="col-3">
-        <div class="container">
-          <ol data-draggable="targetdiv">
-            <li data-draggable="item" draggable="true">sono</li>
-            <li data-draggable="item" draggable="true">sei</li>
-            <li data-draggable="item" draggable="true">è</li>
-            <li data-draggable="item" draggable="true">siamo</li>
-            <li data-draggable="item" draggable="true">siete</li>
-            <li data-draggable="item" draggable="true">sono</li>
-          </ol>
-        </div>
+      <div class="form-group text-center">
+        <button type="submit" class="btn btn-primary btn-xl" id="inviaRisultato">CONFERMA</button>
       </div>
     </div>
-  </div>
+  </form>
 
 
 
