@@ -177,7 +177,7 @@
   </nav>
   <br><br><br><br><br>
   <div class="container">
-    <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0"><br>Verbo Indicativo</h2>
+    <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0"><br>Sinonimi & Contrari</h2>
     <div class="divider-custom">
       <div class="divider-custom-line"></div>
       <div class="divider-custom-icon">
@@ -192,52 +192,49 @@
         <div class="col-3">
         </div>
         <div class="col-6">
-          <p class="lead text-center">ESSERE PRESENTE</p>
           <table class="table table-hover">
             <thead>
               <tr>
-                <th scope="col" class="text-center">Pronome</th>
-                <th scope="col">Verbo</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <th scope="row" class="text-center">IO</th>
+                <th scope="row" class="text-center">SEMPLICE</th>
                 <td>
                   <ol data-draggable="target" class="text-center">
                   </ol>
                 </td>
               </tr>
               <tr>
-                <th scope="row" class="text-center">TU</th>
+                <th scope="row" class="text-center">IMPORTANTE</th>
                 <td>
                   <ol data-draggable="target" class="text-center">
                   </ol>
                 </td>
               </tr>
               <tr>
-                <th scope="row" class="text-center">EGLI</th>
+                <th scope="row" class="text-center">CONFERMARE</th>
                 <td>
                   <ol data-draggable="target" class="text-center">
                   </ol>
                 </td>
               </tr>
               <tr>
-                <th scope="row" class="text-center">NOI</th>
+                <th scope="row" class="text-center">PROBLEMA</th>
                 <td>
                   <ol data-draggable="target" class="text-center">
                   </ol>
                 </td>
               </tr>
               <tr>
-                <th scope="row" class="text-center">VOI</th>
+                <th scope="row" class="text-center">BUONO</th>
                 <td>
                   <ol data-draggable="target" class="text-center">
                   </ol>
                 </td>
               </tr>
               <tr>
-                <th scope="row" class="text-center">ESSI</th>
+                <th scope="row" class="text-center">TIMIDO</th>
                 <td>
                   <ol data-draggable="target" class="text-center">
                   </ol>
@@ -249,12 +246,12 @@
         <div class="col-3">
           <div class="container">
             <ol data-draggable="targetdiv">
-              <li data-draggable="item" draggable="true">SONO</li>
-              <li data-draggable="item" draggable="true">SEI</li>
-              <li data-draggable="item" draggable="true">È</li>
-              <li data-draggable="item" draggable="true">SIAMO</li>
-              <li data-draggable="item" draggable="true">SIETE</li>
-              <li data-draggable="item" draggable="true">SONO</li>
+              <li data-draggable="item" draggable="true">GRAVE</li>
+              <li data-draggable="item" draggable="true">NEGARE</li>
+              <li data-draggable="item" draggable="true">QUESITO</li>
+              <li data-draggable="item" draggable="true">CATTIVO</li>
+              <li data-draggable="item" draggable="true">DIFFICILE</li>
+              <li data-draggable="item" draggable="true">AUDACE</li>
             </ol>
           </div>
         </div>
