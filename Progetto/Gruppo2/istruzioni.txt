@@ -1,0 +1,14 @@
+Drag the Article
+
+Nella parte superiore dello schermo sono presenti due scatole, su cui c'è scritto "Articoli determinativi" e "Articoli indeterminativi".
+Nella parte inferiore ci sono dei mattoncini, al cui interno ci sono degli articoli, determinativi e indeterminativi.
+Il tuo compito è di inserire i mattoncini all'interno della scatola corretta. Quando i mattoncini saranno finiti, apparirà un messaggio che ti dirà se hai vinto o
+hai perso, mostrandoti anche gli errori commessi.Più vai avanti con i livelli, più i mattoncini da inserire aumentano.
+
+The Preposition’s Battle
+
+Nella tabella, che trovi al centro dello schermo, le colonne corrispondono agli articoli determinativi (il, lo, la, i, gli, le) mentre, le righe, corrispondo alle 
+preposizioni semplici (di, a, da, in, con, su, per, tra, fra).
+Usando la frase che trovi nella parte superiore dello schermo, inserisci la preposizione corretta. Per inserire una preposizione bisogna cliccare la cella che 
+corrisponde alla sua formazione (ad esempio, per inserire l’articolo “del” premi la cella “il-di”).
+Con qualsiasi livello di difficoltà, il tuo compito è quello di inserire correttamente tre preposizione e, più si va avanti di livello, più diminuiscono i tentativi.

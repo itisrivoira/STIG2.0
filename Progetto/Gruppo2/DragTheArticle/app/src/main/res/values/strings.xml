@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">DragTheArticle</string>
+    <string name="titolo_istruzioni">ISTRUZIONI</string>
+    <string name="descrizione_istruzioni">Nella parte superiore dello schermo sono presenti due scatole, su cui c\'è scritto "Articoli determinativi" e "Articoli indeterminativi". Nella parte inferiore ci sono dei mattoncini, al cui interno ci sono degli articoli, determinativi e indeterminativi. Il tuo compito è di inserire i mattoncini all\'interno della scatola corretta. Quando i mattoncini saranno finiti, apparirà un messaggio che ti dirà se hai vinto o hai perso, mostrandoti anche gli errori commessi. Più vai avanti con i livelli, più i mattoncini da inserire aumentano.</string>
+</resources>
