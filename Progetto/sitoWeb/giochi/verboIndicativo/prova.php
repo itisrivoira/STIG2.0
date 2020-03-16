@@ -87,9 +87,11 @@
       </div>
     </div>
   </nav>
+<<<<<<< Updated upstream:Progetto/sitoWeb/giochi/verboIndicativo/prova.php
 <br><br><br><br><br><br>
-
-
+=======
+  <br><br><br><br><br>
+  <div class="container"
 
   <!-- Bootstrap core JavaScript -->
   <script src="../../vendor/jquery/jquery.min.js"></script>
