@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.app_gpoi_istruzioni">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".SinominiIstruzioniActivity"></activity>
+        <activity android:name=".PreposizioniIstruzioniActivity" />
+        <activity android:name=".NomiIstruzioniActivity" />
+        <activity android:name=".IndicativoIstruzioniActivity" />
+        <activity android:name=".ArticoliIstruzioniActivity" />
+        <activity android:name=".AggettivoIstruzioniActivity" />
+        <activity android:name=".giocoAggettivoActivity" />
+        <activity android:name=".giocoNomiActivity" />
+        <activity android:name=".giocoPreposizioniActivity" />
+        <activity android:name=".giocoArticoliActivity" />
+        <activity android:name=".giocoIndicativoActivity" />
+        <activity android:name=".giocoSinominiActivity" />
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
