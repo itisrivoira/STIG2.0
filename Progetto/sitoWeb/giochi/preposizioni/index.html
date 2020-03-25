@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>W O W</title>
+
+  <!-- Custom fonts for this theme -->
+  <link href="../../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+
+  <!-- Theme CSS -->
+  <link href="../../css/freelancer.min.css" rel="stylesheet">
+
+  <style>
+    td:hover{
+      opacity: 0.5;
+      cursor: pointer;
+    }
+
+    .table td, .table th{
+      padding: 18px;
+    }
+
+    table{
+      font-size: 18px;
+      float:right;
+    }
+
+    .regole{
+      cursor: pointer;
+    }
+
+    /* The Modal (background) */
+     .modal {
+      display: none; /* Hidden by default */
+      position: fixed; /* Stay in place */
+      z-index: 1; /* Sit on top */
+      padding-top: 100px; /* Location of the box */
+      left: 0;
+      top: 0;
+      width: 100%; /* Full width */
+      height: 100%; /* Full height */
+      overflow: auto; /* Enable scroll if needed */
+      background-color: rgb(0,0,0); /* Fallback color */
+      background-color: rgba(0,0,0,0.5); /* Black w/ opacity */
+    }
+
+  </style>
+
+</head>
+
+<body id="page-top">
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand js-scroll-trigger" href="#page-top">W O W</a>
+      <button class="navbar-toggler navbar-toggler-right text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        Menu
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item mx-0 mx-lg-1">
+           <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="../../utente/utente.html#giochi">Giochi</a> <!-- Icone dei vari giochi -->
+          </li>
+          <li class="nav-item mx-0 mx-lg-1">
+            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="../../utente/profilo.html">Profilo</a>
+          </li>
+          <li class="nav-item mx-0 mx-lg-1 regole">
+            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" onclick="regole()">?</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <br><br><br><br><br>
+
+  <div class="container mb-5">
+    <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0"><br>The Preposition’s Battle</h2>
+
+    <!-- Icon Divider -->
+    <div class="divider-custom">
+      <div class="divider-custom-line"></div>
+      <div class="divider-custom-icon">
+        <i class="fas fa-star"></i>
+      </div>
+      <div class="divider-custom-line"></div>
+    </div>
+  </div>
+  <!-- Gioco -->
+  <div class="container mb-5 text-center">
+    <div class="row">
+      <div class="col-2"></div>
+      <!-- div Tabella e Frase -->
+      <div class="col-8 mb-5">
+        <div class="mb-5">
+          <h4 id="frase" class="L'istinto degli animali"> L'istinto &nbsp<span id="prepFrase" class="degli">_________</span>&nbsp animali</h4>
+        </div>
+        <table class="table table-bordered">
+          <thead class="bg-dark text-white">
+            <tr>
+              <th scope="col" class="border-secondary"></th>
+              <th scope="col" class="border-secondary">IL</th>
+              <th scope="col" class="border-secondary">LO</th>
+              <th scope="col" class="border-secondary">L'</th>
+              <th scope="col" class="border-secondary">LA</th>
+              <th scope="col" class="border-secondary">I</th>
+              <th scope="col" class="border-secondary">GLI</th>
+              <th scope="col" class="border-secondary">LE</th>
+            </tr>
+          </thead>
+          <tbody class="bg-light">
+            <tr>
+              <th scope="row" class="bg-dark text-white border-secondary">DI</th>
+              <td onclick="selezione()" id="del">DEL</td>
+              <td onclick="selezione()" id="dello">DELLO</td>
+              <td onclick="selezione()" id="dell">DELL'</td>
+              <td onclick="selezione()" id="della">DELLA</td>
+              <td onclick="selezione()" id="dei">DEI</td>
+              <td onclick="selezione()" id="degli">DEGLI</td>
+              <td onclick="selezione()" id="delle">DELLE</td>
+            </tr>
+            <tr>
+              <th scope="row" class="bg-dark text-white border-secondary">A</th>
+              <td onclick="selezione()" id="al">AL</td>
+              <td onclick="selezione()" id="allo">ALLO</td>
+              <td onclick="selezione()" id="all">ALL'</td>
+              <td onclick="selezione()" id="alla">ALLA</td>
+              <td onclick="selezione()" id="ai">AI</td>
+              <td onclick="selezione()" id="agli">AGLI</td>
+              <td onclick="selezione()" id="alle">ALLE</td>
+            </tr>
+            <tr>
+              <th scope="row" class="bg-dark text-white border-secondary">DA</th>
+              <td onclick="selezione()" id="dal">DAL</td>
+              <td onclick="selezione()" id="dallo">DALLO</td>
+              <td onclick="selezione()" id="dall">DALL'</td>
+              <td onclick="selezione()" id="dalla">DALLA</td>
+              <td onclick="selezione()" id="dai">DAI</td>
+              <td onclick="selezione()" id="dagli">DAGLI</td>
+              <td onclick="selezione()" id="dalle">DALLE</td>
+            </tr>
+            <tr>
+              <th scope="row" class="bg-dark text-white border-secondary">IN</th>
+              <td onclick="selezione()" id="nel">NEL</td>
+              <td onclick="selezione()" id="nello">NELLO</td>
+              <td onclick="selezione()" id="nell">NELL'</td>
+              <td onclick="selezione()" id="nella">NELLA</td>
+              <td onclick="selezione()" id="nei">NEI</td>
+              <td onclick="selezione()" id="negli">NEGLI</td>
+              <td onclick="selezione()" id="nelle">NELLE</td>
+            </tr>
+            <tr>
+              <th scope="row" class="bg-dark text-white border-secondary">SU</th>
+              <td onclick="selezione()" id="sul">SUL</td>
+              <td onclick="selezione()" id="sullo">SULLO</td>
+              <td onclick="selezione()" id="sull">SULL'</td>
+              <td onclick="selezione()" id="sulla">SULLA</td>
+              <td onclick="selezione()" id="sui">SUI</td>
+              <td onclick="selezione()" id="sugli">SUGLI</td>
+              <td onclick="selezione()" id="sulle">SULLE</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="col-2"></div>
+    </div>
+  </div>
+
+  <!-- The Modal -->
+  <div class="modal" id="myModal" tabindex="-1" role="dialog" aria-labelledby="portfolioModal2Label" aria-hidden="true">
+    <div class="modal-dialog modal-xl" role="document">
+      <div class="modal-content">
+          <div class="modal-body text-center">
+            <div class="container">
+              <div class="row justify-content-center">
+                <div class="col-lg-8">
+                  <!-- Portfolio Modal - Title -->
+                  <h2 class="portfolio-modal-title text-uppercase text-secondary mb-1">fine</h2>
+                  <!-- Icon Divider -->
+                  <div class="divider-custom">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon">
+                      <i class="fas fa-star"></i>
+                    </div>
+                    <div class="divider-custom-line"></div>
+                  </div>
+                  <!-- Portfolio Modal - Text -->
+                  <h4 class="mb-5" id="txtModal"></h4>
+                  <button type="button" onclick="giocaAncora()" class="btn btn-secondary float-left ">Gioca Ancora</button>
+                  <button type="button" onclick="nuovoGioco()" class="btn btn-secondary float-right">Altro gioco</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal regole -->
+    <div class="modal" id="modalRegole" tabindex="-1" role="dialog" aria-labelledby="portfolioModal2Label" aria-hidden="true">
+      <div class="modal-dialog modal-xl" role="document">
+        <div class="modal-content">
+            <div class="modal-body text-center">
+              <div class="container">
+                <div class="row justify-content-center">
+                  <div class="col-lg-8">
+                    <!-- Portfolio Modal - Title -->
+                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-1">regole</h2>
+                    <!-- Icon Divider -->
+                    <div class="divider-custom">
+                      <div class="divider-custom-line"></div>
+                      <div class="divider-custom-icon">
+                        <i class="fas fa-star"></i>
+                      </div>
+                      <div class="divider-custom-line"></div>
+                    </div>
+                    <!-- Portfolio Modal - Text -->
+                    <h3 class="mb-5"> Nel gioco si trova una tabella dove le colonne corrispondono agli articoli determinativi mentre, le righe, corrispondo alle preposizioni semplici. Usando la frase che trovi nella parte superiore dello schermo, inserisci la preposizione corretta. Con qualsiasi livello di difficoltà, il tuo compito è quello di inserire correttamente tre preposizione e, più si va avanti di livello, più diminuiscono i tentativi.</h3>
+                    <button type="button" onclick="chiudi()" class="btn btn-secondary float-right ">Gioca</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+  <!-- Footer -->
+    <footer class="footer text-center">
+      <div class="container">
+        <div class="row">
+
+          <!-- Footer Location -->
+          <div class="col-lg-6 mb-5 mb-lg-0">
+            <h4 class="text-uppercase mb-4">I.T.I.S. Giovanni Rivoira</h4>
+            <p class="lead mb-0">Verzuolo,
+              <br>Cuneo, Italy</p>
+          </div>
+
+          <!-- Footer Social Icons -->
+          <div class="col-lg-6 mb-5 mb-lg-0">
+            <h4 class="text-uppercase mb-4">Seguici sui social</h4>
+            <a class="btn btn-outline-light btn-social mx-1" href="https://www.facebook.com/itisrivoira/" target="_blank">
+              <i class="fab fa-fw fa-facebook-f"></i>
+            </a>
+            <a class="btn btn-outline-light btn-social mx-1" href="https://twitter.com/itisrivoira" target="_blank">
+              <i class="fab fa-fw fa-twitter"></i>
+            </a>
+            <a class="btn btn-outline-light btn-social mx-1" href="https://www.instagram.com/itisrivoira/" target="_blank">
+              <i class="fab fa-fw fa-instagram"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="../../vendor/jquery/jquery.min.js"></script>
+  <script src="../../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Plugin JavaScript -->
+  <script src="../../vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- Contact Form JavaScript -->
+  <script src="../../js/jqBootstrapValidation.js"></script>
+
+  <!-- Custom scripts for this template -->
+  <script src="../../js/freelancer.min.js"></script>
+
+  <script>
+    function selezione(e){
+      if (!e) var e = window.event;
+      if (e.stopPropagation) e.stopPropagation();
+      prep=document.getElementById("prepFrase");
+      frase=document.getElementById("frase");
+      if(prep.className==e.target.id){
+          document.getElementById("txtModal").innerText="HAI VINTO!\n\n"+frase.className;
+          txtModal.style.color="green";
+      }
+      else{
+        document.getElementById("txtModal").innerText="HAI PERSO!\n\n"+frase.className;
+        txtModal.style.color="red";
+      }
+      var modal = document.getElementById("myModal");
+      var span = document.getElementsByClassName("close")[0];
+      modal.style.display = "block";
+    }
+
+    function nuovoGioco(){ window.open("../../utente/utente.html#giochi", target="_self"); }
+
+    function giocaAncora(){ window.location.reload(); }
+
+    function regole(){ document.getElementById("modalRegole").style.display = "block"; }
+
+    function chiudi(){ document.getElementById("modalRegole").style.display = "none"; }
+
+  </script>
+
+</body>
+
+</html>
