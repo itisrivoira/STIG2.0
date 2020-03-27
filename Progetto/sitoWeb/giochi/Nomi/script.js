@@ -57,15 +57,17 @@ else
 {
 // incortect letter guess
 wrong_guesses += 1;
-eval("document.hm.src=\"hm" + wrong_guesses + ".gif\"");
+eval("document.hm.src=\"./img/hm" + wrong_guesses + ".gif\"");
 		
 if (wrong_guesses == 10)
 {
 // lost
 var modal = document.getElementById("myModal");
 modal.style.display = "block";
+
    
 txtModal.style.color="red";
+document.getElementById("txtModalWord").innerText="Parola --> "+to_guess;
 document.getElementById("txtModal").innerText="hai Perso!";
          
 can_play = false;
@@ -79,7 +81,7 @@ selectWord();
 document.game.usedLetters.value = "";
 used_letters = "";
 wrong_guesses = 0;
-document.hm.src="hmstart.gif";
+document.hm.src="./img/hmstart.gif";
 }
 
 function selectWord()

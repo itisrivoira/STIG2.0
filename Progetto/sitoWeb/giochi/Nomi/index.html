@@ -36,6 +36,9 @@
   	margin:1em 0 3em 0;
 
   }
+  .custom {
+    width: 45px !important;
+}
 
   .regole{
     cursor: pointer;
@@ -88,7 +91,7 @@
   <br><br><br><br><br>
 
   <div class="container">
-    <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0"><br>Gioco Nomi</h2>
+    <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0"><br>Il sostantivo dell'impiccato</h2>
     <!-- Icon Divider -->
     <div class="divider-custom">
       <div class="divider-custom-line"></div>
@@ -102,58 +105,67 @@
   <div class="container">
     <div class="row">
       <!-- div Immagine -->
-      <div class="col-5 ">
-        <p><img src="hmstart.gif" height="125" width="75" name="hm"></p>
+      <div class="col-4 pb-5">
+        <p class="mb-5"><img src="./img/hmstart.gif" height="250" width="150" name="hm"></p>
       </div>
-      <div class="col-1"></div>
+      
       <!-- div Lettere -->
-      <div class="col-6">
+      <div class="col-8 mt-5">
 
         <!-- script per il gioco -->
         <script src="script.js">
         </script>
         
 
-
-        <form name="game">
-          <p>Parola: <input type="text" name="displayWord"><br>
-          Lettere: <input type="text" name="usedLetters"></p>
+        <div class="row mb-4"> 
+          <form name="game" class="mx-auto">
+            <p class="text-uppercase text-secondary ">Parola : <input type="text" name="displayWord"></p>
+            <p class="text-uppercase text-secondary ">Lettere: <input type="text" name="usedLetters"></p>
           </form>
+        </div>
+       <div>
           <form>
-            <input type="button" value="A" onclick="selectLetter('A')"/>
-            <input type="button" value="B" onclick="selectLetter('B')"/>
-            <input type="button" value="C" onclick="selectLetter('C')"/>
-            <input type="button" value="D" onclick="selectLetter('D')"/>
-            <input type="button" value="E" onclick="selectLetter('E')"/>
-            <input type="button" value="F" onclick="selectLetter('F')"/>
-            <input type="button" value="G" onclick="selectLetter('G')"/>
-            <input type="button" value="H" onclick="selectLetter('H')"/>
-            <input type="button" value="I" onclick="selectLetter('I')"/>
-            <input type="button" value="J" onclick="selectLetter('J')"/>
-            <input type="button" value="K" onclick="selectLetter('K')"/>
-            <input type="button" value="L" onclick="selectLetter('L')"/>
-            <input type="button" value="M" onclick="selectLetter('M')"/>
-            <input type="button" value="N" onclick="selectLetter('N')"/>
-            <input type="button" value="O" onclick="selectLetter('O')"/>
-            <input type="button" value="P" onclick="selectLetter('P')"/>
-            <input type="button" value="Q" onclick="selectLetter('Q')"/>
-            <input type="button" value="R" onclick="selectLetter('R')"/>
-            <input type="button" value="S" onclick="selectLetter('S')"/>
-            <input type="button" value="T" onclick="selectLetter('T')"/>
-            <input type="button" value="U" onclick="selectLetter('U')"/>
-            <input type="button" value="V" onclick="selectLetter('V')"/>
-            <input type="button" value="W" onclick="selectLetter('W')"/>
-            <input type="button" value="X" onclick="selectLetter('X')"/>
-            <input type="button" value="Y" onclick="selectLetter('Y')"/>
-            <input type="button" value="Z" onclick="selectLetter('Z')"/>
+            <div class="row">
+            <input type="button"  class="btn btn-secondary mx-1 custom" value="A" onclick="selectLetter('A')"/>
+            <input type="button" class="btn btn-secondary mx-1 custom" value="B"  onclick="selectLetter('B')"/>
+            <input type="button" class="btn btn-secondary mx-1 custom" value="C"  onclick="selectLetter('C')"/>
+            <input type="button" class="btn btn-secondary mx-1 custom" value="D"  onclick="selectLetter('D')"/>
+            <input type="button" class="btn btn-secondary mx-1 custom" value="E"  onclick="selectLetter('E')"/>
+            <input type="button" value="F" class="btn btn-secondary mx-1 custom" onclick="selectLetter('F')"/>
+            <input type="button" value="G" class="btn btn-secondary mx-1 custom" onclick="selectLetter('G')"/>
+            <input type="button" value="H" class="btn btn-secondary mx-1 custom" onclick="selectLetter('H')"/>
+            <input type="button" value="I" class="btn btn-secondary mx-1 custom" onclick="selectLetter('I')"/>
+            <input type="button" value="J" class="btn btn-secondary mx-1 custom" onclick="selectLetter('J')"/>
+            <input type="button" value="K" class="btn btn-secondary mx-1 custom" onclick="selectLetter('K')"/>
+            <input type="button" value="L" class="btn btn-secondary mx-1 custom" onclick="selectLetter('L')"/>
+            <input type="button" value="M" class="btn btn-secondary mx-1 custom" onclick="selectLetter('M')"/>
+          </div>
+          <div class="row m-1"></div>
 
-            
-
-            
-            </form>
+          <div class="row">
+            <input type="button" value="N" class="btn btn-secondary mx-1 custom" onclick="selectLetter('N')"/>
+            <input type="button" value="O" class="btn btn-secondary mx-1 custom" onclick="selectLetter('O')"/>
+            <input type="button" value="P" class="btn btn-secondary mx-1 custom" onclick="selectLetter('P')"/>
+            <input type="button" value="Q" class="btn btn-secondary mx-1 custom" onclick="selectLetter('Q')"/>
+            <input type="button" value="R" class="btn btn-secondary mx-1 custom" onclick="selectLetter('R')"/>
+            <input type="button" value="S" class="btn btn-secondary mx-1 custom" onclick="selectLetter('S')"/>
+            <input type="button" value="T" class="btn btn-secondary mx-1 custom" onclick="selectLetter('T')"/>
+            <input type="button" value="U" class="btn btn-secondary mx-1 custom" onclick="selectLetter('U')"/>
+            <input type="button" value="V" class="btn btn-secondary mx-1 custom" onclick="selectLetter('V')"/>
+            <input type="button" value="W" class="btn btn-secondary mx-1 custom" onclick="selectLetter('W')"/>
+            <input type="button" value="X" class="btn btn-secondary mx-1 custom" onclick="selectLetter('X')"/>
+            <input type="button" value="Y" class="btn btn-secondary mx-1 custom" onclick="selectLetter('Y')"/>
+            <input type="button" value="Z" class="btn btn-secondary mx-1 custom" onclick="selectLetter('Z')"/>
+          </div>
+        </form>
+      </div>
+      <div class="row m-4"></div>
+      <div class="row justify-content-end">
+        <input type="button" value="Ricomincia" class="btn btn-secondary mx-1 " onclick="reset()"/>
+      </div>
 
           
-            <p><a href="javascript:reset()">Parti/Ricomincia</a></p>
+          
       </div>
     </div>
     
@@ -179,6 +191,7 @@
                   </div>
                   <!-- Portfolio Modal - Text -->
                   <h4 class="mb-5 text-uppercase" id="txtModal"></h4>
+                  <h4 class="mb-5 text-uppercase" id="txtModalWord"></h4>
                   <button type="button" onclick="giocaAncora()" class="btn btn-secondary float-left ">Gioca Ancora</button>
                   <button type="button" onclick="nuovoGioco()" class="btn btn-secondary float-right">Altro gioco</button>
                 </div>
@@ -208,7 +221,7 @@
                       <div class="divider-custom-line"></div>
                     </div>
                     <!-- Portfolio Modal - Text -->
-                    <h3 class="mb-5">Nel gioco sono presenti due scatole, una per "Articoli determinativi" e l'altra per "Articoli indeterminativi". Nella parte inferiore ci sono dei mattoncini, al cui interno ci sono degli articoli, determinativi e indeterminativi. Il tuo compito è di inserire i mattoncini all'interno della scatola corretta. Quando i mattoncini saranno finiti, apparirà un messaggio che ti dirà se hai vinto o hai perso, mostrandoti anche gli errori commessi. Più vai avanti con i livelli, più i mattoncini da inserire aumentano.</h3>
+                    <h3 class="mb-5">Il gioco presenta un patibolo e una parola da indovinare. Ad ogni turno l'utente prova ad indovinare una lettera: se ha successo questa appare nella sua posizione corrispondente. Altrimenti una parte di un omino impiccato verrà generata, partendo dalla base del patibolo. Il punto va al giocatore a seconda che la parola venga indovinata prima del completamento del disegno o no.</h3>
                     <button type="button" onclick="chiudi()" class="btn btn-secondary float-right ">Gioca</button>
                   </div>
                 </div>
