@@ -9,13 +9,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".SinominiIstruzioniActivity"></activity>
+        <activity android:name=".ImpiccatoIstruzioniActivity"></activity>
+        <activity android:name=".giocoImpiccatoActivity" />
+        <activity android:name=".IstruzioniActivity" />
         <activity android:name=".PreposizioniIstruzioniActivity" />
         <activity android:name=".NomiIstruzioniActivity" />
         <activity android:name=".IndicativoIstruzioniActivity" />
         <activity android:name=".ArticoliIstruzioniActivity" />
-        <activity android:name=".AggettivoIstruzioniActivity" />
-        <activity android:name=".giocoAggettivoActivity" />
         <activity android:name=".giocoNomiActivity" />
         <activity android:name=".giocoPreposizioniActivity" />
         <activity android:name=".giocoArticoliActivity" />

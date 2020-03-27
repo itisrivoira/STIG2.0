@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".ImpiccatoIstruzioniActivity">
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline2"
@@ -35,12 +35,11 @@
         app:layout_constraintGuide_begin="667dp" />
 
     <TextView
-        android:id="@+id/idIstruzioni"
-        android:layout_width="300dp"
-        android:layout_height="371dp"
-        android:text="@string/IstruzioniGiocoNomi"
-        tools:layout_editor_absoluteX="50dp"
-        tools:layout_editor_absoluteY="55dp" />
-
+        android:id="@+id/textView2"
+        android:layout_width="297dp"
+        android:layout_height="349dp"
+        android:text="@string/IstruzioniImpiccato"
+        tools:layout_editor_absoluteX="52dp"
+        tools:layout_editor_absoluteY="50dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

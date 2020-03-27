@@ -8,16 +8,17 @@ import android.view.View;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
-public class giocoNomiActivity extends AppCompatActivity {
+public class giocoImpiccatoActivity extends AppCompatActivity {
 
     private FloatingActionButton btnIstruzioni = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_gioco_nomi);
+        setContentView(R.layout.activity_gioco_impiccato);
         btnIstruzioni = findViewById(R.id.btnIstruzioni);
     }
+
 
     @Override
     protected void onResume() {
@@ -25,7 +26,7 @@ public class giocoNomiActivity extends AppCompatActivity {
         btnIstruzioni.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent mioIntent = new Intent(getApplicationContext(),NomiIstruzioniActivity.class);
+                Intent mioIntent = new Intent(getApplicationContext(),ArticoliIstruzioniActivity.class);
                 startActivity(mioIntent);
             }
         });

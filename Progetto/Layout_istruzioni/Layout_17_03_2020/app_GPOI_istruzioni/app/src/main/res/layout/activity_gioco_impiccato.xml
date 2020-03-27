@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".giocoImpiccatoActivity">
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline2"
@@ -34,13 +34,14 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_begin="667dp" />
 
-    <TextView
-        android:id="@+id/idIstruzioni"
-        android:layout_width="300dp"
-        android:layout_height="371dp"
-        android:text="@string/IstruzioniGiocoNomi"
-        tools:layout_editor_absoluteX="50dp"
-        tools:layout_editor_absoluteY="55dp" />
-
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btnIstruzioni"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:clickable="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline3"
+        app:srcCompat="@android:drawable/ic_menu_help" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

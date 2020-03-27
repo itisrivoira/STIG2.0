@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">app_GPOI_istruzioni</string>
     <string name="giocoIndicativo">Indicativi</string>
-    <string name="giocoSinomini">Sinomini</string>
+    <string name="giocoSinomini">Sinonimi</string>
     <string name="giocoArticoli">Articoli</string>
     <string name="giocoPreposizioni">Preposizioni</string>
     <string name="giocoNomi">Nomi</string>
@@ -24,16 +24,6 @@
                                         - Nomi Collettivi
                                         - Nomi numerabili
                                         - Nomi non numerabili</string>
-    <string name="IstruzioniGiocoAggettivo">Immagine oscurata :
-                                            Il giocatore ha a disposizione un immagine che viene suddivisa in un numero casuale di parti, numero scelto in base al livello di difficoltà disponibile tra Facile , Medio e Difficile.
-                                            Sotto l\'immagine verrà mostrata una frase contente un aggettivo (segnato in grassetto) , il giocatore dovrà scegliere la giusta categoria di aggettivi tra le opzioni suggerite sotto la frase.
-
-                                            Facile : immagine suddivisa in X parti, Y opzioni dispobili
-                                            Medio : immagine suddivisa in X parti
-                                            Difficile : immagine suddivisa in X parti
-
-                                            Ogni volta che il giocatore selezionerà il bottone giusto , una porzione di immagine verrà resa visibile.
-                                            Il gioco termina quando tutta l'immagine sarà visibile.
-                                            In caso di errore al primo tentativo , l'immagine rimarrà oscurata e verrà mostrata una nuova frase con nuove opzioni.</string>
+    <string name="IstruzioniImpiccato">Il gioco presenta un patibolo e una parola da indovinare. Ad ogni turno l\'utente prova ad indovinare una lettera: se ha successo questa appare nella sua posizione corrispondente. Altrimenti una parte di un omino impiccato verrà generata, partendo dalla base del patibolo. Il punto va al giocatore a seconda che la parola venga indovinata prima del completamento del disegno o no.</string>
     <string name="IstruzioniGiocoIndicativo">Scrivere alcune frasi con uno spazio nel quale bisogna inserire un verbo indicativo. Nella parte inferiore dello schermo inseriamo dei verbi di tutti i tipi e il ragazzo deve capire qual e il verbo indicativo e saperlo inserire nello spazio corretto. Si puo anche mettere un numero massimo di tentativi.</string>
 </resources>

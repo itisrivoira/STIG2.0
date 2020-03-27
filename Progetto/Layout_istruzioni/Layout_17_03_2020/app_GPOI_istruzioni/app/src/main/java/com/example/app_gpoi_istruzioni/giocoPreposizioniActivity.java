@@ -15,7 +15,7 @@ public class giocoPreposizioniActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_gioco_aggettivo);
+        setContentView(R.layout.activity_gioco_preposizioni);
         btnIstruzioni = findViewById(R.id.btnIstruzioni);
     }
 

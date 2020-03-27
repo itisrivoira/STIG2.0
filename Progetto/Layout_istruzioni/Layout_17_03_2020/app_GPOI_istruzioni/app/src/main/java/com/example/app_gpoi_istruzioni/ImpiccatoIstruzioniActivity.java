@@ -4,12 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class NomiIstruzioniActivity extends AppCompatActivity {
+public class ImpiccatoIstruzioniActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_nomi_istruzioni);
+        setContentView(R.layout.activity_impiccato_istruzioni);
     }
-
 }
