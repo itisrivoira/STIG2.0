@@ -56,6 +56,48 @@
     </div>
   </div>
 
+  <div class="container">
+  
+    <?php
+      // Apre il file
+        if (($h = fopen("ListaNomi.csv", "r")) !== FALSE) 
+        {
+          // Converte ogni linea in variabile data
+          while (($data = fgetcsv($h, 1000)) !== FALSE) 
+          {	
+          $nome=$data[0]
+      ?>
+      <div class="row">
+      <div class="col-2"></div>
+    <div class="col-6">
+    <table class="table table-bordered" cellpadding="2">
+      <tbody>
+      <tr class="text-center"  >
+        <?php 
+          for ($i = 0; $i < 5; $i++) {
+            echo"<td >$nome[$i]</td>";
+          }
+        ?>     
+
+      </tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="col-4 ">
+      <button type="button" class="btn btn-secondary ">Domanda</button>
+    
+    </div>
+    </div>
+    <?php
+        }
+      
+        // Chiude il file
+        fclose($h);
+      }
+    ?>
+    
+  
+</div>
   
 
 

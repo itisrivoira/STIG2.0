@@ -17,6 +17,7 @@
 
   <!-- Theme CSS -->
   <link href="../../css/freelancer.min.css" rel="stylesheet">
+  <link href="./style.css" rel="stylesheet">
 
 </head>
 <!-- DA SPOSTARE DENTRO UN FILE JS -->
@@ -56,6 +57,12 @@
     </div>
   </div>
 
+  <div class="container">  <!-- Pezzo del gioco -->
+
+  
+    
+  
+  </div>
   
 
 
