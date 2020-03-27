@@ -78,7 +78,8 @@
               </div>
             </div>
             <div class="row mb-3 text-center">
-               <button type="button" onclick="modifica()" class="btn-secondary btn " id="invia">Modifica profilo</button>
+               <!-- Button trigger modal -->
+              <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#modalModifica"> Modifica Profilo </button>
             </div>
           </div>
        </div>
@@ -122,9 +123,14 @@
       </footer>
 
       <!-- Modal modifica -->
-      <div class="modal" id="modalModifica" tabindex="-1" role="dialog" aria-labelledby="portfolioModal2Label" aria-hidden="true">
-        <div class="modal-dialog modal-xl" role="document">
+      <div class="portfolio-modal modal fade" id="modalModifica" tabindex="-1" role="dialog" aria-labelledby="portfolioModal2Label" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
           <div class="modal-content">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">
+                  <i class="fas fa-times"></i>
+                </span>
+              </button>
               <div class="modal-body text-center">
                 <div class="container">
                   <div class="row justify-content-center">
@@ -141,12 +147,12 @@
                       </div>
                       <!-- Portfolio Modal - Text -->
                       <div class="row mb-3">
-                		    <div class="floating-label-form-group controls mb-0 pb-2">
-                		      <label>Nome</label>
-                		      <input class="mb-0" id="nomeModifica" type="text" value="Gianluca" onclick="select_all(this)">
-                		    </div>
-                			</div>
-              		    <div class="row mb-3">
+                        <div class="floating-label-form-group controls mb-0 pb-2">
+                          <label>Nome</label>
+                          <input class="mb-0" id="nomeModifica" type="text" value="Gianluca" onclick="select_all(this)">
+                        </div>
+                      </div>
+                      <div class="row mb-3">
                         <div class="floating-label-form-group controls mb-0 pb-2">
                           <label>Cognome</label>
                           <input class="mb-0" id="cognomeModifica" type="text" value="Rossi" onclick="select_all(this)">
@@ -170,7 +176,7 @@
                           <input class="mb-0" id="passwordConferma" type="password" value="ciao" onclick="select_all(this)">
                         </div>
                       </div>
-                      <div class="row mb-3 text-center">
+                      <div class="row mb-0 text-center">
                          <button type="button" onclick="modificaDati()" class="btn-secondary btn" id="btnModifica">Aggiorna profilo</button>
                       </div>
                     </div>
@@ -197,26 +203,9 @@
 
     <!-- Contact Form JavaScript -->
     <script src="../js/jqBootstrapValidation.js"></script>
+
     <!-- Custom scripts for this template -->
     <!-- <script src="../js/freelancer.min.js"></script> -->
-
-    <style>
-
-    /* The Modal (background) */
-    .modal {
-      display: none; /* Hidden by default */
-      position: fixed; /* Stay in place */
-      z-index: 1; /* Sit on top */
-      padding-top: 100px; /* Location of the box */
-      left: 0;
-      top: 0;
-      width: 100%; /* Full width */
-      height: 100%; /* Full height */
-      overflow: auto; /* Enable scroll if needed */
-      background-color: rgb(0,0,0); /* Fallback color */
-      background-color: rgba(0,0,0,0.5); /* Black w/ opacity */
-    }
-    </style>
 
     <script type="text/javascript">
 
@@ -237,7 +226,8 @@
         if( confPsw==true && confEmail==true){
           document.getElementById("password").value=passwordModifica.value;
           document.getElementById("email").value=email.value;
-          document.getElementById("modalModifica").style.display = "none";
+          $('#modalModifica').modal('toggle');
+          alert("Dati Aggiornati");
         }
         else{
           alert("Controllare i dati");
