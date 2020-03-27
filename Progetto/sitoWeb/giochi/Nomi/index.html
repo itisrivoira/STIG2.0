@@ -20,8 +20,22 @@
 
 </head>
 
+
 <style>
 
+  
+
+  ul{
+    cursor: pointer;
+    margin-top:25%;
+  }
+
+  img{
+  	float:center;
+  	width:70%;
+  	margin:1em 0 3em 0;
+
+  }
 
   .regole{
     cursor: pointer;
@@ -44,7 +58,9 @@
 
 </style>
 
-<body id="page-top">
+
+
+<body id="page-top" onLoad="reset(); return true;">
 
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
@@ -84,6 +100,62 @@
   </div>
   <!-- Gioco -->
   <div class="container">
+    <div class="row">
+      <!-- div Immagine -->
+      <div class="col-5 ">
+        <p><img src="hmstart.gif" height="125" width="75" name="hm"></p>
+      </div>
+      <div class="col-1"></div>
+      <!-- div Lettere -->
+      <div class="col-6">
+
+        <!-- script per il gioco -->
+        <script src="script.js">
+        </script>
+        
+
+
+        <form name="game">
+          <p>Parola: <input type="text" name="displayWord"><br>
+          Lettere: <input type="text" name="usedLetters"></p>
+          </form>
+          <form>
+            <input type="button" value="A" onclick="selectLetter('A')"/>
+            <input type="button" value="B" onclick="selectLetter('B')"/>
+            <input type="button" value="C" onclick="selectLetter('C')"/>
+            <input type="button" value="D" onclick="selectLetter('D')"/>
+            <input type="button" value="E" onclick="selectLetter('E')"/>
+            <input type="button" value="F" onclick="selectLetter('F')"/>
+            <input type="button" value="G" onclick="selectLetter('G')"/>
+            <input type="button" value="H" onclick="selectLetter('H')"/>
+            <input type="button" value="I" onclick="selectLetter('I')"/>
+            <input type="button" value="J" onclick="selectLetter('J')"/>
+            <input type="button" value="K" onclick="selectLetter('K')"/>
+            <input type="button" value="L" onclick="selectLetter('L')"/>
+            <input type="button" value="M" onclick="selectLetter('M')"/>
+            <input type="button" value="N" onclick="selectLetter('N')"/>
+            <input type="button" value="O" onclick="selectLetter('O')"/>
+            <input type="button" value="P" onclick="selectLetter('P')"/>
+            <input type="button" value="Q" onclick="selectLetter('Q')"/>
+            <input type="button" value="R" onclick="selectLetter('R')"/>
+            <input type="button" value="S" onclick="selectLetter('S')"/>
+            <input type="button" value="T" onclick="selectLetter('T')"/>
+            <input type="button" value="U" onclick="selectLetter('U')"/>
+            <input type="button" value="V" onclick="selectLetter('V')"/>
+            <input type="button" value="W" onclick="selectLetter('W')"/>
+            <input type="button" value="X" onclick="selectLetter('X')"/>
+            <input type="button" value="Y" onclick="selectLetter('Y')"/>
+            <input type="button" value="Z" onclick="selectLetter('Z')"/>
+
+            
+
+            
+            </form>
+
+          
+            <p><a href="javascript:reset()">Parti/Ricomincia</a></p>
+      </div>
+    </div>
     
   </div>
 
@@ -191,63 +263,10 @@
   <script src="../../js/freelancer.min.js"></script>
 
   <script>
+   
 
-    var indeterminativi=['uno','una'];
-    var determinativi=['il','lo','la','i','gli','le'];
-    var indUtente=[];
-    var detUtente=[];
-    var cont=0;
-    document.addEventListener('dragstart', function(e){
-        item = e.target;
-        e.dataTransfer.setData('text', item.id);
-    }, false);
 
-    document.addEventListener('dragover', function(e){
-        if(item)e.preventDefault()
-    }, false);
-
-    document.addEventListener('drop', function(e){
-        if(e.target.getAttribute('data-draggable') == 'indeterminativi'){
-            indUtente.push(e.dataTransfer.getData('text'));
-            e.target.appendChild(item);
-            e.preventDefault();
-            cont++;
-        }
-        if(e.target.getAttribute('data-draggable') == 'determinativi'){
-            detUtente.push(e.dataTransfer.getData('text'));
-            e.target.appendChild(item);
-            e.preventDefault();
-            cont++;
-        }
-    }, false);
-
-    document.addEventListener('dragend', function(e){
-        item = null;
-        if(cont==8){
-          var vinto=true;
-          var c=0;
-          do{
-            if(!indeterminativi.includes(indUtente[c])) vinto=false;
-            c++;
-          }while(vinto==true && c<2);
-          c=0;
-          do{
-            if(!determinativi.includes(detUtente[c])) vinto=false;
-            c++;
-          }while(vinto==true && c<6);
-          //Modal fine gioco
-          var modal = document.getElementById("myModal");
-          var span = document.getElementsByClassName("close")[0];
-          modal.style.display = "block";
-          if(vinto){
-            txtModal.style.color="green";
-            document.getElementById("txtModal").innerText="hai vinto!";
-          }else{
-            txtModal.style.color="green";
-            document.getElementById("txtModal").innerText="hai perso!";
-          }
-        };
-    }, false);
+    
 
     function nuovoGioco(){ window.open("../../utente/utente.html#giochi", target="_self"); }
 
