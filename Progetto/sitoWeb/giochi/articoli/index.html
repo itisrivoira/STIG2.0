@@ -57,21 +57,6 @@
     cursor: pointer;
   }
 
-  /* The Modal (background) */
-   .modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    padding-top: 100px; /* Location of the box */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-  }
-
 </style>
 
 <body id="page-top">
@@ -93,7 +78,7 @@
             <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="../../utente/profilo.html">Profilo</a>
           </li>
           <li class="nav-item mx-0 mx-lg-1 regole">
-            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" onclick="regole()">Regole</a>
+            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" data-toggle="modal" data-target="#modalRegole" >Regole</a>
           </li>
         </ul>
       </div>
@@ -145,17 +130,17 @@
   </div>
 
   <!-- Modal fine gioco -->
-  <div class="modal" id="myModal" tabindex="-1" role="dialog" aria-labelledby="portfolioModal2Label" aria-hidden="true">
-    <div class="modal-dialog modal-xl" role="document">
+  <div class="portfolio-modal modal fade" data-backdrop="static" data-keyboard="false"  id="myModal" tabindex="-1" role="dialog" aria-labelledby="portfolioModal2Label" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
       <div class="modal-content">
           <div class="modal-body text-center">
             <div class="container">
               <div class="row justify-content-center">
                 <div class="col-lg-8">
                   <!-- Portfolio Modal - Title -->
-                  <h2 class="portfolio-modal-title text-secondary text-uppercase mb-1">fine</h2>
+                  <h2 class="portfolio-modal-title0 text-uppercase mb-1" id="titModal"></h2>
                   <!-- Icon Divider -->
-                  <div class="divider-custom">
+                  <div class="divider-custom mb-5">
                     <div class="divider-custom-line"></div>
                     <div class="divider-custom-icon">
                       <i class="fas fa-star"></i>
@@ -163,7 +148,7 @@
                     <div class="divider-custom-line"></div>
                   </div>
                   <!-- Portfolio Modal - Text -->
-                  <h4 class="mb-5 text-uppercase" id="txtModal"></h4>
+                  <h4 class="mb-5" id="txtModal"></h4>
                   <button type="button" onclick="giocaAncora()" class="btn btn-secondary float-left ">Gioca Ancora</button>
                   <button type="button" onclick="nuovoGioco()" class="btn btn-secondary float-right">Altro gioco</button>
                 </div>
@@ -175,9 +160,14 @@
     </div>
 
     <!-- Modal regole -->
-    <div class="modal" id="modalRegole" tabindex="-1" role="dialog" aria-labelledby="portfolioModal2Label" aria-hidden="true">
-      <div class="modal-dialog modal-xl" role="document">
+    <div class="portfolio-modal modal" id="modalRegole" tabindex="-1" role="dialog" aria-labelledby="portfolioModal2Label" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
         <div class="modal-content">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="chiudi()" >
+              <span aria-hidden="true">
+                <i class="fas fa-times"></i>
+              </span>
+            </button>
             <div class="modal-body text-center">
               <div class="container">
                 <div class="row justify-content-center">
@@ -194,7 +184,6 @@
                     </div>
                     <!-- Portfolio Modal - Text -->
                     <h3 class="mb-5">Nel gioco sono presenti due scatole, una per "Articoli determinativi" e l'altra per "Articoli indeterminativi". Nella parte inferiore ci sono dei mattoncini, al cui interno ci sono degli articoli, determinativi e indeterminativi. Il tuo compito è di inserire i mattoncini all'interno della scatola corretta. Quando i mattoncini saranno finiti, apparirà un messaggio che ti dirà se hai vinto o hai perso, mostrandoti anche gli errori commessi. Più vai avanti con i livelli, più i mattoncini da inserire aumentano.</h3>
-                    <button type="button" onclick="chiudi()" class="btn btn-secondary float-right ">Gioca</button>
                   </div>
                 </div>
               </div>
@@ -232,91 +221,90 @@
       </div>
     </footer>
 
+    <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
+    <div class="scroll-to-top d-lg-none position-fixed ">
+      <a class="js-scroll-trigger d-block text-center text-white rounded" href="#page-top">
+        <i class="fa fa-chevron-up"></i>
+      </a>
+    </div>
 
+    <!-- Bootstrap core JavaScript -->
+    <script src="../../vendor/jquery/jquery.min.js"></script>
+    <script src="../../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-  <!-- Bootstrap core JavaScript -->
-  <script src="../../vendor/jquery/jquery.min.js"></script>
-  <script src="../../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Plugin JavaScript -->
+    <script src="../../vendor/jquery-easing/jquery.easing.min.js"></script>
 
-  <!-- Plugin JavaScript -->
-  <script src="../../vendor/jquery-easing/jquery.easing.min.js"></script>
+    <!-- Contact Form JavaScript -->
+    <script src="../../js/jqBootstrapValidation.js"></script>
 
-  <!-- Contact Form JavaScript -->
-  <script src="../../js/jqBootstrapValidation.js"></script>
+    <!-- Custom scripts for this template -->
+    <script src="../../js/freelancer.min.js"></script>
 
-  <!-- Custom scripts for this template -->
-  <script src="../../js/freelancer.min.js"></script>
+    <script>
 
-  <script>
+      var indeterminativi=['uno','una'];
+      var determinativi=['il','lo','la','i','gli','le'];
+      var indUtente=[];
+      var detUtente=[];
+      var cont=0;
+      document.addEventListener('dragstart', function(e){
+          item = e.target;
+          e.dataTransfer.setData('text', item.id);
+      }, false);
 
-    var indeterminativi=['uno','una'];
-    var determinativi=['il','lo','la','i','gli','le'];
-    var indUtente=[];
-    var detUtente=[];
-    var cont=0;
-    document.addEventListener('dragstart', function(e){
-        item = e.target;
-        e.dataTransfer.setData('text', item.id);
-    }, false);
+      document.addEventListener('dragover', function(e){
+          if(item) e.preventDefault();
+      }, false);
 
-    document.addEventListener('dragover', function(e){
-        if(item)e.preventDefault()
-    }, false);
-
-    document.addEventListener('drop', function(e){
-        if(e.target.getAttribute('data-draggable') == 'indeterminativi'){
-            indUtente.push(e.dataTransfer.getData('text'));
-            e.target.appendChild(item);
-            e.preventDefault();
-            cont++;
-        }
-        if(e.target.getAttribute('data-draggable') == 'determinativi'){
-            detUtente.push(e.dataTransfer.getData('text'));
-            e.target.appendChild(item);
-            e.preventDefault();
-            cont++;
-        }
-    }, false);
-
-    document.addEventListener('dragend', function(e){
-        item = null;
-        if(cont==8){
-          var vinto=true;
-          var c=0;
-          do{
-            if(!indeterminativi.includes(indUtente[c])) vinto=false;
-            c++;
-          }while(vinto==true && c<2);
-          c=0;
-          do{
-            if(!determinativi.includes(detUtente[c])) vinto=false;
-            c++;
-          }while(vinto==true && c<6);
-          //Modal fine gioco
-          var modal = document.getElementById("myModal");
-          var span = document.getElementsByClassName("close")[0];
-          modal.style.display = "block";
-          if(vinto){
-            txtModal.style.color="green";
-            document.getElementById("txtModal").innerText="hai vinto!";
-          }else{
-            txtModal.style.color="green";
-            document.getElementById("txtModal").innerText="hai perso!";
+      document.addEventListener('drop', function(e){
+          if(e.target.getAttribute('data-draggable') == 'indeterminativi'){
+              indUtente.push(e.dataTransfer.getData('text'));
+              e.target.appendChild(item);
+              e.preventDefault();
+              cont++;
           }
-        };
-    }, false);
+          if(e.target.getAttribute('data-draggable') == 'determinativi'){
+              detUtente.push(e.dataTransfer.getData('text'));
+              e.target.appendChild(item);
+              e.preventDefault();
+              cont++;
+          }
+      }, false);
 
-    function nuovoGioco(){ window.open("../../utente/utente.html#giochi", target="_self"); }
+      document.addEventListener('dragend', function(e){
+          item = null;
+          if(cont==8){
+            var vinto=true;
+            var c=0;
+            do{
+              if(!indeterminativi.includes(indUtente[c])) vinto=false;
+              c++;
+            }while(vinto==true && c<2);
+            c=0;
+            do{
+              if(!determinativi.includes(detUtente[c])) vinto=false;
+              c++;
+            }while(vinto==true && c<6);
+            //Modal fine gioco
+            $('#myModal').modal('show');
+            if(vinto){
+              titModal.className+=" text-success";
+              titModal.innerText="hai vinto!";
+              txtModal.innerText="Articoli indeterminativi: "+indeterminativi+"\n\nArticoli determinativi: "+determinativi;
+            }else{
+              titModal.className+=" text-danger";
+              titModal.innerText="hai perso!";
+              txtModal.innerText="Articoli indeterminativi: "+indeterminativi+"\n\nArticoli determinativi: "+determinativi;
+            }
+          };
+      }, false);
 
-    function giocaAncora(){ window.location.reload(); }
+      function nuovoGioco(){ window.open("../../utente/utente.html#giochi", target="_self"); }
 
-    function regole(){ document.getElementById("modalRegole").style.display = "block"; }
+      function giocaAncora(){ window.location.reload(); }
 
-    function chiudi(){ document.getElementById("modalRegole").style.display = "none"; }
+    </script>
 
-  </script>
-
-
-</body>
-
+  </body>
 </html>
