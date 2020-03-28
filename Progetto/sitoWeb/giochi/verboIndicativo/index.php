@@ -21,86 +21,126 @@
 </head>
 <!-- DA SPOSTARE DENTRO UN FILE JS -->
 <script>
-(function()
-{
+    var io = "sono";
+    var tu = "sei";
+    var egli = "è";
+    var noi  = "siamo";
+    var voi = "siete";
+    var essi = "sono";
 
-    //exclude older browsers by the features we need them to support
-    //and legacy opera explicitly so we don't waste time on a dead browser
-    if
-    (
-        !document.querySelectorAll
-        ||
-        !('draggable' in document.createElement('span'))
-        ||
-        window.opera
-    )
-    { return; }
-
-    //get the collection of draggable items and add their draggable attribute
-    for(var
-        items = document.querySelectorAll('[data-draggable="item"]'),
-        len = items.length,
-        i = 0; i < len; i ++)
-    {
-        items[i].setAttribute('draggable', 'true');
-    }
-
-    //variable for storing the dragging item reference
-    //this will avoid the need to define any transfer data
-    //which means that the elements don't need to have IDs
-    var item = null;
-
-    //dragstart event to initiate mouse dragging
-    document.addEventListener('dragstart', function(e)
-    {
-        //set the item reference to this element
+    var cont = 0;
+    var corrette = 0
+    document.addEventListener('dragstart', function(e){
         item = e.target;
-
-        //we don't need the transfer data, but we have to define something
-        //otherwise the drop action won't work at all in firefox
-        //most browsers support the proper mime-type syntax, eg. "text/plain"
-        //but we have to use this incorrect syntax for the benefit of IE10+
-        e.dataTransfer.setData('text', '');
-
+        e.dataTransfer.setData('text', item.id);
     }, false);
 
-    //dragover event to allow the drag by preventing its default
-    //ie. the default action of an element is not to allow dragging
-    document.addEventListener('dragover', function(e)
-    {
-        if(item)
-        {
-            e.preventDefault();
-        }
-
+    document.addEventListener('dragover', function(e){
+        if(item)e.preventDefault()
     }, false);
 
-    //drop event to allow the element to be dropped into valid targets
-    document.addEventListener('drop', function(e)
-    {
-        //if this element is a drop target, move the item here
-        //then prevent default to allow the action (same as dragover)
-        if(e.target.getAttribute('data-draggable') == 'target')
-        {
+    document.addEventListener('drop', function(e){
+        if(e.target.getAttribute('data-draggable') == 'io' && e.dataTransfer.getData('text') == 'io_drag'){
             e.target.appendChild(item);
-
             e.preventDefault();
+            item.dataTransfer.getgetAttribute('draggable').setData('false');
+            corrette++;
+            cont++;
+        }else if(e.target.getAttribute('data-draggable') == 'tu' && e.dataTransfer.getData('text') == 'tu_drag'){
+            e.target.appendChild(item);
+            e.preventDefault();
+            item.dataTransfer.getgetAttribute('draggable').setData('false');
+            corrette++;
+            cont++;
+        }else if(e.target.getAttribute('data-draggable') == 'egli' && e.dataTransfer.getData('text') == 'egli_drag'){
+            e.target.appendChild(item);
+            e.preventDefault();
+            item.dataTransfer.getgetAttribute('draggable').setData('false');
+            corrette++;
+            cont++;
+        }else if(e.target.getAttribute('data-draggable') == 'noi' && e.dataTransfer.getData('text') == 'noi_drag'){
+            e.target.appendChild(item);
+            e.preventDefault();
+            e.dataTransfer.getgetAttribute('draggable').setData('false');
+            corrette++;
+            cont++;
+        }else if(e.target.getAttribute('data-draggable') == 'voi' && e.dataTransfer.getData('text') == 'voi_drag'){
+            e.target.appendChild(item);
+            e.preventDefault();
+            item.dataTransfer.getgetAttribute('draggable').setData('false');
+            corrette++;
+            cont++;
+        }else if(e.target.getAttribute('data-draggable') == 'essi' && e.dataTransfer.getData('text') == 'essi_drag'){
+            e.target.appendChild(item);
+            e.preventDefault();
+            item.dataTransfer.getgetAttribute('draggable').setData('false');
+            corrette++;
+            cont++;
+        }else{
+          e.target.appendChild(item);
+          e.preventDefault();
+          cont++;
         }
-
     }, false);
 
-    //dragend event to clean-up after drop or abort
-    //which fires whether or not the drop target was valid
-    document.addEventListener('dragend', function(e)
-    {
+    document.addEventListener('dragend', function(e){
         item = null;
+        if(cont==6){
+          var livelloDifficolta = 3;
+          var vinto=false;
+          var c=0;
+          if(livelloDifficolta == 3 && corrette == 6){
+            vinto = true;
+          }else if(livelloDifficolta == 2 && corrette == 5){
+            vinto = true;
+          }else if(livelloDifficolta == 2 && corrette == 4){
+            vinto = true;
+          }
 
+          //Modal fine gioco
+          var modal = document.getElementById("myModal");
+          var span = document.getElementsByClassName("close")[0];
+          modal.style.display = "block";
+          if(vinto){
+            txtModal.style.color="green";
+            document.getElementById("txtModal").innerText="hai vinto!";
+          }else{
+            txtModal.style.color="red";
+            document.getElementById("txtModal").innerText="hai perso!";
+          }
+        };
     }, false);
 
-})();
+    function nuovoGioco(){ window.open("../../utente/utente.html#giochi", target="_self"); }
+
+    function giocaAncora(){ window.location.reload(); }
+
+    function regole(){ document.getElementById("modalRegole").style.display = "block"; }
+
+    function chiudi(){ document.getElementById("modalRegole").style.display = "none"; }
+
 </script>
 <style>
-[data-draggable="target"]
+.articoli {
+  float:right;
+  list-style-type:none;
+  width:40%;
+  height:3em;
+  overflow-y:auto;
+  margin:0 1.5em 3em 0;
+  padding:0.5em;
+  border:3px solid #888;
+  border-radius:0.3em;
+  background:#ddd;
+  color:#555;
+}
+
+.divArticoliTit{
+  float:right;
+  clear: right;
+}
+
+#target
 {
     float:left;
     list-style-type:none;
@@ -119,6 +159,7 @@
     color:#555;
 }
 
+/* non usato */
 [data-draggable="targetdiv"]
 {
     float:left;
@@ -171,6 +212,9 @@
           <li class="nav-item mx-0 mx-lg-1">
             <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#app">APP</a>
           </li>
+          <li class="nav-item mx-0 mx-lg-1 regole">
+            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" onclick="regole()">Regole</a>
+          </li>
         </ul>
       </div>
     </div>
@@ -204,42 +248,42 @@
               <tr>
                 <th scope="row" class="text-center">IO</th>
                 <td>
-                  <ol data-draggable="target" class="text-center">
+                  <ol data-draggable="io" draggable="false" class="text-center" >
                   </ol>
                 </td>
               </tr>
               <tr>
                 <th scope="row" class="text-center">TU</th>
                 <td>
-                  <ol data-draggable="target" class="text-center">
+                  <ol data-draggable="tu" draggable="false" class="text-center" >
                   </ol>
                 </td>
               </tr>
               <tr>
                 <th scope="row" class="text-center">EGLI</th>
                 <td>
-                  <ol data-draggable="target" class="text-center">
+                  <ol data-draggable="egli" draggable="false" class="text-center" >
                   </ol>
                 </td>
               </tr>
               <tr>
                 <th scope="row" class="text-center">NOI</th>
                 <td>
-                  <ol data-draggable="target" class="text-center">
+                  <ol data-draggable="noi" draggable="false" class="text-center" >
                   </ol>
                 </td>
               </tr>
               <tr>
                 <th scope="row" class="text-center">VOI</th>
                 <td>
-                  <ol data-draggable="target" class="text-center">
+                  <ol data-draggable="voi" draggable="false" class="text-center" >
                   </ol>
                 </td>
               </tr>
               <tr>
                 <th scope="row" class="text-center">ESSI</th>
                 <td>
-                  <ol data-draggable="target" class="text-center">
+                  <ol data-draggable="essi" draggable="false" class="text-center">
                   </ol>
                 </td>
               </tr>
@@ -247,23 +291,76 @@
           </table>
           </div>
         <div class="col-3">
-          <div class="container">
-            <ol data-draggable="targetdiv">
-              <li data-draggable="item" draggable="true">SONO</li>
-              <li data-draggable="item" draggable="true">SEI</li>
-              <li data-draggable="item" draggable="true">È</li>
-              <li data-draggable="item" draggable="true">SIAMO</li>
-              <li data-draggable="item" draggable="true">SIETE</li>
-              <li data-draggable="item" draggable="true">SONO</li>
-            </ol>
-          </div>
+          <br><br><br>
+              <li data-draggable="item" draggable="true" class="articoli text-center" id="io_drag">SONO</li>
+              <li data-draggable="item" draggable="true" class="articoli text-center" id="tu_drag">SEI</li>
+              <li data-draggable="item" draggable="true" class="articoli text-center" id="egli_drag">È</li>
+              <li data-draggable="item" draggable="true" class="articoli text-center" id="noi_drag">SIAMO</li>
+              <li data-draggable="item" draggable="true" class="articoli text-center" id="voi_drag">SIETE</li>
+              <li data-draggable="item" draggable="true" class="articoli text-center" id="essi_drag">SONO</li>
         </div>
-      </div>
-      <div class="form-group text-center">
-        <button type="submit" class="btn btn-primary btn-xl" id="inviaRisultato">CONFERMA</button>
       </div>
     </div>
   </form>
+
+  <!-- Modal fine gioco -->
+  <div class="modal" id="myModal" tabindex="-1" role="dialog" aria-labelledby="portfolioModal2Label" aria-hidden="true">
+    <div class="modal-dialog modal-xl" role="document">
+      <div class="modal-content">
+          <div class="modal-body text-center">
+            <div class="container">
+              <div class="row justify-content-center">
+                <div class="col-lg-8">
+                  <!-- Portfolio Modal - Title -->
+                  <h2 class="portfolio-modal-title text-secondary text-uppercase mb-1">fine</h2>
+                  <!-- Icon Divider -->
+                  <div class="divider-custom">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon">
+                      <i class="fas fa-star"></i>
+                    </div>
+                    <div class="divider-custom-line"></div>
+                  </div>
+                  <!-- Portfolio Modal - Text -->
+                  <h4 class="mb-5 text-uppercase" id="txtModal"></h4>
+                  <button type="button" onclick="giocaAncora()" class="btn btn-secondary float-left ">Gioca Ancora</button>
+                  <button type="button" onclick="nuovoGioco()" class="btn btn-secondary float-right">Altro gioco</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal regole -->
+    <div class="modal" id="modalRegole" tabindex="-1" role="dialog" aria-labelledby="portfolioModal2Label" aria-hidden="true">
+      <div class="modal-dialog modal-xl" role="document">
+        <div class="modal-content">
+            <div class="modal-body text-center">
+              <div class="container">
+                <div class="row justify-content-center">
+                  <div class="col-lg-8">
+                    <!-- Portfolio Modal - Title -->
+                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-1">regole</h2>
+                    <!-- Icon Divider -->
+                    <div class="divider-custom">
+                      <div class="divider-custom-line"></div>
+                      <div class="divider-custom-icon">
+                        <i class="fas fa-star"></i>
+                      </div>
+                      <div class="divider-custom-line"></div>
+                    </div>
+                    <!-- Portfolio Modal - Text -->
+                    <h3 class="mb-5">Nel gioco sono presenti due scatole, una per "Articoli determinativi" e l'altra per "Articoli indeterminativi". Nella parte inferiore ci sono dei mattoncini, al cui interno ci sono degli articoli, determinativi e indeterminativi. Il tuo compito è di inserire i mattoncini all'interno della scatola corretta. Quando i mattoncini saranno finiti, apparirà un messaggio che ti dirà se hai vinto o hai perso, mostrandoti anche gli errori commessi. Più vai avanti con i livelli, più i mattoncini da inserire aumentano.</h3>
+                    <button type="button" onclick="chiudi()" class="btn btn-secondary float-right ">Gioca</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
 
 
