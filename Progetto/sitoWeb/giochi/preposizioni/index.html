@@ -19,7 +19,7 @@
   <link href="../../css/freelancer.min.css" rel="stylesheet">
 
   <style>
-    td:hover{
+    .selezione:hover{
       opacity: 0.5;
       cursor: pointer;
     }
@@ -28,30 +28,9 @@
       padding: 18px;
     }
 
-    table{
-      font-size: 18px;
-      float:right;
-    }
-
     .regole{
       cursor: pointer;
     }
-
-    /* The Modal (background) */
-     .modal {
-      display: none; /* Hidden by default */
-      position: fixed; /* Stay in place */
-      z-index: 1; /* Sit on top */
-      padding-top: 100px; /* Location of the box */
-      left: 0;
-      top: 0;
-      width: 100%; /* Full width */
-      height: 100%; /* Full height */
-      overflow: auto; /* Enable scroll if needed */
-      background-color: rgb(0,0,0); /* Fallback color */
-      background-color: rgba(0,0,0,0.5); /* Black w/ opacity */
-    }
-
   </style>
 
 </head>
@@ -75,7 +54,7 @@
             <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="../../utente/profilo.html">Profilo</a>
           </li>
           <li class="nav-item mx-0 mx-lg-1 regole">
-            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" onclick="regole()">?</a>
+            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" data-toggle="modal" data-target="#modalRegole" >Regole</a>
           </li>
         </ul>
       </div>
@@ -108,65 +87,101 @@
           <thead class="bg-dark text-white">
             <tr>
               <th scope="col" class="border-secondary"></th>
-              <th scope="col" class="border-secondary">IL</th>
-              <th scope="col" class="border-secondary">LO</th>
-              <th scope="col" class="border-secondary">L'</th>
-              <th scope="col" class="border-secondary">LA</th>
-              <th scope="col" class="border-secondary">I</th>
-              <th scope="col" class="border-secondary">GLI</th>
-              <th scope="col" class="border-secondary">LE</th>
+              <th scope="col" onclick="selezione()" class="selezione border-secondary" id="di">DI</th>
+              <th scope="col" onclick="selezione()" class="selezione border-secondary" id="a">A</th>
+              <th scope="col" onclick="selezione()" class="selezione border-secondary" id="da">DA</th>
+              <th scope="col" onclick="selezione()" class="selezione border-secondary" id="in">IN</th>
+              <th scope="col" onclick="selezione()" class="selezione border-secondary" id="con">CON</th>
+              <th scope="col" onclick="selezione()" class="selezione border-secondary" id="su">SU</th>
+              <th scope="col" onclick="selezione()" class="selezione border-secondary" id="per">PER</th>
+              <th scope="col" onclick="selezione()" class="selezione border-secondary" id="tra">TRA</th>
+              <th scope="col" onclick="selezione()" class="selezione border-secondary" id="fra">FRA</th>
             </tr>
           </thead>
           <tbody class="bg-light">
             <tr>
-              <th scope="row" class="bg-dark text-white border-secondary">DI</th>
-              <td onclick="selezione()" id="del">DEL</td>
-              <td onclick="selezione()" id="dello">DELLO</td>
-              <td onclick="selezione()" id="dell">DELL'</td>
-              <td onclick="selezione()" id="della">DELLA</td>
-              <td onclick="selezione()" id="dei">DEI</td>
-              <td onclick="selezione()" id="degli">DEGLI</td>
-              <td onclick="selezione()" id="delle">DELLE</td>
+              <th scope="row" class="bg-dark text-white border-secondary">IL</th>
+              <td onclick="selezione()" class="selezione" id="del">DEL</td>
+              <td onclick="selezione()" class="selezione" id="al">AL</td>
+              <td onclick="selezione()" class="selezione" id="dal">DAL</td>
+              <td onclick="selezione()" class="selezione" id="nel">NEL</td>
+              <td onclick="selezione()" class="selezione" id="col">COL</td>
+              <td onclick="selezione()" class="selezione" id="sul">SUL</td>
+              <td>/</td>
+              <td>/</td>
+              <td>/</td>
             </tr>
             <tr>
-              <th scope="row" class="bg-dark text-white border-secondary">A</th>
-              <td onclick="selezione()" id="al">AL</td>
-              <td onclick="selezione()" id="allo">ALLO</td>
-              <td onclick="selezione()" id="all">ALL'</td>
-              <td onclick="selezione()" id="alla">ALLA</td>
-              <td onclick="selezione()" id="ai">AI</td>
-              <td onclick="selezione()" id="agli">AGLI</td>
-              <td onclick="selezione()" id="alle">ALLE</td>
+              <th scope="row" class="bg-dark text-white border-secondary">LO</th>
+              <td onclick="selezione()" class="selezione" id="dello">DELLO</td>
+              <td onclick="selezione()" class="selezione" id="allo">ALLO</td>
+              <td onclick="selezione()" class="selezione" id="dallo">DALLO</td>
+              <td onclick="selezione()" class="selezione" id="nello">NELLO</td>
+              <td>/</td>
+              <td onclick="selezione()" class="selezione" id="sullo">SULLO</td>
+              <td>/</td>
+              <td>/</td>
+              <td>/</td>
             </tr>
             <tr>
-              <th scope="row" class="bg-dark text-white border-secondary">DA</th>
-              <td onclick="selezione()" id="dal">DAL</td>
-              <td onclick="selezione()" id="dallo">DALLO</td>
-              <td onclick="selezione()" id="dall">DALL'</td>
-              <td onclick="selezione()" id="dalla">DALLA</td>
-              <td onclick="selezione()" id="dai">DAI</td>
-              <td onclick="selezione()" id="dagli">DAGLI</td>
-              <td onclick="selezione()" id="dalle">DALLE</td>
+              <th scope="row" class="bg-dark text-white border-secondary">LA</th>
+              <td onclick="selezione()" class="selezione" id="della">DELLA</td>
+              <td onclick="selezione()" class="selezione" id="alla">ALLA</td>
+              <td onclick="selezione()" class="selezione" id="dalla">DALLA</td>
+              <td onclick="selezione()" class="selezione" id="nella">NELLA</td>
+              <td>/</td>
+              <td onclick="selezione()" class="selezione" id="sulla">SULLA</td>
+              <td>/</td>
+              <td>/</td>
+              <td>/</td>
             </tr>
             <tr>
-              <th scope="row" class="bg-dark text-white border-secondary">IN</th>
-              <td onclick="selezione()" id="nel">NEL</td>
-              <td onclick="selezione()" id="nello">NELLO</td>
-              <td onclick="selezione()" id="nell">NELL'</td>
-              <td onclick="selezione()" id="nella">NELLA</td>
-              <td onclick="selezione()" id="nei">NEI</td>
-              <td onclick="selezione()" id="negli">NEGLI</td>
-              <td onclick="selezione()" id="nelle">NELLE</td>
+              <th scope="row" class="bg-dark text-white border-secondary">L'</th>
+              <td onclick="selezione()" class="selezione" id="dell">DELL'</td>
+              <td onclick="selezione()" class="selezione" id="all">ALL'</td>
+              <td onclick="selezione()" class="selezione" id="dall">DALL'</td>
+              <td onclick="selezione()" class="selezione" id="nell">NELL'</td>
+              <td>/</td>
+              <td onclick="selezione()" class="selezione"id="sull">SULL'</td>
+              <td>/</td>
+              <td>/</td>
+              <td>/</td>
             </tr>
             <tr>
-              <th scope="row" class="bg-dark text-white border-secondary">SU</th>
-              <td onclick="selezione()" id="sul">SUL</td>
-              <td onclick="selezione()" id="sullo">SULLO</td>
-              <td onclick="selezione()" id="sull">SULL'</td>
-              <td onclick="selezione()" id="sulla">SULLA</td>
-              <td onclick="selezione()" id="sui">SUI</td>
-              <td onclick="selezione()" id="sugli">SUGLI</td>
-              <td onclick="selezione()" id="sulle">SULLE</td>
+              <th scope="row" class="bg-dark text-white border-secondary">I</th>
+              <td onclick="selezione()" class="selezione" id="dei">DEI</td>
+              <td onclick="selezione()" class="selezione" id="ai">AI</td>
+              <td onclick="selezione()" class="selezione" id="dai">DAI</td>
+              <td onclick="selezione()" class="selezione" id="nei">NEI</td>
+              <td onclick="selezione()" class="selezione" id="coi">COI</td>
+              <td onclick="selezione()" class="selezione" id="sui">SUI</td>
+              <td onclick="selezione()" class="selezione" id="pei">PEI</td>
+              <td>/</td>
+              <td>/</td>
+            </tr>
+            <tr>
+              <th scope="row" class="bg-dark text-white border-secondary">GLI</th>
+              <td onclick="selezione()" class="selezione" id="degli">DEGLI</td>
+              <td onclick="selezione()" class="selezione" id="agli">AGLI</td>
+              <td onclick="selezione()" class="selezione" id="dagli">DAGLI</td>
+              <td onclick="selezione()" class="selezione" id="negli">NEGLI</td>
+              <td>/</td>
+              <td onclick="selezione()" class="selezione" id="sugli">SUGLI</td>
+              <td>/</td>
+              <td>/</td>
+              <td>/</td>
+            </tr>
+            <tr>
+              <th scope="row" class="bg-dark text-white border-secondary">LE</th>
+              <td onclick="selezione()" class="selezione" id="delle">DELLE</td>
+              <td onclick="selezione()" class="selezione" id="alle">ALLE</td>
+              <td onclick="selezione()" class="selezione" id="dalle">DALLE</td>
+              <td onclick="selezione()" class="selezione" id="nelle">NELLE</td>
+              <td>/</td>
+              <td onclick="selezione()" class="selezione" id="sulle">SULLE</td>
+              <td>/</td>
+              <td>/</td>
+              <td>/</td>
             </tr>
           </tbody>
         </table>
@@ -176,17 +191,17 @@
   </div>
 
   <!-- The Modal -->
-  <div class="modal" id="myModal" tabindex="-1" role="dialog" aria-labelledby="portfolioModal2Label" aria-hidden="true">
-    <div class="modal-dialog modal-xl" role="document">
+  <div class="portfolio-modal modal fade" id="myModal" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="portfolioModal2Label" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
       <div class="modal-content">
           <div class="modal-body text-center">
             <div class="container">
               <div class="row justify-content-center">
                 <div class="col-lg-8">
                   <!-- Portfolio Modal - Title -->
-                  <h2 class="portfolio-modal-title text-uppercase text-secondary mb-1">fine</h2>
+                  <h2 class="portfolio-modal-title text-uppercase mb-1" id="titModal"></h2>
                   <!-- Icon Divider -->
-                  <div class="divider-custom">
+                  <div class="divider-custom mb-5">
                     <div class="divider-custom-line"></div>
                     <div class="divider-custom-icon">
                       <i class="fas fa-star"></i>
@@ -206,9 +221,14 @@
     </div>
 
     <!-- Modal regole -->
-    <div class="modal" id="modalRegole" tabindex="-1" role="dialog" aria-labelledby="portfolioModal2Label" aria-hidden="true">
-      <div class="modal-dialog modal-xl" role="document">
+    <div class="portfolio-modal modal fade" id="modalRegole" tabindex="-1" role="dialog" aria-labelledby="portfolioModal2Label" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
         <div class="modal-content">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="chiudi()" >
+              <span aria-hidden="true">
+                <i class="fas fa-times"></i>
+              </span>
+            </button>
             <div class="modal-body text-center">
               <div class="container">
                 <div class="row justify-content-center">
@@ -225,7 +245,6 @@
                     </div>
                     <!-- Portfolio Modal - Text -->
                     <h3 class="mb-5"> Nel gioco si trova una tabella dove le colonne corrispondono agli articoli determinativi mentre, le righe, corrispondo alle preposizioni semplici. Usando la frase che trovi nella parte superiore dello schermo, inserisci la preposizione corretta. Con qualsiasi livello di difficoltà, il tuo compito è quello di inserire correttamente tre preposizione e, più si va avanti di livello, più diminuiscono i tentativi.</h3>
-                    <button type="button" onclick="chiudi()" class="btn btn-secondary float-right ">Gioca</button>
                   </div>
                 </div>
               </div>
@@ -263,50 +282,51 @@
       </div>
     </footer>
 
+    <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
+    <div class="scroll-to-top d-lg-none position-fixed ">
+      <a class="js-scroll-trigger d-block text-center text-white rounded" href="#page-top">
+        <i class="fa fa-chevron-up"></i>
+      </a>
+    </div>
 
+    <!-- Bootstrap core JavaScript -->
+    <script src="../../vendor/jquery/jquery.min.js"></script>
+    <script src="../../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-  <!-- Bootstrap core JavaScript -->
-  <script src="../../vendor/jquery/jquery.min.js"></script>
-  <script src="../../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Plugin JavaScript -->
+    <script src="../../vendor/jquery-easing/jquery.easing.min.js"></script>
 
-  <!-- Plugin JavaScript -->
-  <script src="../../vendor/jquery-easing/jquery.easing.min.js"></script>
+    <!-- Contact Form JavaScript -->
+    <script src="../../js/jqBootstrapValidation.js"></script>
 
-  <!-- Contact Form JavaScript -->
-  <script src="../../js/jqBootstrapValidation.js"></script>
+    <!-- Custom scripts for this template -->
+    <script src="../../js/freelancer.min.js"></script>
 
-  <!-- Custom scripts for this template -->
-  <script src="../../js/freelancer.min.js"></script>
-
-  <script>
-    function selezione(e){
-      if (!e) var e = window.event;
-      if (e.stopPropagation) e.stopPropagation();
-      prep=document.getElementById("prepFrase");
-      frase=document.getElementById("frase");
-      if(prep.className==e.target.id){
-          document.getElementById("txtModal").innerText="HAI VINTO!\n\n"+frase.className;
-          txtModal.style.color="green";
+    <script>
+      function selezione(e){
+        if (!e) var e = window.event;
+        if (e.stopPropagation) e.stopPropagation();
+        prep=document.getElementById("prepFrase");
+        frase=document.getElementById("frase");
+        if(prep.className==e.target.id){
+            titModal.className+=" text-success";
+            titModal.innerText="hai vinto!";
+            txtModal.innerText=frase.className;
+        }
+        else{
+          titModal.className+=" text-danger";
+          titModal.innerText="hai perso!";
+          txtModal.innerText=frase.className;
+        }
+        $('#myModal').modal('show');
       }
-      else{
-        document.getElementById("txtModal").innerText="HAI PERSO!\n\n"+frase.className;
-        txtModal.style.color="red";
-      }
-      var modal = document.getElementById("myModal");
-      var span = document.getElementsByClassName("close")[0];
-      modal.style.display = "block";
-    }
 
-    function nuovoGioco(){ window.open("../../utente/utente.html#giochi", target="_self"); }
+      function nuovoGioco(){ window.open("../../utente/utente.html#giochi", target="_self"); }
 
-    function giocaAncora(){ window.location.reload(); }
+      function giocaAncora(){ window.location.reload(); }
 
-    function regole(){ document.getElementById("modalRegole").style.display = "block"; }
+    </script>
 
-    function chiudi(){ document.getElementById("modalRegole").style.display = "none"; }
-
-  </script>
-
-</body>
+  </body>
 
 </html>
