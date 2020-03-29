@@ -96,15 +96,50 @@
     <div class="row justify-content-center border" >
       <script src="script.js">
       </script>
+      <?php
+        $array = array("BELLO","BRUTTO","GRANDE");
+        for ($i=0; $i < sizeof($array); $i++) { 
+          echo"<div class='border id='contenitore' data-draggable='item' draggable='true'>$array[$i]</div>";
+        }
+        
+      ?>
+
+<script>
+
+var arrayQualificativi=[];
+var cont=0;
+
+document.addEventListener('dragstart', function(e){
+    item = e.target;
+    e.dataTransfer.setData('text', item.id);
+}, false);
+
+document.addEventListener('dragover', function(e){
+    if(item) e.preventDefault();
+}, false);
+
+document.addEventListener('drop', function(e){
+    if(e.target.getAttribute('data-draggable') == 'qualificativi'){
+        arrayQualificativi.push(e.dataTransfer.getData('text'));
+        e.target.appendChild(item);
+        e.preventDefault();
+     
+    }
+    
+    
+}, false);
+
+document.addEventListener('dragend', function(e){}, false);
+
+
+</script>
       
       
-      
-      riquadro con gli aggettivi
-      Array casuale di aggettivi
+     
 
 
     </div>
-    <div class="row justify-content-center border">qualificativi</div>
+    <div class="row justify-content-center border" id="demo" data-draggable="qualificativi" draggable="false">qualificativi</div>
     <div class="row justify-content-center border">possessivi</div>
     <div class="row justify-content-center border">dimostrativi</div>
     <div class="row justify-content-center border">indefiniti</div>
