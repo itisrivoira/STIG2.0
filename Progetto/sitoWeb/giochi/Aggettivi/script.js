@@ -1,0 +1,1 @@
+var aggettivi = new Array("CIAO", "CASA","ALBERO");

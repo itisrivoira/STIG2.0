@@ -11,12 +11,12 @@
   <title>W O W</title>
 
   <!-- Custom fonts for this theme -->
-  <link href="../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="../../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
 
   <!-- Theme CSS -->
-  <link href="../css/freelancer.min.css" rel="stylesheet">
+  <link href="../../css/freelancer.min.css" rel="stylesheet">
 
 </head>
 
@@ -93,15 +93,23 @@
 
   <!-- Gioco -->
   <div class="container">
-    <div class="row justify-content-center">immagine</div>
-    <div class="row justify-content-center">riquadro con gli aggettivi</div>
-    <div class="row justify-content-center">qualificativi</div>
-    <div class="row justify-content-center">possessivi</div>
-    <div class="row justify-content-center">dimostrativi</div>
-    <div class="row justify-content-center">indefiniti</div>
-    <div class="row justify-content-center">numerali</div>
-    <div class="row justify-content-center">interrogativi</div>
-    <div class="row justify-content-center">esclamativi</div>
+    <div class="row justify-content-center border" >
+      <script src="script.js">
+      </script>
+      
+      
+      riquadro con gli aggettivi
+      Array casuale di aggettivi
+
+
+    </div>
+    <div class="row justify-content-center border">qualificativi</div>
+    <div class="row justify-content-center border">possessivi</div>
+    <div class="row justify-content-center border">dimostrativi</div>
+    <div class="row justify-content-center border">indefiniti</div>
+    <div class="row justify-content-center border">numerali</div>
+    <div class="row justify-content-center border">interrogativi</div>
+    <div class="row justify-content-center border">esclamativi</div>
 
     
     
