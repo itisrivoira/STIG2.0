@@ -36,52 +36,70 @@
 
     <Button
         android:id="@+id/btnGiocoIndicativo"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_width="246dp"
+        android:layout_height="62dp"
+        android:layout_marginTop="56dp"
         android:text="@string/giocoIndicativo"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline4" />
 
     <Button
-        android:id="@+id/btnGiocoSinonimi"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="51dp"
-        android:text="@string/giocoSinomini"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnGiocoIndicativo" />
-
-    <Button
-        android:id="@+id/btnGiocoArticoli"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="51dp"
-        android:text="@string/giocoArticoli"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnGiocoSinonimi" />
-
-    <Button
         android:id="@+id/btnGiocoPreposizioni"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="51dp"
+        android:layout_width="246dp"
+        android:layout_height="62dp"
+        android:layout_marginTop="52dp"
         android:text="@string/giocoPreposizioni"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnGiocoArticoli" />
 
     <Button
+        android:id="@+id/btnGiocoArticoli"
+        android:layout_width="246dp"
+        android:layout_height="62dp"
+        android:layout_marginTop="52dp"
+        android:text="@string/giocoArticoli"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnGiocoSinonimi" />
+
+    <Button
         android:id="@+id/btnGiocoNomi"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="61dp"
+        android:layout_width="246dp"
+        android:layout_height="62dp"
+        android:layout_marginTop="60dp"
         android:text="@string/giocoNomi"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnGiocoPreposizioni" />
+
+    <Button
+        android:id="@+id/btnGiocoSinonimi"
+        android:layout_width="246dp"
+        android:layout_height="62dp"
+        android:layout_marginTop="48dp"
+        android:text="@string/giocoSinomini"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnGiocoIndicativo" />
+
+    <TextView
+        android:id="@+id/txtNomeGioco"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/nomeApp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintBottom_toTopOf="@+id/btnGiocoIndicativo"
+        app:layout_constraintEnd_toStartOf="@+id/guideline3"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="@+id/guideline2"
+        app:layout_constraintTop_toTopOf="@+id/guideline4"
+        app:layout_constraintVertical_bias="0.405" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
