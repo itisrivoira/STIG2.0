@@ -1,6 +1,6 @@
 
 var can_play = true;
-var words = new Array("CIAO", "CASA");
+var words = new Array("CIAO", "CASA","ALBERO","GENTE","COME","BELLISSIMO");
 
 var to_guess = "";
 var display_word = "";

@@ -11,12 +11,12 @@
   <title>W O W</title>
 
   <!-- Custom fonts for this theme -->
-  <link href="../../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
 
   <!-- Theme CSS -->
-  <link href="../../css/freelancer.min.css" rel="stylesheet">
+  <link href="../css/freelancer.min.css" rel="stylesheet">
 
 </head>
 
@@ -24,18 +24,6 @@
 <style>
 
   
-
-  ul{
-    cursor: pointer;
-    margin-top:25%;
-  }
-
-  img{
-  	float:center;
-  	width:70%;
-  	margin:1em 0 3em 0;
-
-  }
   .custom {
     width: 45px !important;
 }
@@ -91,7 +79,7 @@
   <br><br><br><br><br>
 
   <div class="container">
-    <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0"><br>Il sostantivo dell'impiccato</h2>
+    <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0"><br>Riconosci l'aggettivo</h2>
     <!-- Icon Divider -->
     <div class="divider-custom">
       <div class="divider-custom-line"></div>
@@ -101,74 +89,21 @@
       <div class="divider-custom-line"></div>
     </div>
   </div>
+
+
   <!-- Gioco -->
   <div class="container">
-    <div class="row">
-      <!-- div Immagine -->
-      <div class="col-4 pb-5">
-        <p class="mb-5"><img src="./img/hmstart.gif" height="250" width="150" name="hm"></p>
-      </div>
-      
-      <!-- div Lettere -->
-      <div class="col-8 mt-5">
+    <div class="row justify-content-center">immagine</div>
+    <div class="row justify-content-center">riquadro con gli aggettivi</div>
+    <div class="row justify-content-center">qualificativi</div>
+    <div class="row justify-content-center">possessivi</div>
+    <div class="row justify-content-center">dimostrativi</div>
+    <div class="row justify-content-center">indefiniti</div>
+    <div class="row justify-content-center">numerali</div>
+    <div class="row justify-content-center">interrogativi</div>
+    <div class="row justify-content-center">esclamativi</div>
 
-        <!-- script per il gioco -->
-        <script src="script.js">
-        </script>
-        
-
-        <div class="row mb-4"> 
-          <form name="game" class="mx-auto">
-            <p class="text-uppercase text-secondary ">Parola : <input type="text" name="displayWord"></p>
-            <p class="text-uppercase text-secondary ">Lettere: <input type="text" name="usedLetters"></p>
-          </form>
-        </div>
-       <div>
-          <form>
-            <div class="row">
-            <input type="button"  class="btn btn-secondary mx-1 custom" value="A" onclick="selectLetter('A')"/>
-            <input type="button" class="btn btn-secondary mx-1 custom" value="B"  onclick="selectLetter('B')"/>
-            <input type="button" class="btn btn-secondary mx-1 custom" value="C"  onclick="selectLetter('C')"/>
-            <input type="button" class="btn btn-secondary mx-1 custom" value="D"  onclick="selectLetter('D')"/>
-            <input type="button" class="btn btn-secondary mx-1 custom" value="E"  onclick="selectLetter('E')"/>
-            <input type="button" value="F" class="btn btn-secondary mx-1 custom" onclick="selectLetter('F')"/>
-            <input type="button" value="G" class="btn btn-secondary mx-1 custom" onclick="selectLetter('G')"/>
-            <input type="button" value="H" class="btn btn-secondary mx-1 custom" onclick="selectLetter('H')"/>
-            <input type="button" value="I" class="btn btn-secondary mx-1 custom" onclick="selectLetter('I')"/>
-            <input type="button" value="J" class="btn btn-secondary mx-1 custom" onclick="selectLetter('J')"/>
-            <input type="button" value="K" class="btn btn-secondary mx-1 custom" onclick="selectLetter('K')"/>
-            <input type="button" value="L" class="btn btn-secondary mx-1 custom" onclick="selectLetter('L')"/>
-            <input type="button" value="M" class="btn btn-secondary mx-1 custom" onclick="selectLetter('M')"/>
-          </div>
-          <div class="row m-1"></div>
-
-          <div class="row">
-            <input type="button" value="N" class="btn btn-secondary mx-1 custom" onclick="selectLetter('N')"/>
-            <input type="button" value="O" class="btn btn-secondary mx-1 custom" onclick="selectLetter('O')"/>
-            <input type="button" value="P" class="btn btn-secondary mx-1 custom" onclick="selectLetter('P')"/>
-            <input type="button" value="Q" class="btn btn-secondary mx-1 custom" onclick="selectLetter('Q')"/>
-            <input type="button" value="R" class="btn btn-secondary mx-1 custom" onclick="selectLetter('R')"/>
-            <input type="button" value="S" class="btn btn-secondary mx-1 custom" onclick="selectLetter('S')"/>
-            <input type="button" value="T" class="btn btn-secondary mx-1 custom" onclick="selectLetter('T')"/>
-            <input type="button" value="U" class="btn btn-secondary mx-1 custom" onclick="selectLetter('U')"/>
-            <input type="button" value="V" class="btn btn-secondary mx-1 custom" onclick="selectLetter('V')"/>
-            <input type="button" value="W" class="btn btn-secondary mx-1 custom" onclick="selectLetter('W')"/>
-            <input type="button" value="X" class="btn btn-secondary mx-1 custom" onclick="selectLetter('X')"/>
-            <input type="button" value="Y" class="btn btn-secondary mx-1 custom" onclick="selectLetter('Y')"/>
-            <input type="button" value="Z" class="btn btn-secondary mx-1 custom" onclick="selectLetter('Z')"/>
-          </div>
-        </form>
-      </div>
-      <div class="row m-4"></div>
-      <div class="row justify-content-end">
-        <input type="button" value="Ricomincia" class="btn btn-secondary mx-1 " onclick="reset()"/>
-      </div>
-      
-
-          
-          
-      </div>
-    </div>
+    
     
   </div>
 
@@ -264,8 +199,8 @@
 
 
   <!-- Bootstrap core JavaScript -->
-  <script src="../../vendor/jquery/jquery.min.js"></script>
-  <script src="../../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../vendor/jquery/jquery.min.js"></script>
+  <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
   <!-- Plugin JavaScript -->
   <script src="../../vendor/jquery-easing/jquery.easing.min.js"></script>
