@@ -98,6 +98,7 @@
       </script>
       
       
+      
       riquadro con gli aggettivi
       Array casuale di aggettivi
 
@@ -165,7 +166,7 @@
                       <div class="divider-custom-line"></div>
                     </div>
                     <!-- Portfolio Modal - Text -->
-                    <h3 class="mb-5">Il gioco presenta un patibolo e una parola da indovinare. Ad ogni turno l'utente prova ad indovinare una lettera: se ha successo questa appare nella sua posizione corrispondente. Altrimenti una parte di un omino impiccato verrà generata, partendo dalla base del patibolo. Il punto va al giocatore a seconda che la parola venga indovinata prima del completamento del disegno o no.</h3>
+                    <h3 class="mb-5">Il gioco presenta alcuni aggettivi, i quali devono essere trascinati nella posizione corretta. Possono essere Qualificativi, Possessivi, Dimostrativi, Indefiniti, Numerali, Interrogativi e Esclamativi. Il punteggio viene assegnato a seconda di quanti aggettivi sono stati posizionati correttamente.</h3>
                     <button type="button" onclick="chiudi()" class="btn btn-secondary float-right ">Gioca</button>
                   </div>
                 </div>
