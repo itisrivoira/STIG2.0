@@ -1,9 +1,10 @@
-/*Punteggi di Mario Bianchi alla domanda 1 */
+/*Punteggi di Mario Bianchi alle domande del gioco dei sinonimi e contrari*/
 SELECT Utente.nome, Utente.cognome,  RispoSingola.punteggio, RispoSingola,dataRisposta
-FROM Utente, RispoSingola 
+FROM Utente, RispoSingola, DomandaSinCon 
 WHERE Utente.idUtente = RispoSingola.idUtente
 AND Utente.nome = 'Mario'  
 AND Utente.cognome = 'Bianchi'
+AND DomandaSinCon.idDomanda = RispoSingola.idDomanda 
 ORDER BY RispoSingola.dataRisposta;
 
 /*Punteggio Medio degli alunni alle domande dei sinonimi e contrari già svolte*/
