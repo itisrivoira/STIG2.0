@@ -19,141 +19,51 @@
   <link href="../../css/freelancer.min.css" rel="stylesheet">
 
 </head>
-<!-- DA SPOSTARE DENTRO UN FILE JS -->
-<script>
-(function()
-{
 
-    //exclude older browsers by the features we need them to support
-    //and legacy opera explicitly so we don't waste time on a dead browser
-    if
-    (
-        !document.querySelectorAll
-        ||
-        !('draggable' in document.createElement('span'))
-        ||
-        window.opera
-    )
-    { return; }
 
-    //get the collection of draggable items and add their draggable attribute
-    for(var
-        items = document.querySelectorAll('[data-draggable="item"]'),
-        len = items.length,
-        i = 0; i < len; i ++)
-    {
-        items[i].setAttribute('draggable', 'true');
-    }
-
-    //variable for storing the dragging item reference
-    //this will avoid the need to define any transfer data
-    //which means that the elements don't need to have IDs
-    var item = null;
-
-    //dragstart event to initiate mouse dragging
-    document.addEventListener('dragstart', function(e)
-    {
-        //set the item reference to this element
-        item = e.target;
-
-        //we don't need the transfer data, but we have to define something
-        //otherwise the drop action won't work at all in firefox
-        //most browsers support the proper mime-type syntax, eg. "text/plain"
-        //but we have to use this incorrect syntax for the benefit of IE10+
-        e.dataTransfer.setData('text', '');
-
-    }, false);
-
-    //dragover event to allow the drag by preventing its default
-    //ie. the default action of an element is not to allow dragging
-    document.addEventListener('dragover', function(e)
-    {
-        if(item)
-        {
-            e.preventDefault();
-        }
-
-    }, false);
-
-    //drop event to allow the element to be dropped into valid targets
-    document.addEventListener('drop', function(e)
-    {
-        //if this element is a drop target, move the item here
-        //then prevent default to allow the action (same as dragover)
-        if(e.target.getAttribute('data-draggable') == 'target')
-        {
-            e.target.appendChild(item);
-
-            e.preventDefault();
-        }
-
-    }, false);
-
-    //dragend event to clean-up after drop or abort
-    //which fires whether or not the drop target was valid
-    document.addEventListener('dragend', function(e)
-    {
-        item = null;
-
-    }, false);
-
-})();
-</script>
 <style>
-[data-draggable="target"]
-{
-    float:left;
-    list-style-type:none;
 
-    width:100%;
-    height:3em;
-    overflow-y:auto;
 
-    margin:0 0.5em 0.5em 0;
-    padding:0.5em;
 
-    border:2px solid #888;
-    border-radius:0.2em;
+  ul{
+    cursor: pointer;
+    margin-top:25%;
+  }
 
-    background:#ddd;
-    color:#555;
+  img{
+  	float:center;
+  	width:70%;
+  	margin:1em 0 3em 0;
+
+  }
+  .custom {
+    width: 45px !important;
 }
 
-[data-draggable="targetdiv"]
-{
-    float:left;
-    list-style-type:none;
+  .regole{
+    cursor: pointer;
+  }
 
-    width:100%;
-    height: 30em;
-    overflow-y:auto;
+  /* The Modal (background) */
+   .modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
 
-    margin:0 0.5em 0.5em 0;
-    padding:0.5em;
-
-    border:2px solid #888;
-    border-radius:0.2em;
-
-    background:#ddd;
-    color:#555;
-}
-
-/* draggable items */
-[data-draggable="item"]
-{
-    display:block;
-    list-style-type:none;
-
-    margin:0 0 2px 0;
-    padding:0.2em 0.4em;
-
-    border-radius:0.2em;
-
-    line-height:1.3;
-}
 </style>
 
-<body id="page-top">
+
+
+<body id="page-top" onLoad="reset(); return true;">
 
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
@@ -166,18 +76,23 @@
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item mx-0 mx-lg-1">
-           <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#giochi">Giochi</a> <!-- Icone dei vari giochi -->
+           <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="../../utente/utente.html#giochi">Giochi</a> <!-- Icone dei vari giochi -->
           </li>
           <li class="nav-item mx-0 mx-lg-1">
-            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#app">APP</a>
+            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="../../utente/profilo.html">Profilo</a>
+          </li>
+          <li class="nav-item mx-0 mx-lg-1 regole">
+            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" onclick="regole()">Regole</a>
           </li>
         </ul>
       </div>
     </div>
   </nav>
   <br><br><br><br><br>
+
   <div class="container">
     <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0"><br>Sinonimi & Contrari</h2>
+    <!-- Icon Divider -->
     <div class="divider-custom">
       <div class="divider-custom-line"></div>
       <div class="divider-custom-icon">
@@ -186,84 +101,142 @@
       <div class="divider-custom-line"></div>
     </div>
   </div>
-  <form action="../../utente/utente.html" method="post">
-    <div class="container">
-      <div class="row">
-        <div class="col-3">
-        </div>
-        <div class="col-6">
-          <table class="table table-hover">
-            <thead>
-              <tr>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th scope="row" class="text-center">SEMPLICE</th>
-                <td>
-                  <ol data-draggable="target" class="text-center">
-                  </ol>
-                </td>
-              </tr>
-              <tr>
-                <th scope="row" class="text-center">IMPORTANTE</th>
-                <td>
-                  <ol data-draggable="target" class="text-center">
-                  </ol>
-                </td>
-              </tr>
-              <tr>
-                <th scope="row" class="text-center">CONFERMARE</th>
-                <td>
-                  <ol data-draggable="target" class="text-center">
-                  </ol>
-                </td>
-              </tr>
-              <tr>
-                <th scope="row" class="text-center">PROBLEMA</th>
-                <td>
-                  <ol data-draggable="target" class="text-center">
-                  </ol>
-                </td>
-              </tr>
-              <tr>
-                <th scope="row" class="text-center">BUONO</th>
-                <td>
-                  <ol data-draggable="target" class="text-center">
-                  </ol>
-                </td>
-              </tr>
-              <tr>
-                <th scope="row" class="text-center">TIMIDO</th>
-                <td>
-                  <ol data-draggable="target" class="text-center">
-                  </ol>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-          </div>
-        <div class="col-3">
-          <div class="container">
-            <ol data-draggable="targetdiv">
-              <li data-draggable="item" draggable="true">GRAVE</li>
-              <li data-draggable="item" draggable="true">NEGARE</li>
-              <li data-draggable="item" draggable="true">QUESITO</li>
-              <li data-draggable="item" draggable="true">CATTIVO</li>
-              <li data-draggable="item" draggable="true">DIFFICILE</li>
-              <li data-draggable="item" draggable="true">AUDACE</li>
-            </ol>
-          </div>
-        </div>
+  <!-- Gioco -->
+  <div class="container">
+    <div class="row">
+      <!-- div Immagine -->
+      <div class="col-4 pb-5">
+        <p class="mb-5"><img src="./img/hmstart.gif" height="250" width="150" name="hm"></p>
       </div>
-      <div class="form-group text-center">
-        <button type="submit" class="btn btn-primary btn-xl" id="inviaRisultato">CONFERMA</button>
+
+      <!-- div Lettere -->
+      <div class="col-8 mt-5">
+
+        <!-- script per il gioco -->
+        <script src="script.js">
+        </script>
+
+
+        <div class="row mb-4">
+          <form name="game" class="mx-auto">
+            <p class="text-uppercase text-secondary"> Contrario di:
+              <?php
+              $listaParole = ["DIFFICILE", "SOTTO", "BELLO", "GRANDE", "GIUSTO"];
+              $risultato = rand(0 , count($listaParole)-1);
+              ?>
+            <p class="text-uppercase text-secondary" id="sinonimoOcontrario" value="<?php echo $listaParole[$risultato]; ?>"><?php echo $listaParole[$risultato]; ?></p>
+            <p class="text-uppercase text-secondary">Parola : <input type="text" name="displayWord"></p>
+            <p class="text-uppercase text-secondary">Lettere: <input type="text" name="usedLetters"></p>
+          </form>
+        </div>
+       <div>
+          <form>
+            <div class="row">
+            <input type="button"  class="btn btn-secondary mx-1 custom" value="A" onclick="selectLetter('A')"/>
+            <input type="button" class="btn btn-secondary mx-1 custom" value="B"  onclick="selectLetter('B')"/>
+            <input type="button" class="btn btn-secondary mx-1 custom" value="C"  onclick="selectLetter('C')"/>
+            <input type="button" class="btn btn-secondary mx-1 custom" value="D"  onclick="selectLetter('D')"/>
+            <input type="button" class="btn btn-secondary mx-1 custom" value="E"  onclick="selectLetter('E')"/>
+            <input type="button" value="F" class="btn btn-secondary mx-1 custom" onclick="selectLetter('F')"/>
+            <input type="button" value="G" class="btn btn-secondary mx-1 custom" onclick="selectLetter('G')"/>
+            <input type="button" value="H" class="btn btn-secondary mx-1 custom" onclick="selectLetter('H')"/>
+            <input type="button" value="I" class="btn btn-secondary mx-1 custom" onclick="selectLetter('I')"/>
+            <input type="button" value="J" class="btn btn-secondary mx-1 custom" onclick="selectLetter('J')"/>
+            <input type="button" value="K" class="btn btn-secondary mx-1 custom" onclick="selectLetter('K')"/>
+            <input type="button" value="L" class="btn btn-secondary mx-1 custom" onclick="selectLetter('L')"/>
+            <input type="button" value="M" class="btn btn-secondary mx-1 custom" onclick="selectLetter('M')"/>
+          </div>
+          <div class="row m-1"></div>
+
+          <div class="row">
+            <input type="button" value="N" class="btn btn-secondary mx-1 custom" onclick="selectLetter('N')"/>
+            <input type="button" value="O" class="btn btn-secondary mx-1 custom" onclick="selectLetter('O')"/>
+            <input type="button" value="P" class="btn btn-secondary mx-1 custom" onclick="selectLetter('P')"/>
+            <input type="button" value="Q" class="btn btn-secondary mx-1 custom" onclick="selectLetter('Q')"/>
+            <input type="button" value="R" class="btn btn-secondary mx-1 custom" onclick="selectLetter('R')"/>
+            <input type="button" value="S" class="btn btn-secondary mx-1 custom" onclick="selectLetter('S')"/>
+            <input type="button" value="T" class="btn btn-secondary mx-1 custom" onclick="selectLetter('T')"/>
+            <input type="button" value="U" class="btn btn-secondary mx-1 custom" onclick="selectLetter('U')"/>
+            <input type="button" value="V" class="btn btn-secondary mx-1 custom" onclick="selectLetter('V')"/>
+            <input type="button" value="W" class="btn btn-secondary mx-1 custom" onclick="selectLetter('W')"/>
+            <input type="button" value="X" class="btn btn-secondary mx-1 custom" onclick="selectLetter('X')"/>
+            <input type="button" value="Y" class="btn btn-secondary mx-1 custom" onclick="selectLetter('Y')"/>
+            <input type="button" value="Z" class="btn btn-secondary mx-1 custom" onclick="selectLetter('Z')"/>
+          </div>
+        </form>
+      </div>
+      <div class="row m-4"></div>
+      <div class="row justify-content-end">
+        <input type="button" value="Ricomincia" class="btn btn-secondary mx-1 " onclick="reset()"/>
+      </div>
+
+
+
+
       </div>
     </div>
-  </form>
 
+  </div>
 
+  <!-- Modal fine gioco -->
+  <div class="modal" id="myModal" tabindex="-1" role="dialog" aria-labelledby="portfolioModal2Label" aria-hidden="true">
+    <div class="modal-dialog modal-xl" role="document">
+      <div class="modal-content">
+          <div class="modal-body text-center">
+            <div class="container">
+              <div class="row justify-content-center">
+                <div class="col-lg-8">
+                  <!-- Portfolio Modal - Title -->
+                  <h2 class="portfolio-modal-title text-secondary text-uppercase mb-1">fine</h2>
+                  <!-- Icon Divider -->
+                  <div class="divider-custom">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon">
+                      <i class="fas fa-star"></i>
+                    </div>
+                    <div class="divider-custom-line"></div>
+                  </div>
+                  <!-- Portfolio Modal - Text -->
+                  <h4 class="mb-5 text-uppercase" id="txtModal"></h4>
+                  <h4 class="mb-5 text-uppercase" id="txtModalWord"></h4>
+                  <button type="button" onclick="giocaAncora()" class="btn btn-secondary float-left ">Gioca Ancora</button>
+                  <button type="button" onclick="nuovoGioco()" class="btn btn-secondary float-right">Altro gioco</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
+    <!-- Modal regole -->
+    <div class="modal" id="modalRegole" tabindex="-1" role="dialog" aria-labelledby="portfolioModal2Label" aria-hidden="true">
+      <div class="modal-dialog modal-xl" role="document">
+        <div class="modal-content">
+            <div class="modal-body text-center">
+              <div class="container">
+                <div class="row justify-content-center">
+                  <div class="col-lg-8">
+                    <!-- Portfolio Modal - Title -->
+                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-1">regole</h2>
+                    <!-- Icon Divider -->
+                    <div class="divider-custom">
+                      <div class="divider-custom-line"></div>
+                      <div class="divider-custom-icon">
+                        <i class="fas fa-star"></i>
+                      </div>
+                      <div class="divider-custom-line"></div>
+                    </div>
+                    <!-- Portfolio Modal - Text -->
+                    <h3 class="mb-5">Il gioco presenta un patibolo e una parola da indovinare. Ad ogni turno l'utente prova ad indovinare una lettera: se ha successo questa appare nella sua posizione corrispondente. Altrimenti una parte di un omino impiccato verrà generata, partendo dalla base del patibolo. Il punto va al giocatore a seconda che la parola venga indovinata prima del completamento del disegno o no.</h3>
+                    <button type="button" onclick="chiudi()" class="btn btn-secondary float-right ">Gioca</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
   <!-- Footer -->
     <footer class="footer text-center">
@@ -290,13 +263,11 @@
               <i class="fab fa-fw fa-instagram"></i>
             </a>
           </div>
-
-          <!-- Footer About Text -->
-
-
         </div>
       </div>
     </footer>
+
+
 
   <!-- Bootstrap core JavaScript -->
   <script src="../../vendor/jquery/jquery.min.js"></script>
@@ -307,10 +278,26 @@
 
   <!-- Contact Form JavaScript -->
   <script src="../../js/jqBootstrapValidation.js"></script>
-  <script src="../../js/contact_me.js"></script>
 
   <!-- Custom scripts for this template -->
   <script src="../../js/freelancer.min.js"></script>
+
+  <script>
+
+
+
+
+
+    function nuovoGioco(){ window.open("../../utente/utente.html#giochi", target="_self"); }
+
+    function giocaAncora(){ window.location.reload(); }
+
+    function regole(){ document.getElementById("modalRegole").style.display = "block"; }
+
+    function chiudi(){ document.getElementById("modalRegole").style.display = "none"; }
+
+  </script>
+
 
 </body>
 
