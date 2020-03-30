@@ -68,8 +68,8 @@ INSERT INTO Gioco VALUES('GiocoArticoli', 'The Prepositions s Battle','REGOLE');
 INSERT INTO Gioco VALUES('GiocoPreposizioni', 'Drag The Article','REGOLE');
 INSERT INTO Gioco VALUES('GiocoAggettivi', 'Ombre', 'REGOLE');
 INSERT INTO Gioco VALUES('GiocoNomi', 'Cruciverba', 'REGOLE');
-INSERT INTO Gioco VALUES('GiocoVerbi', '***', 'REGOLE');
-INSERT INTO Gioco VALUES('GiocoSinCon', '***', 'REGOLE');
+INSERT INTO Gioco VALUES('GiocoVerbi', 'Viaggio nel tempo dei Verbi', 'REGOLE');
+INSERT INTO Gioco VALUES('GiocoSinCon', 'Occhio all'Impiccato', 'REGOLE');
 
 /*Domanda Articoli*/
 
@@ -165,10 +165,10 @@ INSERT INTO RispostaVerbi VALUES
 	
 /* SinCon */
 INSERT INTO DomandaSinCon VALUES 
-	('domanda001', 5, 'Il contrario di Bello', 'Normale', 'Versione 1.0', 'GiocoSinCon', 'DomandaSinCon001'),
-	('domanda002', 5, 'Il contrario di Buono', 'Normale', 'Versione 1.0', 'GiocoSinCon', 'DomandaSinCon002'),
-	('domanda003', 5, 'Un sinonimo di Veloce', 'Normale', 'Versione 1.0', 'GiocoSinCon', 'DomandaSinCon003'),
-	('domanda004', 5, 'Un sinonimo di Divertente', 'Normale', 'Versione 1.0', 'GiocoSinCon', 'DomandaSinCon004');
+	('domanda001', 5, 'Il contrario di: Bello', 'Normale', 'Versione 1.0', 'GiocoSinCon', 'DomandaSinCon001'),
+	('domanda002', 5, 'Il contrario di: Buono', 'Normale', 'Versione 1.0', 'GiocoSinCon', 'DomandaSinCon002'),
+	('domanda003', 5, 'Un sinonimo di: Veloce', 'Normale', 'Versione 1.0', 'GiocoSinCon', 'DomandaSinCon003'),
+	('domanda004', 5, 'Un sinonimo di: Divertente', 'Normale', 'Versione 1.0', 'GiocoSinCon', 'DomandaSinCon004');
 
 INSERT INTO RispostaSinCon VALUES 
 	('risposta001', 5, 'Brutto', 'domanda001'),
