@@ -221,7 +221,7 @@
   </nav>
   <br><br><br><br><br>
   <div class="container">
-    <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0"><br>Verbo Indicativo</h2>
+    <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0"><br>Macchina dei verbi</h2>
     <div class="divider-custom">
       <div class="divider-custom-line"></div>
       <div class="divider-custom-icon">
