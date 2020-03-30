@@ -123,7 +123,7 @@ CREATE TABLE IF NOT EXISTS `DomandaVerb` (
 CREATE TABLE IF NOT EXISTS `RispostaVerbi` (
   `idRispostaVerb` VARCHAR(15) NOT NULL,
   `punti` INT NOT NULL,
-  `flagPrep` BOOLEAN NOT NULL,
+  `flagVerb` BOOLEAN NOT NULL,
   `idDomandaVerb` VARCHAR(15) NOT NULL,
   PRIMARY KEY (`idRispostaVerb`));
   
