@@ -23,16 +23,12 @@ public class MainActivity extends AppCompatActivity {
 
         gridGiochi = findViewById(R.id.gridGiochi);
         giochi = new ArrayList<>();
-        giochi.add(new Gioco(R.drawable.sinonimi, "Sinonimi e contrari"));
-        giochi.add(new Gioco(R.drawable.verbi, "Verbi"));
-        giochi.add(new Gioco(R.drawable.ic_launcher_background, "Gioco 3"));
-        giochi.add(new Gioco(R.drawable.ic_launcher_background, "Gioco 4"));
-        giochi.add(new Gioco(R.drawable.ic_launcher_background, "Gioco 5"));
-        giochi.add(new Gioco(R.drawable.ic_launcher_background, "Gioco 6"));
-        giochi.add(new Gioco(R.drawable.ic_launcher_background, "Gioco 7"));
-        giochi.add(new Gioco(R.drawable.ic_launcher_background, "Gioco 8"));
-        giochi.add(new Gioco(R.drawable.ic_launcher_background, "Gioco 9"));
-        giochi.add(new Gioco(R.drawable.ic_launcher_background, "Gioco 10"));
+        giochi.add(new Gioco(R.drawable.s, "Sinonimi e contrari"));
+        giochi.add(new Gioco(R.drawable.v, "Verbi"));
+        giochi.add(new Gioco(R.drawable.a, "Articoli"));
+        giochi.add(new Gioco(R.drawable.p, "Preposizioni"));
+        giochi.add(new Gioco(R.drawable.n, "Nomi"));
+        giochi.add(new Gioco(R.drawable.a, "Aggettivi"));
 
         CustomAdapter customAdapter = new CustomAdapter(getApplicationContext(), R.layout.grid_layout, giochi);
         gridGiochi.setAdapter(customAdapter);
@@ -48,15 +44,43 @@ public class MainActivity extends AppCompatActivity {
                     case 0:
                         intent = new Intent(getApplicationContext(), IntentActivity.class);
                         intent.putExtra("titolo", "Sinonimi e contrari");
-                        intent.putExtra("immagine", R.drawable.sinonimi);
+                        intent.putExtra("immagine", R.drawable.s);
                         intent.putExtra("istruzioni", R.string.txtHelpSinonimi);
                         startActivity(intent);
                         break;
                     case 1:
                         intent = new Intent(getApplicationContext(), IntentActivity.class);
                         intent.putExtra("titolo", "Verbi");
-                        intent.putExtra("immagine", R.drawable.verbi);
+                        intent.putExtra("immagine", R.drawable.v);
                         intent.putExtra("istruzioni", R.string.txtHelpVerbi);
+                        startActivity(intent);
+                        break;
+                    case 2:
+                        intent = new Intent(getApplicationContext(), IntentActivity.class);
+                        intent.putExtra("titolo", "Articoli");
+                        intent.putExtra("immagine", R.drawable.a);
+                        intent.putExtra("istruzioni", R.string.txtHelpArticoli);
+                        startActivity(intent);
+                        break;
+                    case 3:
+                        intent = new Intent(getApplicationContext(), IntentActivity.class);
+                        intent.putExtra("titolo", "Preposizioni");
+                        intent.putExtra("immagine", R.drawable.p);
+                        intent.putExtra("istruzioni", R.string.txtHelpPreposizioni);
+                        startActivity(intent);
+                        break;
+                    case 4:
+                        intent = new Intent(getApplicationContext(), IntentActivity.class);
+                        intent.putExtra("titolo", "Nomi");
+                        intent.putExtra("immagine", R.drawable.n);
+                        intent.putExtra("istruzioni", R.string.txtHelpNomi);
+                        startActivity(intent);
+                        break;
+                    case 5:
+                        intent = new Intent(getApplicationContext(), IntentActivity.class);
+                        intent.putExtra("titolo", "Aggettivi");
+                        intent.putExtra("immagine", R.drawable.a);
+                        intent.putExtra("istruzioni", R.string.txtHelpAggettivi);
                         startActivity(intent);
                         break;
                 }

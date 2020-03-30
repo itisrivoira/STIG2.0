@@ -1,6 +1,7 @@
 package com.example.layout;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.viewpager.widget.ViewPager;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -17,6 +18,8 @@ public class IntentActivity extends AppCompatActivity {
     private TextView txtTitolo = null;
     private ImageView imgGioco = null;
     private FloatingActionButton btnHelp = null;
+    private ViewPager viewPager = null;
+    private SliderAdapter sliderAdapter = null;
     private String titolo = null;
     private int immagine = 0;
     private int istruzioni = 0;
@@ -30,6 +33,10 @@ public class IntentActivity extends AppCompatActivity {
         txtTitolo = findViewById(R.id.txtTitoloIntent);
         imgGioco = findViewById(R.id.imgGioco);
         btnHelp = findViewById(R.id.btnHelp);
+
+        viewPager = findViewById(R.id.viewPager);
+        sliderAdapter = new SliderAdapter(getApplicationContext());
+        viewPager.setAdapter(sliderAdapter);
     }
 
     @Override

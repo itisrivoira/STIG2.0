@@ -13,6 +13,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import java.util.List;
+import java.util.Objects;
 
 public class CustomAdapter extends ArrayAdapter<Gioco> {
 
@@ -25,7 +26,7 @@ public class CustomAdapter extends ArrayAdapter<Gioco> {
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
         LayoutInflater inflater = (LayoutInflater) getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        convertView = inflater.inflate(R.layout.grid_layout, null);
+        convertView = Objects.requireNonNull(inflater).inflate(R.layout.grid_layout, null);
 
         ImageView imgGioco = convertView.findViewById(R.id.imgGioco);
         TextView txtGioco = convertView.findViewById(R.id.txtGioco);
