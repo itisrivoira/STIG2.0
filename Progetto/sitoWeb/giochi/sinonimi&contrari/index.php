@@ -119,12 +119,11 @@
 
         <div class="row mb-4">
           <form name="game" class="mx-auto">
-            <p class="text-uppercase text-secondary"> Contrario di:
               <?php
               $listaParole = ["DIFFICILE", "SOTTO", "BELLO", "GRANDE", "GIUSTO"];
               $risultato = rand(0 , count($listaParole)-1);
               ?>
-            <p class="text-uppercase text-secondary" id="sinonimoOcontrario" value="<?php echo $listaParole[$risultato]; ?>"><?php echo $listaParole[$risultato]; ?></p>
+            <p class="text-uppercase text-secondary" id="sinonimoOcontrario" value="<?php echo $listaParole[$risultato]; ?>">Contrario di: <?php echo $listaParole[$risultato]; ?></p>
             <p class="text-uppercase text-secondary">Parola : <input type="text" name="displayWord"></p>
             <p class="text-uppercase text-secondary">Lettere: <input type="text" name="usedLetters"></p>
           </form>

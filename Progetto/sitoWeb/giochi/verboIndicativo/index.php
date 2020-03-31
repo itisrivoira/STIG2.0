@@ -43,37 +43,37 @@
         if(e.target.getAttribute('data-draggable') == 'io' && e.dataTransfer.getData('text') == 'io_drag'){
             e.target.appendChild(item);
             e.preventDefault();
-            item.dataTransfer.getgetAttribute('draggable').setData('false');
+
             corrette++;
             cont++;
         }else if(e.target.getAttribute('data-draggable') == 'tu' && e.dataTransfer.getData('text') == 'tu_drag'){
             e.target.appendChild(item);
             e.preventDefault();
-            item.dataTransfer.getgetAttribute('draggable').setData('false');
+
             corrette++;
             cont++;
         }else if(e.target.getAttribute('data-draggable') == 'egli' && e.dataTransfer.getData('text') == 'egli_drag'){
             e.target.appendChild(item);
             e.preventDefault();
-            item.dataTransfer.getgetAttribute('draggable').setData('false');
+
             corrette++;
             cont++;
         }else if(e.target.getAttribute('data-draggable') == 'noi' && e.dataTransfer.getData('text') == 'noi_drag'){
             e.target.appendChild(item);
             e.preventDefault();
-            e.dataTransfer.getgetAttribute('draggable').setData('false');
+
             corrette++;
             cont++;
         }else if(e.target.getAttribute('data-draggable') == 'voi' && e.dataTransfer.getData('text') == 'voi_drag'){
             e.target.appendChild(item);
             e.preventDefault();
-            item.dataTransfer.getgetAttribute('draggable').setData('false');
+
             corrette++;
             cont++;
         }else if(e.target.getAttribute('data-draggable') == 'essi' && e.dataTransfer.getData('text') == 'essi_drag'){
             e.target.appendChild(item);
             e.preventDefault();
-            item.dataTransfer.getgetAttribute('draggable').setData('false');
+
             corrette++;
             cont++;
         }else{
@@ -221,7 +221,7 @@
   </nav>
   <br><br><br><br><br>
   <div class="container">
-    <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0"><br>Macchina dei verbi</h2>
+    <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0"><br>Viaggio nel tempo dei verbi</h2>
     <div class="divider-custom">
       <div class="divider-custom-line"></div>
       <div class="divider-custom-icon">
