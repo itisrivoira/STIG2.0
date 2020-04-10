@@ -39,7 +39,7 @@ function selectLetter(l){
         display_word = temp_mask;
         document.game.displayWord.value= display_word;
                 
-        if (display_word.indexOf("#") == -1)
+        if (display_word.indexOf("_") == -1)
         {
             // won
             var modal = document.getElementById("myModal");
@@ -97,7 +97,7 @@ word_lenght = m.length;
 
 for (i = 0; i < word_lenght; i ++)
 {
-mask += "#";
+mask += "_";
 }
 return mask;
 }

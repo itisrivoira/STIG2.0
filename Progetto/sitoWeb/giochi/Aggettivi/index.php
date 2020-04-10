@@ -93,60 +93,42 @@
 
   <!-- Gioco -->
   <div class="container">
-    <div class="row justify-content-center border" >
-      <script src="script.js">
-      </script>
-      <?php
-        $array = array("BELLO","BRUTTO","GRANDE");
-        for ($i=0; $i < sizeof($array); $i++) { 
-          echo"<div class='border id='contenitore' data-draggable='item' draggable='true'>$array[$i]</div>";
-        }
-        
-      ?>
-
-<script>
-
-var arrayQualificativi=[];
-var cont=0;
-
-document.addEventListener('dragstart', function(e){
-    item = e.target;
-    e.dataTransfer.setData('text', item.id);
-}, false);
-
-document.addEventListener('dragover', function(e){
-    if(item) e.preventDefault();
-}, false);
-
-document.addEventListener('drop', function(e){
-    if(e.target.getAttribute('data-draggable') == 'qualificativi'){
-        arrayQualificativi.push(e.dataTransfer.getData('text'));
-        e.target.appendChild(item);
-        e.preventDefault();
-     
-    }
     
-    
-}, false);
-
-document.addEventListener('dragend', function(e){}, false);
-
-
-</script>
-      
-      
-     
-
-
+    <div class="row justify-content-center mb-2">
+    <div class="col-6 " style="height: 150px;"> <div class="border mx-auto" style="height: 100%; width: 50%;"></div></div>
     </div>
-    <div class="row justify-content-center border" id="demo" data-draggable="qualificativi" draggable="false">qualificativi</div>
-    <div class="row justify-content-center border">possessivi</div>
-    <div class="row justify-content-center border">dimostrativi</div>
-    <div class="row justify-content-center border">indefiniti</div>
-    <div class="row justify-content-center border">numerali</div>
-    <div class="row justify-content-center border">interrogativi</div>
-    <div class="row justify-content-center border">esclamativi</div>
+    <div class="row mb-2">
+    <div class="col-6 " style="height: 150px;"> <div class="border mx-auto" style="height: 100%; width: 50%;"></div></div>
+    <div class="col-6 " style="height: 150px;"> <div class="border mx-auto" style="height: 100%; width: 50%;"></div></div>
+    </div>
+    <div class="row mb-2">
+    <div class="col-4 " > </div>
+    <div class="col-4 d-flex justify-content-center border" > 
+    <div class='border m-1' id='ciao' data-draggable='item' draggable='true'>ciao</div>
+    <div class='border m-1' id='ciao' data-draggable='item' draggable='true'>ciao</div>
+    <div class='border m-1' id='ciao' data-draggable='item' draggable='true'>ciao</div>
+    <div class='border m-1' id='ciao' data-draggable='item' draggable='true'>ciao</div>
+    <div class='border m-1' id='ciao' data-draggable='item' draggable='true'>ciao</div>
+    <div class='border m-1' id='ciao' data-draggable='item' draggable='true'>ciao</div>
+    <div class='border m-1' id='ciao' data-draggable='item' draggable='true'>ciao</div>
+    <div class='border m-1' id='ciao' data-draggable='item' draggable='true'>ciao</div>
+    <div class='border m-1' id='ciao' data-draggable='item' draggable='true'>ciao</div>
+    <div class='border m-1' id='ciao' data-draggable='item' draggable='true'>ciao</div>
 
+    
+    
+    </div>
+    
+    <div class="col-4 d-flex flex-row-reverse" > </div>
+    </div>
+    <div class="row mb-2">
+    <div class="col-6 " style="height: 150px;"> <div class="border mx-auto" style="height: 100%; width: 50%;"></div></div>
+    <div class="col-6 " style="height: 150px;"> <div class="border mx-auto" style="height: 100%; width: 50%;"></div></div>
+    </div>
+    <div class="row justify-content-center mb-5">
+    <div class="col-6 " style="height: 150px;"> <div class="border mx-auto" style="height: 100%; width: 50%;"></div></div>
+    </div>
+    
     
     
   </div>
