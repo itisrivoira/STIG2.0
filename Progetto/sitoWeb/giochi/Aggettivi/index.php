@@ -18,10 +18,43 @@
   <!-- Theme CSS -->
   <link href="../../css/freelancer.min.css" rel="stylesheet">
 
+  <script src="./script.js"></script>
+
 </head>
 
 
 <style>
+  .bgimg {
+    background-repeat:no-repeat;
+    background-size: 90% 100%;
+    background-position: center;
+}
+
+
+#rcorners1 {
+  border-radius: 25px;
+  
+}
+
+#rcorners2 {
+  border-radius: 20px 0px 0px 0px;
+  
+}
+#rcorners3 {
+  border-radius:  0px 20px 0px 0px;
+  
+}
+
+#rcorners4 {
+  border-radius:  0px  0px 0px 20px;
+  
+}
+
+#rcorners5 {
+  border-radius:  0px  0px 20px 0px ;
+  
+}
+
 
   
   .custom {
@@ -94,39 +127,62 @@
   <!-- Gioco -->
   <div class="container">
     
-    <div class="row justify-content-center mb-2">
-    <div class="col-6 " style="height: 150px;"> <div class="border mx-auto" style="height: 100%; width: 50%;"></div></div>
-    </div>
-    <div class="row mb-2">
-    <div class="col-6 " style="height: 150px;"> <div class="border mx-auto" style="height: 100%; width: 50%;"></div></div>
-    <div class="col-6 " style="height: 150px;"> <div class="border mx-auto" style="height: 100%; width: 50%;"></div></div>
-    </div>
-    <div class="row mb-2">
-    <div class="col-4 " > </div>
-    <div class="col-4 d-flex justify-content-center border" > 
-    <div class='border m-1' id='ciao' data-draggable='item' draggable='true'>ciao</div>
-    <div class='border m-1' id='ciao' data-draggable='item' draggable='true'>ciao</div>
-    <div class='border m-1' id='ciao' data-draggable='item' draggable='true'>ciao</div>
-    <div class='border m-1' id='ciao' data-draggable='item' draggable='true'>ciao</div>
-    <div class='border m-1' id='ciao' data-draggable='item' draggable='true'>ciao</div>
-    <div class='border m-1' id='ciao' data-draggable='item' draggable='true'>ciao</div>
-    <div class='border m-1' id='ciao' data-draggable='item' draggable='true'>ciao</div>
-    <div class='border m-1' id='ciao' data-draggable='item' draggable='true'>ciao</div>
-    <div class='border m-1' id='ciao' data-draggable='item' draggable='true'>ciao</div>
-    <div class='border m-1' id='ciao' data-draggable='item' draggable='true'>ciao</div>
+    <div class="row justify-content-center mb-4">
+      <div class="col-9 " > 
+        <div class=" mx-auto p-2" id="rcorners1" >
+          <div class="row">
+          <div class="col-3  ">
+            <div class='border rounded m-1 mx-auto text-center' id='1' data-draggable='item' draggable='true'>1</div>
+            <div class='border rounded m-1 mx-auto text-center' id='2' data-draggable='item' draggable='true'>2</div>
+            <div class='border rounded m-1 mx-auto text-center' id='3' data-draggable='item' draggable='true'>3</div>
+            <div class='border rounded m-1 mx-auto text-center' id='4' data-draggable='item' draggable='true'>4</div>
+          </div>
+          <div class="col-3">
+            <div class='border rounded m-1 mx-auto text-center' id='5' data-draggable='item' draggable='true'>5</div>
+            <div class='border rounded m-1 mx-auto text-center' id='6' data-draggable='item' draggable='true'>6</div>
+            <div class='border rounded m-1 mx-auto text-center' id='7' data-draggable='item' draggable='true'>7</div>
+            <div class='border rounded m-1 mx-auto text-center' id='8' data-draggable='item' draggable='true'>8</div>
+          </div>
+          <div class="col-3 ">
+            <div class='border rounded m-1 mx-auto text-center' id='9' data-draggable='item' draggable='true'>9</div>
+            <div class='border rounded m-1 mx-auto text-center' id='10' data-draggable='item' draggable='true'>10</div>
+            <div class='border rounded m-1 mx-auto text-center' id='11' data-draggable='item' draggable='true'>11</div>
+            <div class='border rounded m-1 mx-auto text-center' id='12' data-draggable='item' draggable='true'>12</div>
+          </div>
+          <div class="col-3 ">
+            <div class='border rounded m-1 mx-auto text-center' id='13' data-draggable='item' draggable='true'>13</div>
+            <div class='border rounded m-1 mx-auto text-center' id='14' data-draggable='item' draggable='true'>14</div>
+            <div class='border rounded m-1 mx-auto text-center' id='15' data-draggable='item' draggable='true'>15</div>
+            <div class='border rounded m-1 mx-auto text-center' id='16' data-draggable='item' draggable='true'>16</div>
+          </div>
 
-    
+          </div>
+          
+          
+        </div>
+      </div>
+    </div>
+
+
+
+    <div class="row mb-3 mt-3">
+      <div class="col-4 " > <div class="border bgimg border-primary " data-draggable="possessivi" draggable="false" id="rcorners2" style="height: 100%; background-image: url(img/poss.png);" ><br><br><br><br><br><br><br></div></div>
+      <div class="col-4 "> </div>
+      <div class="col-4 " > <div class="border bgimg border-info " data-draggable="indefiniti" draggable="false" id="rcorners3" style="height: 100%; background-image: url(img/indef.png); "></div></div>
+    </div>
+
+
+    <div class="row mb-3">
+      <div class="col-4 " style="height: 150px;"> <div class="border  bgimg border-success " data-draggable="dimostrativi" draggable="false" style="height: 100%; background-image: url(img/dimo.png);"></div></div>
+      <div class="col-4 " style="height: 150px;"> <div class="border bgimg border-danger " data-draggable="qualificativi" draggable="false" id="rcorners1" style="height: 100%; background-image: url(img/qual.png);" ></div></div>
+      <div class="col-4  " style="height: 150px;"> <div class="border bgimg border-warning " data-draggable="esclamativi" draggable="false"  style="height: 100%; background-image: url(img/escl.png);"></div></div>
     
     </div>
     
-    <div class="col-4 d-flex flex-row-reverse" > </div>
-    </div>
-    <div class="row mb-2">
-    <div class="col-6 " style="height: 150px;"> <div class="border mx-auto" style="height: 100%; width: 50%;"></div></div>
-    <div class="col-6 " style="height: 150px;"> <div class="border mx-auto" style="height: 100%; width: 50%;"></div></div>
-    </div>
-    <div class="row justify-content-center mb-5">
-    <div class="col-6 " style="height: 150px;"> <div class="border mx-auto" style="height: 100%; width: 50%;"></div></div>
+    <div class="row mb-3">
+      <div class="col-4 " style="height: 150px;"> <div class="border bgimg border-secondary" data-draggable="numerali" draggable="false" id="rcorners4" style="height: 100%; background-image: url(img/num.png);"></div></div>
+      <div class="col-4 " style="height: 150px;"> </div>
+      <div class="col-4  " style="height: 150px;"> <div class="border bgimg border-dark" data-draggable="interrogativi" draggable="false" id="rcorners5" style="height: 100%; background-image: url(img/interr.png);"></div></div>
     </div>
     
     
@@ -238,6 +294,9 @@
   <script src="../../js/freelancer.min.js"></script>
 
   <script>
+
+
+
    
 
 
