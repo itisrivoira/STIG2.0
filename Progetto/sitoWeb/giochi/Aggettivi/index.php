@@ -18,7 +18,7 @@
   <!-- Theme CSS -->
   <link href="../../css/freelancer.min.css" rel="stylesheet">
 
-  <script src="./script.js"></script>
+  <script src="./script2.js"></script>
 
 </head>
 
@@ -26,8 +26,14 @@
 <style>
   .bgimg {
     background-repeat:no-repeat;
-    background-size: 90% 100%;
+    background-size: 90% 20%;
     background-position: center;
+    
+}
+
+.altezza {
+  height:auto;
+  min-height:150px;
 }
 
 
@@ -166,23 +172,23 @@
 
 
     <div class="row mb-3 mt-3">
-      <div class="col-4 " > <div class="border bgimg border-primary " data-draggable="possessivi" draggable="false" id="rcorners2" style="height: 100%; background-image: url(img/poss.png);" ><br><br><br><br><br><br><br></div></div>
+      <div class="col-4 " > <div class="border bgimg altezza border-primary px-5" data-draggable="possessivi" draggable="false" id="rcorners2" style="background-image: url(img/poss.png);" ></div></div>
       <div class="col-4 "> </div>
-      <div class="col-4 " > <div class="border bgimg border-info " data-draggable="indefiniti" draggable="false" id="rcorners3" style="height: 100%; background-image: url(img/indef.png); "></div></div>
+      <div class="col-4 " > <div class="border bgimg altezza  border-info px-5" data-draggable="indefiniti" draggable="false" id="rcorners3" style="height: 100%; background-image: url(img/indef.png); "></div></div>
     </div>
 
 
     <div class="row mb-3">
-      <div class="col-4 " style="height: 150px;"> <div class="border  bgimg border-success " data-draggable="dimostrativi" draggable="false" style="height: 100%; background-image: url(img/dimo.png);"></div></div>
-      <div class="col-4 " style="height: 150px;"> <div class="border bgimg border-danger " data-draggable="qualificativi" draggable="false" id="rcorners1" style="height: 100%; background-image: url(img/qual.png);" ></div></div>
-      <div class="col-4  " style="height: 150px;"> <div class="border bgimg border-warning " data-draggable="esclamativi" draggable="false"  style="height: 100%; background-image: url(img/escl.png);"></div></div>
+      <div class="col-4 " > <div class="border altezza  bgimg border-success px-5" data-draggable="dimostrativi" draggable="false" style="height: 100%; background-image: url(img/dimo.png);"></div></div>
+      <div class="col-4 " > <div class="border altezza bgimg border-danger px-5" data-draggable="qualificativi" draggable="false" id="rcorners1" style="height: 100%; background-image: url(img/qual.png);" ></div></div>
+      <div class="col-4  " > <div class="border altezza bgimg border-warning px-5 " data-draggable="esclamativi" draggable="false"  style="height: 100%; background-image: url(img/escl.png);"></div></div>
     
     </div>
     
     <div class="row mb-3">
-      <div class="col-4 " style="height: 150px;"> <div class="border bgimg border-secondary" data-draggable="numerali" draggable="false" id="rcorners4" style="height: 100%; background-image: url(img/num.png);"></div></div>
-      <div class="col-4 " style="height: 150px;"> </div>
-      <div class="col-4  " style="height: 150px;"> <div class="border bgimg border-dark" data-draggable="interrogativi" draggable="false" id="rcorners5" style="height: 100%; background-image: url(img/interr.png);"></div></div>
+      <div class="col-4 " > <div class="border altezza bgimg border-secondary px-5" data-draggable="numerali" draggable="false" id="rcorners4" style="height: 100%; background-image: url(img/num.png);"></div></div>
+      <div class="col-4 " > </div>
+      <div class="col-4  " > <div class="border altezza bgimg border-dark px-5" data-draggable="interrogativi" draggable="false" id="rcorners5" style="height: 100%; background-image: url(img/interr.png);"></div></div>
     </div>
     
     

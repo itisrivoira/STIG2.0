@@ -38,10 +38,17 @@ function showQUAL() {
     alert(arrayPossessivi);
   }
 
+
+function showArr(array) {
+    alert(array);
+  }
+
+
+
 function aggiungiAggettivo(e,arrayPUSH,arrayRM){
     var agg = e.dataTransfer.getData('text');
     if(!arrayPUSH.includes(agg) ){
-        if (arrayRM.includes(agg) /* lista degli array */) {
+        if (arrayRM!=0 /* lista degli array */) {
             arrayRM.splice(arrayRM.indexOf(agg),1);
         } 
         arrayPUSH.push(agg);

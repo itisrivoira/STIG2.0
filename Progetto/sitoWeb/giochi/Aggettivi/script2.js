@@ -1,6 +1,11 @@
 
 var arrayAssociativoAggettivi=new Array();  //verrà caricato dagli aggettivi che chiediamo al server con funzione random
 var arrayQualificativi=[];
+var arrayDimostrativi=[];
+var arrayNumerali=[];
+var arrayIndefiniti=[];
+var arrayEsclamativi=[];
+var arrayInterrogativi=[];
 var arrayPossessivi=[];
 var cont=0;
 
@@ -14,13 +19,9 @@ document.addEventListener('dragover', function(e){
 }, false);
 
 document.addEventListener('drop', function(e){
-    if(e.target.getAttribute('data-draggable') == 'qualificativi'){
-        aggiungiAggettivo(e,arrayQualificativi,arrayPossessivi);
-     
-    }
-    if(e.target.getAttribute('data-draggable') == 'possessivi'){
-        aggiungiAggettivo(e,arrayPossessivi,arrayQualificativi);
-    }
+    addAggettivo(e);
+
+
     
     
     
@@ -28,20 +29,75 @@ document.addEventListener('drop', function(e){
 
 document.addEventListener('dragend', function(e){}, false);
 
+function addAggettivo(evento) {
+    var tipo=evento.target.getAttribute('data-draggable')
+    var arrayPrima=getArrayAggettivi(evento.dataTransfer.getData('text'))
 
-function showQUAL() {
-    alert(arrayQualificativi);
-  }
+    switch(tipo) {
+        case "qualificativi":
+            aggiungiAggettivo(evento,arrayQualificativi,arrayPrima);
+          break;
+        case "possessivi":
+            aggiungiAggettivo(evento,arrayPossessivi,arrayPrima);
+          break;
+        case "dimostrativi":
+            aggiungiAggettivo(evento,arrayDimostrativi,arrayPrima);
+            break;
+        case "numerali":
+            aggiungiAggettivo(evento,arrayNumerali,arrayPrima);
+            break;
+        case "indefiniti":
+            aggiungiAggettivo(evento,arrayIndefiniti,arrayPrima);
+          break;
+        case "esclamativi":
+            aggiungiAggettivo(evento,arrayEsclamativi,arrayPrima);
+          break;
+        case "interrogativi":
+            aggiungiAggettivo(evento,arrayInterrogativi,arrayPrima);
+            break;
+
+        default:
+          // code block
+      }
 
 
-  function showPOSS() {
-    alert(arrayPossessivi);
-  }
+function getArrayAggettivi(agg) {
+    if(arrayQualificativi.includes(agg) ){
+        return arrayQualificativi;
+    }
+    else if(arrayDimostrativi.includes(agg) ){
+        return arrayDimostrativi;
+    }
+    else if(arrayEsclamativi.includes(agg) ){
+        return arrayEsclamativi;
+    }
+    else if(arrayIndefiniti.includes(agg) ){
+        return arrayIndefiniti;
+    }
+    else if(arrayPossessivi.includes(agg) ){
+        return arrayPossessivi;
+    }
+    else if(arrayInterrogativi.includes(agg) ){
+        return arrayInterrogativi;
+    }
+    else if(arrayNumerali.includes(agg) ){
+        return arrayNumerali;
+    }
+    else{
+        return 0;
+    }
+
+   
+}
+
+    
+}
+
 
 function aggiungiAggettivo(e,arrayPUSH,arrayRM){
     var agg = e.dataTransfer.getData('text');
     if(!arrayPUSH.includes(agg) ){
-        if (arrayRM.includes(agg) /* lista degli array */) {
+        if (arrayRM!=0 /* lista degli array */) {
             arrayRM.splice(arrayRM.indexOf(agg),1);
         } 
         arrayPUSH.push(agg);
@@ -49,6 +105,3 @@ function aggiungiAggettivo(e,arrayPUSH,arrayRM){
     e.target.appendChild(item);
     e.preventDefault();
 }
-
-
-      
