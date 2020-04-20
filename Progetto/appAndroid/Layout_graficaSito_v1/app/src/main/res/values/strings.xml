@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Layout</string>
+    <string name="txtTitoloMain">TITOLO</string>
+    <string name="txtTitoloIntent"> <font fgcolor='#FFFFFF'> </font></string>
+    <string name="txtTitoloHelp"><font fgcolor='#FFFFFF'>ISTRUZIONI </font></string> <!-- parametro font per il colore -->
+    <string name="txtHelpSinonimi"><font fgcolor='#FFFFFF'>ISTRUZIONI SINONIMI</font></string>
+    <string name="txtHelpVerbi"><font fgcolor='#FFFFFF'>ISTRUZIONI VERBI</font></string>
+</resources>
