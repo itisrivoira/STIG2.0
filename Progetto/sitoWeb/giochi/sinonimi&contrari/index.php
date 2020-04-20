@@ -92,6 +92,7 @@
 
   <div class="container">
     <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0"><br>Occhio all'impiccato</h2>
+    <h4 class="text-center text-secondary">Livello <?php echo $_GET["livello"]; ?></h4>
     <!-- Icon Divider -->
     <div class="divider-custom">
       <div class="divider-custom-line"></div>

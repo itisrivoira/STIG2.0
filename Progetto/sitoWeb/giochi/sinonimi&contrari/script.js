@@ -8,6 +8,10 @@ var display_word = "";
 var used_letters = "";
 var wrong_guesses = 0;
 
+const queryString = window.location.search;
+const urlParametri = new URLSearchParams(queryString);
+const livello = urlParametri.get('livello')
+
 function selectLetter(l){
     if (can_play == false){
         return;
