@@ -73,37 +73,34 @@ function selectLetter(l){
     }
 }
 
-function reset()
-{
-selectWord();
-document.game.usedLetters.value = "";
-used_letters = "";
-wrong_guesses = 0;
-document.hm.src="./img/hmstart.gif";
+function reset(){
+  selectWord();
+  document.game.usedLetters.value = "";
+  used_letters = "";
+  wrong_guesses = 0;
+  document.hm.src="./img/hmstart.gif";
 }
 
-function selectWord()
-{
-can_play = true;
-var parolaCorrente = document.querySelector("#sinonimoOcontrario").getAttribute("value");
-var posizione = listaParole.indexOf(parolaCorrente);
-to_guess = words[posizione];
-//document.game.theWord.value = to_guess;
+function selectWord(){
+  can_play = true;
+  var parolaCorrente = document.querySelector("#sinonimoOcontrario").getAttribute("value");
+  var posizione = listaParole.indexOf(parolaCorrente);
+  to_guess = words[posizione];
+  //document.game.theWord.value = to_guess;
 
-// display masked word
-masked_word = createMask(to_guess);
-document.game.displayWord.value = masked_word;
-display_word = masked_word;
+  // display masked word
+  masked_word = createMask(to_guess);
+  document.game.displayWord.value = masked_word;
+  display_word = masked_word;
 }
 
-function createMask(m)
-{
-mask = "";
-word_lenght = m.length;
+function createMask(m){
+  mask = "";
+  word_lenght = m.length;
 
-for (i = 0; i < word_lenght; i ++)
-{
-mask += "#";
-}
-return mask;
+  for (i = 0; i < word_lenght; i ++)
+  {
+  mask += "#";
+  }
+  return mask;
 }
