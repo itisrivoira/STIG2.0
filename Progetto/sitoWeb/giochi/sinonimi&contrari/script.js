@@ -10,7 +10,8 @@ var wrong_guesses = 0;
 
 const queryString = window.location.search;
 const urlParametri = new URLSearchParams(queryString);
-const livello = urlParametri.get('livello')
+var livello = urlParametri.get('livello')
+livello = parseInt(livello);
 
 function selectLetter(l){
     if (can_play == false){
@@ -57,18 +58,41 @@ function selectLetter(l){
         // incortect letter guess
         wrong_guesses += 1;
         eval("document.hm.src=\"./img/hm" + wrong_guesses + ".gif\"");
+        if (livello == 1 && wrong_guesses == 6) {
+          // lost
+          var modal = document.getElementById("myModal");
+          modal.style.display = "block";
 
-        if (wrong_guesses == 10){
-            // lost
-            var modal = document.getElementById("myModal");
-            modal.style.display = "block";
+
+          txtModal.style.color="red";
+          document.getElementById("txtModalWord").innerText="Parola --> "+to_guess;
+          document.getElementById("txtModal").innerText="hai Perso!";
+
+          can_play = false;
+        }
+        if (livello == 2 && wrong_guesses == 8) {
+          // lost
+          var modal = document.getElementById("myModal");
+          modal.style.display = "block";
 
 
-            txtModal.style.color="red";
-            document.getElementById("txtModalWord").innerText="Parola --> "+to_guess;
-            document.getElementById("txtModal").innerText="hai Perso!";
+          txtModal.style.color="red";
+          document.getElementById("txtModalWord").innerText="Parola --> "+to_guess;
+          document.getElementById("txtModal").innerText="hai Perso!";
 
-            can_play = false;
+          can_play = false;
+        }
+        if (livello == 3 && wrong_guesses == 10) {
+          // lost
+          var modal = document.getElementById("myModal");
+          modal.style.display = "block";
+
+
+          txtModal.style.color="red";
+          document.getElementById("txtModalWord").innerText="Parola --> "+to_guess;
+          document.getElementById("txtModal").innerText="hai Perso!";
+
+          can_play = false;
         }
     }
 }

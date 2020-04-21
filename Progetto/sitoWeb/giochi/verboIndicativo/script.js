@@ -17,37 +17,33 @@ document.addEventListener('dragover', function(e){
 }, false);
 
 document.addEventListener('drop', function(e){
-    if(e.target.getAttribute('id') == 'io' && e.dataTransfer.getAttribute('id') == 'io_drag'){
+    if(e.target.getAttribute('data-draggable') == 'io' && e.dataTransfer.getAttribute('text') == 'io_drag'){
       corrette++;
       cont++;
       e.target.appendChild(item);
       e.preventDefault();
-    }else if(e.target.getAttribute('id') == 'tu' && e.dataTransfer.getAttribute('id') == 'tu_drag'){
+    }else if(e.target.getAttribute('data-draggable') == 'tu' && e.dataTransfer.getAttribute('text') == 'tu_drag'){
       corrette++;
       cont++;
       e.target.appendChild(item);
       e.preventDefault();
-    }else if(e.target.getAttribute('id') == 'egli' && e.dataTransfer.getAttribute('id') == 'egli_drag'){
+    }else if(e.target.getAttribute('data-draggable') == 'egli' && e.dataTransfer.getAttribute('text') == 'egli_drag'){
       corrette++;
       cont++;
       e.target.appendChild(item);
       e.preventDefault();
-    }else if(e.target.getAttribute('id') == 'noi' && e.dataTransfer.getAttribute('id') == 'noi_drag'){
+    }else if(e.target.getAttribute('data-draggable') == 'noi' && e.dataTransfer.getAttribute('text') == 'noi_drag'){
       corrette++;
       cont++;
       e.target.appendChild(item);
       e.preventDefault();
-    }else if(e.target.getAttribute('id') == 'voi' && e.dataTransfer.getAttribute('id') == 'voi_drag'){
+    }else if(e.target.getAttribute('data-draggable') == 'voi' && e.dataTransfer.getAttribute('text') == 'voi_drag'){
       corrette++;
       cont++;
       e.target.appendChild(item);
       e.preventDefault();
-    }else if(e.target.getAttribute('id') == 'essi' && e.dataTransfer.getAttribute('id') == 'essi_drag'){
+    }else if(e.target.getAttribute('data-draggable') == 'essi' && e.dataTransfer.getAttribute('text') == 'essi_drag'){
       corrette++;
-      cont++;
-      e.target.appendChild(item);
-      e.preventDefault();
-    }else{
       cont++;
       e.target.appendChild(item);
       e.preventDefault();
