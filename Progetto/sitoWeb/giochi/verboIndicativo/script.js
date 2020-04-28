@@ -7,9 +7,10 @@ var essi = "sono";
 
 var cont = 0;
 var corrette = 0
+
 document.addEventListener('dragstart', function(e){
     item = e.target;
-    e.dataTransfer.setData('text', item.id);
+    e.dataTransfer.setData('text', item);
 }, false);
 
 document.addEventListener('dragover', function(e){
