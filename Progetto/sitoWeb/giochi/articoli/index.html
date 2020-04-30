@@ -3,7 +3,7 @@
 
 <head>
 
-  <meta charset="utf-8">
+  
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
@@ -23,7 +23,7 @@
 <style>
 
   .articoli {
-  	float:right;
+  	float: right;
   	list-style-type:none;
   	width:40%;
   	height:3em;
@@ -43,18 +43,22 @@
 
   ul{
     cursor: pointer;
-    margin-top:25%;
+    display: inline;
   }
 
   img{
   	float:center;
   	width:70%;
   	margin:1em 0 3em 0;
-
   }
 
   .regole{
     cursor: pointer;
+  }
+
+  .vite img{
+    width:10%;
+    margin:2em 0.25em 2em 0.25em;
   }
 
 </style>
@@ -72,13 +76,16 @@
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item mx-0 mx-lg-1">
-           <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="../../utente/utente.html#giochi">Giochi</a> <!-- Icone dei vari giochi -->
+            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="../../utente/utente.html#giochi">Giochi</a> <!-- Icone dei vari giochi -->
           </li>
           <li class="nav-item mx-0 mx-lg-1">
             <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="../../utente/profilo.html">Profilo</a>
           </li>
           <li class="nav-item mx-0 mx-lg-1 regole">
             <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" data-toggle="modal" data-target="#modalRegole" >Regole</a>
+          </li>
+          <li class="nav-item mx-0 mx-lg-1 regole">
+            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" data-toggle="modal" data-target="#modalLivello" >Difficoltà</a>
           </li>
         </ul>
       </div>
@@ -102,20 +109,27 @@
     <div class="row">
       <!-- div Scatole -->
       <div class="col-5">
-      	<div class="divArticoliTit">
-      		<h3>Articoli Indeterminativi</h3>
-      		<img data-draggable="indeterminativi" draggable="false" src="./img/scatolaIndeterminativi.png">
-      	</div>
-      	</br>
-      	<div class="divArticoliTit">
-      		<h3>Articoli Determinativi</h3>
-      		<img data-draggable="determinativi" draggable="false" src="./img/scatolaDeterminativi.png">
-      	</div>
+        <div class="divArticoliTit">
+          <h3>Articoli Indeterminativi</h3>
+          <img data-draggable="indeterminativi" draggable="false" src="./img/scatolaIndeterminativi.png">
+        </div>
+        </br>
+        <div class="divArticoliTit">
+          <h3>Articoli Determinativi</h3>
+          <img data-draggable="determinativi" draggable="false" src="./img/scatolaDeterminativi.png">
+        </div>
       </div>
       <div class="col-2"></div>
       <!-- div Articoli -->
       <div class="col-5">
-      	<ul>
+        <div class="vite text-center mb-5">
+          <img id="vita0" src="./img/cuore.png">
+          <img id="vita1" src="./img/cuore.png">
+          <img id="vita2" src="./img/cuore.png">
+          <img id="vita3" src="./img/cuore.png">
+          <img id="vita4" src="./img/cuore.png">
+        </div>
+        <ul class="text-center">
           <li data-draggable="item" draggable="true" class="articoli text-center" id="il"> IL </li>
           <li data-draggable="item" draggable="true" class="articoli text-center" id="lo"> LO </li>
           <li data-draggable="item" draggable="true" class="articoli text-center" id="la"> LA </li>
@@ -124,7 +138,7 @@
           <li data-draggable="item" draggable="true" class="articoli text-center" id="le"> LE </li>
           <li data-draggable="item" draggable="true" class="articoli text-center" id="uno"> UNO </li>
           <li data-draggable="item" draggable="true" class="articoli text-center" id="una"> UNA </li>
-      	</ul>
+        </ul>
       </div>
     </div>
   </div>
@@ -133,64 +147,94 @@
   <div class="portfolio-modal modal fade" data-backdrop="static" data-keyboard="false"  id="myModal" tabindex="-1" role="dialog" aria-labelledby="portfolioModal2Label" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
       <div class="modal-content">
-          <div class="modal-body text-center">
-            <div class="container">
-              <div class="row justify-content-center">
-                <div class="col-lg-8">
-                  <!-- Portfolio Modal - Title -->
-                  <h2 class="portfolio-modal-title0 text-uppercase mb-1" id="titModal"></h2>
-                  <!-- Icon Divider -->
-                  <div class="divider-custom mb-5">
-                    <div class="divider-custom-line"></div>
-                    <div class="divider-custom-icon">
-                      <i class="fas fa-star"></i>
-                    </div>
-                    <div class="divider-custom-line"></div>
+        <div class="modal-body text-center">
+          <div class="container">
+            <div class="row justify-content-center">
+              <div class="col-lg-8">
+                <!-- Portfolio Modal - Title -->
+                <h2 class="portfolio-modal-title text-uppercase mb-1" id="titModal"></h2>
+                <!-- Icon Divider -->
+                <div class="divider-custom mb-5">
+                  <div class="divider-custom-line"></div>
+                  <div class="divider-custom-icon">
+                    <i class="fas fa-star"></i>
                   </div>
-                  <!-- Portfolio Modal - Text -->
-                  <h4 class="mb-5" id="txtModal"></h4>
-                  <button type="button" onclick="giocaAncora()" class="btn btn-secondary float-left ">Gioca Ancora</button>
-                  <button type="button" onclick="nuovoGioco()" class="btn btn-secondary float-right">Altro gioco</button>
+                  <div class="divider-custom-line"></div>
                 </div>
+                <!-- Portfolio Modal - Text -->
+                <h4 class="mb-5" id="txtModal"></h4>
+                <button type="button" onclick="giocaAncora()" class="btn btn-secondary float-left ">Gioca Ancora</button>
+                <button type="button" onclick="nuovoGioco()" class="btn btn-secondary float-right">Altro gioco</button>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
+  </div>
 
-    <!-- Modal regole -->
-    <div class="portfolio-modal modal" id="modalRegole" tabindex="-1" role="dialog" aria-labelledby="portfolioModal2Label" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
-        <div class="modal-content">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="chiudi()" >
-              <span aria-hidden="true">
-                <i class="fas fa-times"></i>
-              </span>
-            </button>
-            <div class="modal-body text-center">
-              <div class="container">
-                <div class="row justify-content-center">
-                  <div class="col-lg-8">
-                    <!-- Portfolio Modal - Title -->
-                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-1">regole</h2>
-                    <!-- Icon Divider -->
-                    <div class="divider-custom">
-                      <div class="divider-custom-line"></div>
-                      <div class="divider-custom-icon">
-                        <i class="fas fa-star"></i>
-                      </div>
-                      <div class="divider-custom-line"></div>
-                    </div>
-                    <!-- Portfolio Modal - Text -->
-                    <h3 class="mb-5">Nel gioco sono presenti due scatole, una per "Articoli determinativi" e l'altra per "Articoli indeterminativi". Nella parte inferiore ci sono dei mattoncini, al cui interno ci sono degli articoli, determinativi e indeterminativi. Il tuo compito è di inserire i mattoncini all'interno della scatola corretta. Quando i mattoncini saranno finiti, apparirà un messaggio che ti dirà se hai vinto o hai perso, mostrandoti anche gli errori commessi. Più vai avanti con i livelli, più i mattoncini da inserire aumentano.</h3>
+  <!-- Modal regole -->
+  <div class="portfolio-modal modal" id="modalRegole" tabindex="-1" role="dialog" aria-labelledby="portfolioModal2Label" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+      <div class="modal-content">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="chiudi()" >
+        <span aria-hidden="true">
+        <i class="fas fa-times"></i>
+        </span>
+        </button>
+        <div class="modal-body text-center">
+          <div class="container">
+            <div class="row justify-content-center">
+              <div class="col-lg-8">
+                <!-- Portfolio Modal - Title -->
+                <h2 class="portfolio-modal-title text-secondary text-uppercase mb-1">regole</h2>
+                <!-- Icon Divider -->
+                <div class="divider-custom">
+                  <div class="divider-custom-line"></div>
+                  <div class="divider-custom-icon">
+                    <i class="fas fa-star"></i>
                   </div>
+                  <div class="divider-custom-line"></div>
                 </div>
+                <!-- Portfolio Modal - Text -->
+                <h3 class="mb-5">Nel gioco sono presenti due scatole, una per "Articoli determinativi" e l'altra per "Articoli indeterminativi". Nella parte inferiore ci sono dei mattoncini, al cui interno ci sono degli articoli, determinativi e indeterminativi. Il tuo compito è di inserire i mattoncini all'interno della scatola corretta. Quando i mattoncini saranno finiti, apparirà un messaggio che ti dirà se hai vinto o hai perso, mostrandoti anche gli errori commessi. Più vai avanti con i livelli, più i mattoncini da inserire aumentano.</h3>
               </div>
             </div>
           </div>
         </div>
       </div>
+    </div>
+  </div>
+
+  <!-- Modal Livello -->
+  <div class="portfolio-modal modal fade" data-backdrop="static" data-keyboard="false"  id="modalLivello" tabindex="-1" role="dialog" aria-labelledby="portfolioModal2Label" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+      <div class="modal-content">
+        <div class="modal-body text-center">
+          <div class="container">
+            <div class="row justify-content-center">
+              <div class="col-lg-8">
+                <!-- Portfolio Modal - Title -->
+                <h2 class="portfolio-modal-title text-uppercase text-secondary mb-1">difficoltà</h2>
+                <!-- Icon Divider -->
+                <div class="divider-custom mb-5">
+                  <div class="divider-custom-line"></div>
+                  <div class="divider-custom-icon">
+                    <i class="fas fa-star"></i>
+                  </div>
+                  <div class="divider-custom-line"></div>
+                </div>
+                <!-- Portfolio Modal - Text -->
+                <button onclick="setDifficolta(0)" type="button" class="btn btn-success btn-lg btn-block text-uppercase">facile</button>
+                <button onclick="setDifficolta(1)" type="button" class="btn btn-warning text-white btn-lg btn-block text-uppercase">normale</button>
+                <button onclick="setDifficolta(2)" type="button" class="btn btn-danger btn-lg btn-block text-uppercase">difficile</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- Footer -->
     <footer class="footer text-center">
@@ -248,6 +292,11 @@
       var indUtente=[];
       var detUtente=[];
       var cont=0;
+      var arrayItem=[];
+      var classeTitolo=titModal.className;
+
+      $('#modalLivello').modal('show');
+
       document.addEventListener('dragstart', function(e){
           item = e.target;
           e.dataTransfer.setData('text', item.id);
@@ -260,49 +309,87 @@
       document.addEventListener('drop', function(e){
           if(e.target.getAttribute('data-draggable') == 'indeterminativi'){
               indUtente.push(e.dataTransfer.getData('text'));
-              e.target.appendChild(item);
+              item.style.display="none";
+              arrayItem.push(item);
               e.preventDefault();
               cont++;
           }
           if(e.target.getAttribute('data-draggable') == 'determinativi'){
               detUtente.push(e.dataTransfer.getData('text'));
-              e.target.appendChild(item);
+              item.style.display="none";
+              arrayItem.push(item);
               e.preventDefault();
               cont++;
           }
       }, false);
 
       document.addEventListener('dragend', function(e){
-          item = null;
-          if(cont==8){
-            var vinto=true;
-            var c=0;
-            do{
-              if(!indeterminativi.includes(indUtente[c])) vinto=false;
-              c++;
-            }while(vinto==true && c<2);
-            c=0;
-            do{
-              if(!determinativi.includes(detUtente[c])) vinto=false;
-              c++;
-            }while(vinto==true && c<6);
-            //Modal fine gioco
-            $('#myModal').modal('show');
-            if(vinto){
-              titModal.className+=" text-success";
-              titModal.innerText="hai vinto!";
-              txtModal.innerText="Articoli indeterminativi: "+indeterminativi+"\n\nArticoli determinativi: "+determinativi;
-            }else{
-              titModal.className+=" text-danger";
-              titModal.innerText="hai perso!";
-              txtModal.innerText="Articoli indeterminativi: "+indeterminativi+"\n\nArticoli determinativi: "+determinativi;
-            }
-          };
+        item = null;
+        if(cont==8){
+          var vinto=true;
+          var c=0;
+          do{
+            if(!indeterminativi.includes(indUtente[c])) vinto=false;
+            c++;
+          }while(vinto==true && c<2);
+          c=0;
+          do{
+            if(!determinativi.includes(detUtente[c])) vinto=false;
+            c++;
+          }while(vinto==true && c<6);
+          if(vinto) fineGioco(" text-success","hai vinto!");
+          else{
+            if(tentativi>1){
+              document.getElementById("vita"+(5-tentativi)).style.opacity=0.5;
+              indUtente=[];
+              detUtente=[];
+              cont=0;
+              tentativi--;
+              arrayItem.forEach(element => { element.style.display="inline"; });
+            }else fineGioco(" text-danger","hai perso!");
+          }
+        }
+
       }, false);
+
+      function fineGioco(colore,testo){
+        titModal.className=classeTitolo+colore;
+        titModal.innerText=testo;
+        txtModal.innerText="Articoli indeterminativi: "+indeterminativi+"\n\nArticoli determinativi: "+determinativi;
+        $('#myModal').modal('show');
+      }
 
       function nuovoGioco(){ window.open("../../utente/utente.html#giochi", target="_self"); }
 
-      function giocaAncora(){ window.location.reload(); }
+      function giocaAncora(){
+        gioca();
+        arrayItem.forEach(element => { element.style.display="inline"; });
+        $('#myModal').modal('hide');
+        indUtente=[];
+        detUtente=[];
+        cont=0;
+      }
+
+      function setDifficolta(d){
+        difficolta=d;
+        gioca();
+        $('#modalLivello').modal('hide');
+       }
+
+      function gioca(){
+        for (let i=0; i<5; i++){
+          document.getElementById("vita"+i).style.display="inline";
+          document.getElementById("vita"+i).style.opacity=1;
+        }
+        if(difficolta==0) tentativi=5;
+        else if(difficolta==1){
+          tentativi=3;
+          for (let i=0; i<5-tentativi; i++) document.getElementById("vita"+i).style.display="none";
+        }else{
+          tentativi=1
+          for (let i=0; i<5-tentativi; i++) document.getElementById("vita"+i).style.display="none";
+        }
+      }
 
     </script>
 
