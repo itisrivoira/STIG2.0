@@ -31,6 +31,13 @@
     .regole{
       cursor: pointer;
     }
+
+    img{
+      float:center;
+      width:35px;
+      margin:1em 0.25em 0em 0.25em;
+    }
+
   </style>
 
 </head>
@@ -56,13 +63,16 @@
           <li class="nav-item mx-0 mx-lg-1 regole">
             <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" data-toggle="modal" data-target="#modalRegole" >Regole</a>
           </li>
+          <li class="nav-item mx-0 mx-lg-1 regole">
+            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" data-toggle="modal" data-target="#modalLivello" >Difficoltà</a>
+          </li>
         </ul>
       </div>
     </div>
   </nav>
   <br><br><br><br><br>
 
-  <div class="container mb-5">
+  <div class="container mb-3">
     <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0"><br>The Preposition’s Battle</h2>
 
     <!-- Icon Divider -->
@@ -77,12 +87,18 @@
   <!-- Gioco -->
   <div class="container mb-5 text-center">
     <div class="row">
-      <div class="col-2"></div>
-      <!-- div Tabella e Frase -->
-      <div class="col-8 mb-5">
-        <div class="mb-5">
-          <h4 id="frase" class="L'istinto degli animali"> L'istinto &nbsp<span id="prepFrase" class="degli">_________</span>&nbsp animali</h4>
+
+      <!--div Tabella e Frase -->
+      <div class="col-lg-12 mb-5">
+        <div class="text-center mb-5">
+          <img id="vita0" src="./img/cuore.png">
+          <img id="vita1" src="./img/cuore.png">
+          <img id="vita2" src="./img/cuore.png">
+          <img id="vita3" src="./img/cuore.png">
+          <img id="vita4" src="./img/cuore.png">
         </div>
+        <div class="mb-5 text-center"><h4 id="frase" class="L'istinto degli animali"> L'istinto &nbsp<span id="prepFrase" class="degli">_________</span>&nbsp animali</h4></div>
+
         <table class="table table-bordered">
           <thead class="bg-dark text-white">
             <tr>
@@ -186,72 +202,101 @@
           </tbody>
         </table>
       </div>
-      <div class="col-2"></div>
     </div>
   </div>
 
-  <!-- The Modal -->
-  <div class="portfolio-modal modal fade" id="myModal" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="portfolioModal2Label" aria-hidden="true">
+  <!-- Modal fine gioco -->
+  <div class="portfolio-modal modal fade" data-backdrop="static" data-keyboard="false"  id="myModal" tabindex="-1" role="dialog" aria-labelledby="portfolioModal2Label" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
       <div class="modal-content">
-          <div class="modal-body text-center">
-            <div class="container">
-              <div class="row justify-content-center">
-                <div class="col-lg-8">
-                  <!-- Portfolio Modal - Title -->
-                  <h2 class="portfolio-modal-title text-uppercase mb-1" id="titModal"></h2>
-                  <!-- Icon Divider -->
-                  <div class="divider-custom mb-5">
-                    <div class="divider-custom-line"></div>
-                    <div class="divider-custom-icon">
-                      <i class="fas fa-star"></i>
-                    </div>
-                    <div class="divider-custom-line"></div>
+        <div class="modal-body text-center">
+          <div class="container">
+            <div class="row justify-content-center">
+              <div class="col-lg-8">
+                <!-- Portfolio Modal - Title -->
+                <h2 class="portfolio-modal-title text-uppercase mb-1" id="titModal"></h2>
+                <!-- Icon Divider -->
+                <div class="divider-custom mb-5">
+                  <div class="divider-custom-line"></div>
+                  <div class="divider-custom-icon">
+                    <i class="fas fa-star"></i>
                   </div>
-                  <!-- Portfolio Modal - Text -->
-                  <h4 class="mb-5" id="txtModal"></h4>
-                  <button type="button" onclick="giocaAncora()" class="btn btn-secondary float-left ">Gioca Ancora</button>
-                  <button type="button" onclick="nuovoGioco()" class="btn btn-secondary float-right">Altro gioco</button>
+                  <div class="divider-custom-line"></div>
                 </div>
+                <!-- Portfolio Modal - Text -->
+                <h4 class="mb-5" id="txtModal"></h4>
+                <button type="button" onclick="giocaAncora()" class="btn btn-secondary float-left ">Gioca Ancora</button>
+                <button type="button" onclick="nuovoGioco()" class="btn btn-secondary float-right">Altro gioco</button>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
+  </div>
 
-    <!-- Modal regole -->
-    <div class="portfolio-modal modal fade" id="modalRegole" tabindex="-1" role="dialog" aria-labelledby="portfolioModal2Label" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
-        <div class="modal-content">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="chiudi()" >
-              <span aria-hidden="true">
-                <i class="fas fa-times"></i>
-              </span>
-            </button>
-            <div class="modal-body text-center">
-              <div class="container">
-                <div class="row justify-content-center">
-                  <div class="col-lg-8">
-                    <!-- Portfolio Modal - Title -->
-                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-1">regole</h2>
-                    <!-- Icon Divider -->
-                    <div class="divider-custom">
-                      <div class="divider-custom-line"></div>
-                      <div class="divider-custom-icon">
-                        <i class="fas fa-star"></i>
-                      </div>
-                      <div class="divider-custom-line"></div>
-                    </div>
-                    <!-- Portfolio Modal - Text -->
-                    <h3 class="mb-5"> Nel gioco si trova una tabella dove le colonne corrispondono agli articoli determinativi mentre, le righe, corrispondo alle preposizioni semplici. Usando la frase che trovi nella parte superiore dello schermo, inserisci la preposizione corretta. Con qualsiasi livello di difficoltà, il tuo compito è quello di inserire correttamente tre preposizione e, più si va avanti di livello, più diminuiscono i tentativi.</h3>
+  <!-- Modal regole -->
+  <div class="portfolio-modal modal" id="modalRegole" tabindex="-1" role="dialog" aria-labelledby="portfolioModal2Label" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+      <div class="modal-content">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="chiudi()" >
+        <span aria-hidden="true">
+        <i class="fas fa-times"></i>
+        </span>
+        </button>
+        <div class="modal-body text-center">
+          <div class="container">
+            <div class="row justify-content-center">
+              <div class="col-lg-8">
+                <!-- Portfolio Modal - Title -->
+                <h2 class="portfolio-modal-title text-secondary text-uppercase mb-1">regole</h2>
+                <!-- Icon Divider -->
+                <div class="divider-custom">
+                  <div class="divider-custom-line"></div>
+                  <div class="divider-custom-icon">
+                    <i class="fas fa-star"></i>
                   </div>
+                  <div class="divider-custom-line"></div>
                 </div>
+                <!-- Portfolio Modal - Text -->
+                <h3 class="mb-5"> Nel gioco si trova una tabella dove le colonne corrispondono agli articoli determinativi mentre, le righe, corrispondo alle preposizioni semplici. Usando la frase che trovi nella parte superiore dello schermo, inserisci la preposizione corretta. Con qualsiasi livello di difficoltà, il tuo compito è quello di inserire correttamente tre preposizione e, più si va avanti di livello, più diminuiscono i tentativi.</h3>
               </div>
             </div>
           </div>
         </div>
       </div>
+    </div>
+  </div>
+
+  <!-- Modal Livello -->
+  <div class="portfolio-modal modal fade" data-backdrop="static" data-keyboard="false"  id="modalLivello" tabindex="-1" role="dialog" aria-labelledby="portfolioModal2Label" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+      <div class="modal-content">
+        <div class="modal-body text-center">
+          <div class="container">
+            <div class="row justify-content-center">
+              <div class="col-lg-8">
+                <!-- Portfolio Modal - Title -->
+                <h2 class="portfolio-modal-title text-uppercase text-secondary mb-1">difficoltà</h2>
+                <!-- Icon Divider -->
+                <div class="divider-custom mb-5">
+                  <div class="divider-custom-line"></div>
+                  <div class="divider-custom-icon">
+                    <i class="fas fa-star"></i>
+                  </div>
+                  <div class="divider-custom-line"></div>
+                </div>
+                <!-- Portfolio Modal - Text -->
+                <button onclick="setDifficolta(0)" type="button" class="btn btn-success btn-lg btn-block text-uppercase">facile</button>
+                <button onclick="setDifficolta(1)" type="button" class="btn btn-warning text-white btn-lg btn-block text-uppercase">normale</button>
+                <button onclick="setDifficolta(2)" type="button" class="btn btn-danger btn-lg btn-block text-uppercase">difficile</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- Footer -->
     <footer class="footer text-center">
@@ -303,27 +348,58 @@
     <script src="../../js/freelancer.min.js"></script>
 
     <script>
+
+      $('#modalLivello').modal('show'); 
+      var classeTitolo=titModal.className;
+
       function selezione(e){
         if (!e) var e = window.event;
         if (e.stopPropagation) e.stopPropagation();
         prep=document.getElementById("prepFrase");
         frase=document.getElementById("frase");
-        if(prep.className==e.target.id){
-            titModal.className+=" text-success";
-            titModal.innerText="hai vinto!";
-            txtModal.innerText=frase.className;
-        }
+        if(prep.className==e.target.id) fineGioco(" text-success","hai vinto!");
         else{
-          titModal.className+=" text-danger";
-          titModal.innerText="hai perso!";
-          txtModal.innerText=frase.className;
+          if(tentativi>1){
+            document.getElementById("vita"+(5-tentativi)).style.opacity=0.5;
+            tentativi--;
+          }else fineGioco(" text-danger","hai perso!");
         }
+      }
+
+      function fineGioco(colore,testo){
+        titModal.className=classeTitolo+colore;
+        titModal.innerText=testo;
+        txtModal.innerText=frase.className;
         $('#myModal').modal('show');
       }
 
       function nuovoGioco(){ window.open("../../utente/utente.html#giochi", target="_self"); }
 
-      function giocaAncora(){ window.location.reload(); }
+      function giocaAncora(){
+        gioca();
+        $('#myModal').modal('hide');
+      }
+
+      function setDifficolta(d){ 
+        difficolta=d;
+        gioca();
+        $('#modalLivello').modal('hide');
+       }  
+
+      function gioca(){
+        for (let i=0; i<5; i++){
+          document.getElementById("vita"+i).style.display="inline";
+          document.getElementById("vita"+i).style.opacity=1;
+        }
+        if(difficolta==0) tentativi=5;
+        else if(difficolta==1){
+          tentativi=3;
+          for (let i=0; i<5-tentativi; i++) document.getElementById("vita"+i).style.display="none";
+        }else{
+          tentativi=1
+          for (let i=0; i<5-tentativi; i++) document.getElementById("vita"+i).style.display="none";
+        }
+      }
 
     </script>
 
