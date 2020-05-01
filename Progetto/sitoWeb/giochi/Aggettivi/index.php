@@ -111,6 +111,9 @@
           <li class="nav-item mx-0 mx-lg-1 regole">
             <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" onclick="regole()">Regole</a>
           </li>
+          <li class="nav-item mx-0 mx-lg-1 regole">
+            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" onclick="difficolta()" >Difficoltà</a>
+          </li>
         </ul>
       </div>
     </div>
@@ -131,12 +134,32 @@
 
 
   <!-- Gioco -->
-  <div class="container">
+  <div class="container mb-5">
     
     <div class="row justify-content-center mb-4">
       <div class="col-9 " > 
         <div class=" mx-auto p-2" id="rcorners1" >
           <div class="row">
+
+          <?php
+           $myFile = "dimostrativi.csv";
+           $fh = fopen($myFile, "r");
+           if ( $fh ) {
+             while ( !feof($fh) ) {
+               $line = fgets($fh);
+             }
+             fclose($fh);
+           }
+
+           
+
+            
+
+          ?>
+
+
+
+
           <div class="col-3  ">
             <div class='border rounded m-1 mx-auto text-center' id='1' data-draggable='item' draggable='true'>1</div>
             <div class='border rounded m-1 mx-auto text-center' id='2' data-draggable='item' draggable='true'>2</div>
@@ -226,6 +249,36 @@
       </div>
     </div>
 
+    <!-- Modal Livello -->
+  <div class="modal" id="modalLivello" tabindex="-1" role="dialog" aria-labelledby="portfolioModal2Label" aria-hidden="true">
+    <div class="modal-dialog modal-xl" role="document">
+      <div class="modal-content">
+        <div class="modal-body text-center">
+          <div class="container">
+            <div class="row justify-content-center">
+              <div class="col-lg-8">
+                <!-- Portfolio Modal - Title -->
+                <h2 class="portfolio-modal-title text-secondary text-uppercase mb-1">difficoltà</h2>
+                <!-- Icon Divider -->
+                <div class="divider-custom">
+                  <div class="divider-custom-line"></div>
+                  <div class="divider-custom-icon">
+                    <i class="fas fa-star"></i>
+                  </div>
+                  <div class="divider-custom-line"></div>
+                </div>
+                <!-- Portfolio Modal - Text -->
+                <button onclick="setDifficolta(0)" type="button" class="btn btn-success btn-lg btn-block text-uppercase">facile</button>
+                <button onclick="setDifficolta(1)" type="button" class="btn btn-warning text-white btn-lg btn-block text-uppercase">normale</button>
+                <button onclick="setDifficolta(2)" type="button" class="btn btn-danger btn-lg btn-block text-uppercase">difficile</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
     <!-- Modal regole -->
     <div class="modal" id="modalRegole" tabindex="-1" role="dialog" aria-labelledby="portfolioModal2Label" aria-hidden="true">
       <div class="modal-dialog modal-xl" role="document">
@@ -307,7 +360,8 @@
 
 
     
-
+    function difficolta(){ document.getElementById("modalLivello").style.display = "block"; }
+    
     function nuovoGioco(){ window.open("../../utente/utente.html#giochi", target="_self"); }
 
     function giocaAncora(){ window.location.reload(); }

@@ -9,6 +9,22 @@ var arrayInterrogativi=[];
 var arrayPossessivi=[];
 var cont=0;
 
+
+function reset()
+{
+
+document.getElementById("modalLivello").style.display = "block";
+}
+
+
+function setDifficolta(d){ 
+    diff=d
+    document.getElementById("modalLivello").style.display = "none";
+    alert(d)
+  }
+
+
+
 document.addEventListener('dragstart', function(e){
     item = e.target;
     e.dataTransfer.setData('text', item.id);
@@ -32,6 +48,7 @@ document.addEventListener('dragend', function(e){}, false);
 function addAggettivo(evento) {
     var tipo=evento.target.getAttribute('data-draggable')
     var arrayPrima=getArrayAggettivi(evento.dataTransfer.getData('text'))
+  
 
     switch(tipo) {
         case "qualificativi":

@@ -1,11 +1,14 @@
 
 var can_play = true;
-var words = new Array("CIAO", "CASA","ALBERO","GENTE","COME","BELLISSIMO");
+var facile = new Array("CANE", "CASA");  //sostantivi con poche lettere
+var medio = new Array("ALBERO","GENTE"); //sostantivi con lettere normali
+var difficile = new Array("ZUZZURELLONE","ALBERTOFRANCO"); //sostantivi con tante lettere
 
 var to_guess = "";
 var display_word = "";
 var used_letters = "";
 var wrong_guesses = 0;
+
 
 function selectLetter(l){
     if (can_play == false){
@@ -39,14 +42,18 @@ function selectLetter(l){
         display_word = temp_mask;
         document.game.displayWord.value= display_word;
                 
-        if (display_word.indexOf("_") == -1)
+        if (display_word.indexOf("#") == -1)
         {
             // won
-            var modal = document.getElementById("myModal");
-            modal.style.display = "block";
-            txtModal.style.color="green";
-            document.getElementById("txtModal").innerText="hai vinto!";
-            can_play = false;
+            //wait 2 sec
+            setTimeout(function(){
+                var modal = document.getElementById("myModal");
+                modal.style.display = "block";
+                txtModal.style.color="green";
+                document.getElementById("txtModal").innerText="hai vinto!";
+                can_play = false;
+            }, 1000);
+           
         }
     }else{
         // incortect letter guess
@@ -70,20 +77,39 @@ function selectLetter(l){
 
 function reset()
 {
-selectWord();
+
 document.game.usedLetters.value = "";
 used_letters = "";
 wrong_guesses = 0;
 document.hm.src="./img/hmstart.gif";
+document.getElementById("modalLivello").style.display = "block";
 }
 
-function selectWord()
+function setDifficolta(d){ 
+    diff=d
+    document.getElementById("modalLivello").style.display = "none";
+    selectWord(diff);
+  }
+
+function selectWord(diff)
 {
 can_play = true;
-random_number = Math.round(Math.random() * (words.length - 1));
-to_guess = words[random_number];
-//document.game.theWord.value = to_guess;
-	
+if (diff==0) {
+    random_number = Math.round(Math.random() * (facile.length - 1));
+    to_guess = facile[random_number];
+    alert(to_guess)
+    
+}else if (diff==1) {
+    random_number = Math.round(Math.random() * (medio.length - 1));
+    to_guess = medio[random_number];
+    alert(to_guess)
+}else{
+    random_number = Math.round(Math.random() * (difficile.length - 1));
+    to_guess = difficile[random_number];
+    alert(to_guess)
+}
+
+
 // display masked word
 masked_word = createMask(to_guess);
 document.game.displayWord.value = masked_word;
@@ -97,7 +123,7 @@ word_lenght = m.length;
 
 for (i = 0; i < word_lenght; i ++)
 {
-mask += "_";
+mask += "#";
 }
 return mask;
 }
