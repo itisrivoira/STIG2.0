@@ -35,7 +35,7 @@
 
 .altezza {
   height:auto;
-  min-height:150px;
+  min-height:170px;
 }
 
 
@@ -92,7 +92,7 @@
 
 
 
-<body id="page-top"onload="loadDifficolta()" >
+<body id="page-top" >
   
 
   <!-- Navigation -->
@@ -114,7 +114,9 @@
           <li class="nav-item mx-0 mx-lg-1 regole">
             <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" onclick="regole()">Regole</a>
           </li>
-          
+          <li class="nav-item mx-0 mx-lg-1 regole">
+            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" onclick="loadDifficolta()" >Difficoltà</a>
+          </li>
         </ul>
       </div>
     </div>
@@ -134,7 +136,100 @@
   </div>
 
 
-  
+  <!-- Gioco -->
+  <div class="container mb-5">
+    
+    <div class="row justify-content-center mb-4">
+      <div class="col-9 " > 
+        <div class=" mx-auto p-2" id="rcorners1" >
+          <div class="row" >
+
+          <?php
+
+            
+          
+            $rows   = array_map('str_getcsv', file('listaAggettivi.csv'));
+            $header = array_shift($rows);
+            $csv    = array();
+            foreach($rows as $row) {
+                $csv[] = array_combine($header, $row);
+                
+            }
+            
+            
+            include "stampaGioco.php";
+            
+          
+          ?>
+
+
+
+
+          
+
+          </div>
+          
+          
+        </div>
+      </div>
+    </div>
+
+
+
+    <div class="row mb-3 mt-3">
+      <div class="col-4 " > <div class="border bgimg altezza border-primary px-5" data-draggable="possessivi" draggable="false" id="rcorners2" style="background-image: url(img/poss.png);" ></div></div>
+      <div class="col-4 "> </div>
+      <div class="col-4 " > <div class="border bgimg altezza  border-info px-5" data-draggable="indefiniti" draggable="false" id="rcorners3" style="height: 100%; background-image: url(img/indef.png); "></div></div>
+    </div>
+
+
+    <div class="row mb-3">
+      <div class="col-4 " > <div class="border altezza  bgimg border-success px-5" data-draggable="dimostrativi" draggable="false" style="height: 100%; background-image: url(img/dimo.png);"></div></div>
+      <div class="col-4 " > <div class="border altezza bgimg border-danger px-5" data-draggable="qualificativi" draggable="false" id="rcorners1" style="height: 100%; background-image: url(img/qual.png);" ></div></div>
+      <div class="col-4  " > <div class="border altezza bgimg border-warning px-5 " data-draggable="esclamativi" draggable="false"  style="height: 100%; background-image: url(img/escl.png);"></div></div>
+    
+    </div>
+    
+    <div class="row mb-3">
+      <div class="col-4 " > <div class="border altezza bgimg border-secondary px-5" data-draggable="numerali" draggable="false" id="rcorners4" style="height: 100%; background-image: url(img/num.png);"></div></div>
+      <div class="col-4 " > </div>
+      <div class="col-4  " > <div class="border altezza bgimg border-dark px-5" data-draggable="interrogativi" draggable="false" id="rcorners5" style="height: 100%; background-image: url(img/interr.png);"></div></div>
+    </div>
+    
+    
+    
+  </div>
+
+  <!-- Modal fine gioco -->
+  <div class="modal" id="myModal" tabindex="-1" role="dialog" aria-labelledby="portfolioModal2Label" aria-hidden="true">
+    <div class="modal-dialog modal-xl" role="document">
+      <div class="modal-content">
+          <div class="modal-body text-center">
+            <div class="container">
+              <div class="row justify-content-center">
+                <div class="col-lg-8">
+                  <!-- Portfolio Modal - Title -->
+                  <h2 class="portfolio-modal-title text-secondary text-uppercase mb-1">fine</h2>
+                  <!-- Icon Divider -->
+                  <div class="divider-custom">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon">
+                      <i class="fas fa-star"></i>
+                    </div>
+                    <div class="divider-custom-line"></div>
+                  </div>
+                  <!-- Portfolio Modal - Text -->
+                  <h4 class="mb-5 text-uppercase" id="txtModal"></h4>
+                  <h4 class="mb-5 text-uppercase" id="txtModalWord"></h4>
+                  <button type="button" onclick="loadDifficolta()" class="btn btn-secondary float-left ">Gioca Ancora</button>
+                  <button type="button" onclick="nuovoGioco()" class="btn btn-secondary float-right">Altro gioco</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <!-- Modal Livello -->
   <div class="modal" id="modalLivello" tabindex="-1" role="dialog" aria-labelledby="portfolioModal2Label" aria-hidden="true">
@@ -198,7 +293,34 @@
         </div>
       </div>
 
-  
+  <!-- Footer -->
+    <footer class="footer text-center">
+      <div class="container">
+        <div class="row">
+
+          <!-- Footer Location -->
+          <div class="col-lg-6 mb-5 mb-lg-0">
+            <h4 class="text-uppercase mb-4">I.T.I.S. Giovanni Rivoira</h4>
+            <p class="lead mb-0">Verzuolo,
+              <br>Cuneo, Italy</p>
+          </div>
+
+          <!-- Footer Social Icons -->
+          <div class="col-lg-6 mb-5 mb-lg-0">
+            <h4 class="text-uppercase mb-4">Seguici sui social</h4>
+            <a class="btn btn-outline-light btn-social mx-1" href="https://www.facebook.com/itisrivoira/" target="_blank">
+              <i class="fab fa-fw fa-facebook-f"></i>
+            </a>
+            <a class="btn btn-outline-light btn-social mx-1" href="https://twitter.com/itisrivoira" target="_blank">
+              <i class="fab fa-fw fa-twitter"></i>
+            </a>
+            <a class="btn btn-outline-light btn-social mx-1" href="https://www.instagram.com/itisrivoira/" target="_blank">
+              <i class="fab fa-fw fa-instagram"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
 
 
 
@@ -218,7 +340,6 @@
   <script>
     var fileCsv = <?php echo json_encode($csv); ?>;
     caricaArray(fileCsv)
-    
 
 
 
