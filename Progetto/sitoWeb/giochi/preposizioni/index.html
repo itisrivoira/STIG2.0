@@ -97,107 +97,105 @@
           <img id="vita3" src="./img/cuore.png">
           <img id="vita4" src="./img/cuore.png">
         </div>
-        <div class="mb-5 text-center"><h4 id="frase" class="L'istinto degli animali"> L'istinto &nbsp<span id="prepFrase" class="degli">_________</span>&nbsp animali</h4></div>
+        <div class="mb-5 text-center"><h4 id="frase" class="text-dark"></h4></div>
 
-        <table class="table table-bordered">
-          <thead class="bg-dark text-white">
+        <table class="table table-striped shadow">
+          <tbody>
             <tr>
-              <th scope="col" class="border-secondary"></th>
-              <th scope="col" onclick="selezione()" class="selezione border-secondary" id="di">DI</th>
-              <th scope="col" onclick="selezione()" class="selezione border-secondary" id="a">A</th>
-              <th scope="col" onclick="selezione()" class="selezione border-secondary" id="da">DA</th>
-              <th scope="col" onclick="selezione()" class="selezione border-secondary" id="in">IN</th>
-              <th scope="col" onclick="selezione()" class="selezione border-secondary" id="con">CON</th>
-              <th scope="col" onclick="selezione()" class="selezione border-secondary" id="su">SU</th>
-              <th scope="col" onclick="selezione()" class="selezione border-secondary" id="per">PER</th>
-              <th scope="col" onclick="selezione()" class="selezione border-secondary" id="tra">TRA</th>
-              <th scope="col" onclick="selezione()" class="selezione border-secondary" id="fra">FRA</th>
+              <th scope="row" class="bg-dark text-white boder-bottom border-secondary"></th>
+              <th scope="col" onclick="selezione()" class="selezione" id="di">DI</th>
+              <th scope="col" onclick="selezione()" class="selezione" id="a">A</th>
+              <th scope="col" onclick="selezione()" class="selezione" id="da">DA</th>
+              <th scope="col" onclick="selezione()" class="selezione" id="in">IN</th>
+              <th scope="col" onclick="selezione()" class="selezione" id="con">CON</th>
+              <th scope="col" onclick="selezione()" class="selezione" id="su">SU</th>
+              <th scope="col" onclick="selezione()" class="selezione" id="per">PER</th>
+              <th scope="col" onclick="selezione()" class="selezione" id="tra">TRA</th>
+              <th scope="col" onclick="selezione()" class="selezione border-right" id="fra">FRA</th>
             </tr>
-          </thead>
-          <tbody class="bg-light">
             <tr>
               <th scope="row" class="bg-dark text-white border-secondary">IL</th>
-              <td onclick="selezione()" class="selezione" id="del">DEL</td>
-              <td onclick="selezione()" class="selezione" id="al">AL</td>
-              <td onclick="selezione()" class="selezione" id="dal">DAL</td>
-              <td onclick="selezione()" class="selezione" id="nel">NEL</td>
-              <td onclick="selezione()" class="selezione" id="col">COL</td>
-              <td onclick="selezione()" class="selezione" id="sul">SUL</td>
+              <td onclick="selezione()" class="selezione font-italic" id="del">DEL</td>
+              <td onclick="selezione()" class="selezione font-italic" id="al">AL</td>
+              <td onclick="selezione()" class="selezione font-italic" id="dal">DAL</td>
+              <td onclick="selezione()" class="selezione font-italic" id="nel">NEL</td>
+              <td onclick="selezione()" class="selezione font-italic" id="col">COL</td>
+              <td onclick="selezione()" class="selezione font-italic" id="sul">SUL</td>
               <td>/</td>
               <td>/</td>
-              <td>/</td>
+              <td class="border-right">/</td>
             </tr>
             <tr>
               <th scope="row" class="bg-dark text-white border-secondary">LO</th>
-              <td onclick="selezione()" class="selezione" id="dello">DELLO</td>
-              <td onclick="selezione()" class="selezione" id="allo">ALLO</td>
-              <td onclick="selezione()" class="selezione" id="dallo">DALLO</td>
-              <td onclick="selezione()" class="selezione" id="nello">NELLO</td>
+              <td onclick="selezione()" class="selezione font-italic" id="dello">DELLO</td>
+              <td onclick="selezione()" class="selezione font-italic" id="allo">ALLO</td>
+              <td onclick="selezione()" class="selezione font-italic" id="dallo">DALLO</td>
+              <td onclick="selezione()" class="selezione font-italic" id="nello">NELLO</td>
               <td>/</td>
-              <td onclick="selezione()" class="selezione" id="sullo">SULLO</td>
+              <td onclick="selezione()" class="selezione font-italic" id="sullo">SULLO</td>
               <td>/</td>
               <td>/</td>
-              <td>/</td>
+              <td class="border-right">/</td>
             </tr>
-            <tr>
-              <th scope="row" class="bg-dark text-white border-secondary">LA</th>
-              <td onclick="selezione()" class="selezione" id="della">DELLA</td>
-              <td onclick="selezione()" class="selezione" id="alla">ALLA</td>
-              <td onclick="selezione()" class="selezione" id="dalla">DALLA</td>
-              <td onclick="selezione()" class="selezione" id="nella">NELLA</td>
+            <tr> 
+              <th scope="row" class="bg-dark text-white border-secondary ">LA</th>
+              <td onclick="selezione()" class="selezione font-italic" id="della">DELLA</td>
+              <td onclick="selezione()" class="selezione font-italic" id="alla">ALLA</td>
+              <td onclick="selezione()" class="selezione font-italic" id="dalla">DALLA</td>
+              <td onclick="selezione()" class="selezione font-italic" id="nella">NELLA</td>
               <td>/</td>
-              <td onclick="selezione()" class="selezione" id="sulla">SULLA</td>
+              <td onclick="selezione()" class="selezione font-italic" id="sulla">SULLA</td>
               <td>/</td>
               <td>/</td>
-              <td>/</td>
+              <td class="border-right">/</td>
             </tr>
             <tr>
               <th scope="row" class="bg-dark text-white border-secondary">L'</th>
-              <td onclick="selezione()" class="selezione" id="dell">DELL'</td>
-              <td onclick="selezione()" class="selezione" id="all">ALL'</td>
-              <td onclick="selezione()" class="selezione" id="dall">DALL'</td>
-              <td onclick="selezione()" class="selezione" id="nell">NELL'</td>
+              <td onclick="selezione()" class="selezione font-italic" id="dell">DELL'</td>
+              <td onclick="selezione()" class="selezione font-italic" id="all">ALL'</td>
+              <td onclick="selezione()" class="selezione font-italic" id="dall">DALL'</td>
+              <td onclick="selezione()" class="selezione font-italic" id="nell">NELL'</td>
               <td>/</td>
-              <td onclick="selezione()" class="selezione"id="sull">SULL'</td>
+              <td onclick="selezione()" class="selezione font-italic" id="sull">SULL'</td>
               <td>/</td>
               <td>/</td>
-              <td>/</td>
+              <td class="border-right">/</td>
             </tr>
             <tr>
               <th scope="row" class="bg-dark text-white border-secondary">I</th>
-              <td onclick="selezione()" class="selezione" id="dei">DEI</td>
-              <td onclick="selezione()" class="selezione" id="ai">AI</td>
-              <td onclick="selezione()" class="selezione" id="dai">DAI</td>
-              <td onclick="selezione()" class="selezione" id="nei">NEI</td>
-              <td onclick="selezione()" class="selezione" id="coi">COI</td>
-              <td onclick="selezione()" class="selezione" id="sui">SUI</td>
-              <td onclick="selezione()" class="selezione" id="pei">PEI</td>
+              <td onclick="selezione()" class="selezione font-italic" id="dei">DEI</td>
+              <td onclick="selezione()" class="selezione font-italic" id="ai">AI</td>
+              <td onclick="selezione()" class="selezione font-italic" id="dai">DAI</td>
+              <td onclick="selezione()" class="selezione font-italic" id="nei">NEI</td>
+              <td onclick="selezione()" class="selezione font-italic" id="coi">COI</td>
+              <td onclick="selezione()" class="selezione font-italic" id="sui">SUI</td>
+              <td onclick="selezione()" class="selezione font-italic" id="pei">PEI</td>
               <td>/</td>
-              <td>/</td>
+              <td class="border-right">/</td>
             </tr>
             <tr>
               <th scope="row" class="bg-dark text-white border-secondary">GLI</th>
-              <td onclick="selezione()" class="selezione" id="degli">DEGLI</td>
-              <td onclick="selezione()" class="selezione" id="agli">AGLI</td>
-              <td onclick="selezione()" class="selezione" id="dagli">DAGLI</td>
-              <td onclick="selezione()" class="selezione" id="negli">NEGLI</td>
+              <td onclick="selezione()" class="selezione font-italic" id="degli">DEGLI</td>
+              <td onclick="selezione()" class="selezione font-italic" id="agli">AGLI</td>
+              <td onclick="selezione()" class="selezione font-italic" id="dagli">DAGLI</td>
+              <td onclick="selezione()" class="selezione font-italic" id="negli">NEGLI</td>
+              <td >/</td>
+              <td onclick="selezione()" class="selezione font-italic" id="sugli">SUGLI</td>
               <td>/</td>
-              <td onclick="selezione()" class="selezione" id="sugli">SUGLI</td>
               <td>/</td>
-              <td>/</td>
-              <td>/</td>
+              <td class="border-right">/</td>
             </tr>
             <tr>
               <th scope="row" class="bg-dark text-white border-secondary">LE</th>
-              <td onclick="selezione()" class="selezione" id="delle">DELLE</td>
-              <td onclick="selezione()" class="selezione" id="alle">ALLE</td>
-              <td onclick="selezione()" class="selezione" id="dalle">DALLE</td>
-              <td onclick="selezione()" class="selezione" id="nelle">NELLE</td>
-              <td>/</td>
-              <td onclick="selezione()" class="selezione" id="sulle">SULLE</td>
-              <td>/</td>
-              <td>/</td>
-              <td>/</td>
+              <td onclick="selezione()" class="selezione font-italic border-bottom" id="delle">DELLE</td>
+              <td onclick="selezione()" class="selezione font-italic border-bottom" id="alle">ALLE</td>
+              <td onclick="selezione()" class="selezione font-italic border-bottom" id="dalle">DALLE</td>
+              <td onclick="selezione()" class="selezione font-italic border-bottom" id="nelle">NELLE</td>
+              <td class="border-bottom">/</td>
+              <td onclick="selezione()" class="selezione font-italic border-bottom" id="sulle">SULLE</td>
+              <td class="border-bottom">/</td>
+              <td class="border-bottom">/</td>
+              <td class="border-right border-bottom">/</td>
             </tr>
           </tbody>
         </table>
@@ -349,27 +347,34 @@
 
     <script>
 
-      $('#modalLivello').modal('show'); 
+      //$('#modalLivello').modal('show'); 
       var classeTitolo=titModal.className;
 
       function selezione(e){
         if (!e) var e = window.event;
         if (e.stopPropagation) e.stopPropagation();
-        prep=document.getElementById("prepFrase");
-        frase=document.getElementById("frase");
-        if(prep.className==e.target.id) fineGioco(" text-success","hai vinto!");
+        
+        if (numFrasi==0) fineGioco(" text-success","hai vinto!","Hai inserito tutte le preposizioni giuste");
         else{
-          if(tentativi>1){
-            document.getElementById("vita"+(5-tentativi)).style.opacity=0.5;
-            tentativi--;
-          }else fineGioco(" text-danger","hai perso!");
+          if(frase["preposizione"]==e.target.id) {
+            numFrasi--;
+            i++;
+            frase=frasi[i];
+            fraseDiv=document.getElementById("frase");
+            fraseDiv.innerHTML=frase["frase"];
+          }else{
+            if(tentativi>1){
+              document.getElementById("vita"+(5-tentativi)).style.opacity=0.5;
+              tentativi--;
+            }else fineGioco(" text-danger","hai perso!","Non hai inserito tutte le preposizioni giuste");
+          }
         }
       }
 
-      function fineGioco(colore,testo){
+      function fineGioco(colore,titolo,testo){
         titModal.className=classeTitolo+colore;
-        titModal.innerText=testo;
-        txtModal.innerText=frase.className;
+        titModal.innerText=titolo;
+        txtModal.innerText=testo;
         $('#myModal').modal('show');
       }
 
@@ -391,14 +396,25 @@
           document.getElementById("vita"+i).style.display="inline";
           document.getElementById("vita"+i).style.opacity=1;
         }
-        if(difficolta==0) tentativi=5;
-        else if(difficolta==1){
+        if(difficolta==0) { // facile
+          frasi=[{"frase":"l'istinto ______ animali","preposizione":"degli"},{"frase":"Nella maggior parte ______ casi","preposizione":"dei"},{"frase":"Bisogna dare da magiare ______ cani","preposizione":"ai"}];
+          numFrasi=2;
+          tentativi=5;
+        }else if(difficolta==1){ // normale
           tentativi=3;
+          frasi=[{"frase":" Questa sedia è ______ legno.","preposizione":"di"},{"frase":"Il palazzo ______ comune","preposizione":"del"},{"frase":"Bisogna dare da magiare ______ cani","preposizione":"ai"},{"frase":"Il treno ______ milano è in partenza","preposizione":"per"},{"frase":"Non posso vivere lontano ______ mia città","preposizione":"dalla"}];
+          numFrasi=4;
           for (let i=0; i<5-tentativi; i++) document.getElementById("vita"+i).style.display="none";
-        }else{
-          tentativi=1
+        }else{ // difficile
+          tentativi=1 
+          frasi=[{"frase":"Questo non è il mio computer è quello ______ mio amico Gilberto","preposizione":"del"},{"frase":"Nella maggior parte ______ casi","preposizione":"dei"},{"frase":"Sandro vive ______ i suoi genitori","preposizione":"con"},{"frase":"Roma è ______ tra Firenza e Napoli","preposizione":"tra"},{"frase":"______ anno 1492 Colombo ha scoperto l’America.","preposizione":"nell"},{"frase":"La notizia è ______ tutti i giornali","preposizione":"sui"},{"frase":"Mi piace andare ______ stadio","preposizione":"allo"}];
+          numFrasi=6;
           for (let i=0; i<5-tentativi; i++) document.getElementById("vita"+i).style.display="none";
         }
+        i=0;
+        frase=frasi[i];
+        fraseDiv=document.getElementById("frase");
+        fraseDiv.innerHTML=frase["frase"];
       }
 
     </script>
