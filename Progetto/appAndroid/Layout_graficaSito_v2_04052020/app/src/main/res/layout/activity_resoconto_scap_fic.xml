@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="5dp"
+    android:layout_gravity="center"
+    tools:context=".ResocontoScapFic">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+
+        <TextView
+            android:id="@+id/txtVittoria"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="25dp"
+            android:fontFamily="@font/montserrat_italic"
+            android:text="HAI VINTO!!!"
+            android:textColor="#FBE207"
+            android:textSize="50dp"
+            android:textStyle="bold"></TextView>
+        <ImageView
+            android:id="@+id/Immagine"
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="50dp"
+            android:src="@drawable/vittoria"></ImageView>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Punti:"
+            android:textStyle="bold"
+            android:textColor="#FDFCFC"
+            android:textSize="25dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="5dp"></TextView>
+
+        <TextView
+            android:id="@+id/txtPunti"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="5dp"
+            android:text="Scrivi punti"
+            android:textColor="#84F106"
+            android:textSize="25dp"
+            android:textStyle="bold"></TextView>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Errori:"
+            android:textStyle="bold"
+            android:textColor="#FDFCFC"
+            android:textSize="25dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="5dp"></TextView>
+        <TextView
+            android:id="@+id/txtErrori"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="5dp"
+            android:text="Scrivi Errori"
+            android:textColor="#F41202"
+            android:textSize="25dp"
+            android:textStyle="bold"></TextView>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="5dp"
+        android:text="Riprova"
+        android:textStyle="bold"></Button>
+</LinearLayout>
