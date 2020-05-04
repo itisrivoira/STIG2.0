@@ -12,16 +12,6 @@ const queryString = window.location.search;
 const urlParametri = new URLSearchParams(queryString);
 var livello = urlParametri.get('livello')
 livello = parseInt(livello);
-if (livello==1){
-  wrong_guesses = 4;
-}
-if (livello==2){
-  wrong_guesses = 2;
-}
-if (livello==3){
-  wrong_guesses = 0;
-}
-
 
 function selectLetter(l){
     if (can_play == false){
@@ -68,7 +58,7 @@ function selectLetter(l){
         // incortect letter guess
         wrong_guesses += 1;
         eval("document.hm.src=\"./img/hm" + wrong_guesses + ".gif\"");
-        if (livello == 1 && wrong_guesses == 10) {
+        if (livello == 1 && wrong_guesses == 6) {
           // lost
           var modal = document.getElementById("myModal");
           modal.style.display = "block";
@@ -80,7 +70,7 @@ function selectLetter(l){
 
           can_play = false;
         }
-        if (livello == 2 && wrong_guesses == 10) {
+        if (livello == 2 && wrong_guesses == 8) {
           // lost
           var modal = document.getElementById("myModal");
           modal.style.display = "block";
@@ -127,6 +117,37 @@ function selectWord(){
   document.game.displayWord.value = masked_word;
   display_word = masked_word;
 }
+
+function selectWord(diff){
+// can_play = true;
+// if (diff==0) {
+//     random_number = Math.round(Math.random() * (facile.length - 1));
+//     to_guess = listaParole[random_number];
+//
+// }else if (diff==1) {
+//     random_number = Math.round(Math.random() * (medio.length - 1));
+//     to_guess = listaParole[random_number];
+// }else{
+//     random_number = Math.round(Math.random() * (difficile.length - 1));
+//     to_guess = listaParole[random_number];
+  can_play = true;
+  var parolaCorrente = document.querySelector("#sinonimoOcontrario").getAttribute("value");
+  var posizione = listaParole.indexOf(parolaCorrente);
+  to_guess = words[posizione];
+  //document.game.theWord.value = to_guess;
+
+  // display masked word
+  masked_word = createMask(to_guess);
+  document.game.displayWord.value = masked_word;
+  display_word = masked_word;
+}
+
+function setDifficolta(d){
+    diff=d
+    document.getElementById("modalLivello").style.display = "none";
+    selectWord(diff);
+  }
+
 
 function createMask(m){
   mask = "";
