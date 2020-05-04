@@ -12,6 +12,16 @@ const queryString = window.location.search;
 const urlParametri = new URLSearchParams(queryString);
 var livello = urlParametri.get('livello')
 livello = parseInt(livello);
+if (livello==1){
+  wrong_guesses = 4;
+}
+if (livello==2){
+  wrong_guesses = 2;
+}
+if (livello==3){
+  wrong_guesses = 0;
+}
+
 
 function selectLetter(l){
     if (can_play == false){
@@ -58,7 +68,7 @@ function selectLetter(l){
         // incortect letter guess
         wrong_guesses += 1;
         eval("document.hm.src=\"./img/hm" + wrong_guesses + ".gif\"");
-        if (livello == 1 && wrong_guesses == 6) {
+        if (livello == 1 && wrong_guesses == 10) {
           // lost
           var modal = document.getElementById("myModal");
           modal.style.display = "block";
@@ -70,7 +80,7 @@ function selectLetter(l){
 
           can_play = false;
         }
-        if (livello == 2 && wrong_guesses == 8) {
+        if (livello == 2 && wrong_guesses == 10) {
           // lost
           var modal = document.getElementById("myModal");
           modal.style.display = "block";

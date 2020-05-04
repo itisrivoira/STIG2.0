@@ -107,7 +107,7 @@
     <div class="row">
       <!-- div Immagine -->
       <div class="col-4 pb-5">
-        <p class="mb-5"><img src="./img/hmstart.gif" height="250" width="150" name="hm"></p>
+        <p class="mb-5"><img src="" height="250" width="150" name="hm"></p>
       </div>
 
       <!-- div Lettere -->
