@@ -97,12 +97,14 @@ function selectLetter(l){
     }
 }
 
-function reset(){
-  selectWord();
-  document.game.usedLetters.value = "";
-  used_letters = "";
-  wrong_guesses = 0;
-  document.hm.src="./img/hmstart.gif";
+function reset()
+{
+
+document.game.usedLetters.value = "";
+used_letters = "";
+wrong_guesses = 0;
+document.hm.src="./img/hmstart.gif";
+document.getElementById("modalLivello").style.display = "block";
 }
 
 function selectWord(){
