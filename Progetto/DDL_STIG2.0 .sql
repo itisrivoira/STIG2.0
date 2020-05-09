@@ -17,7 +17,7 @@ CREATE TABLE IF NOT EXISTS `Utente` (
   `Cognome` VARCHAR(30) NULL,
   `Tipologia` VARCHAR(15) NULL,
   `email` VARCHAR(30) NULL,
-  `Password` VARCHAR(30) NOT NULL,
+  `Password` VARCHAR(100) NOT NULL,
   PRIMARY KEY (`idUtente`));
   
 /*Tabella Relazione Sede Utente*/
@@ -31,7 +31,7 @@ ALTER TABLE Frequenta ADD FOREIGN KEY (idUtente) REFERENCES Utente(idUtente);
 
 /*Tabella Gioco*/
 CREATE TABLE IF NOT EXISTS `Gioco` (
-  `idGioco` VARCHAR(15) NOT NULL,
+  `idGioco` VARCHAR(30) NOT NULL,
   `Nome` VARCHAR(30) NULL,
   PRIMARY KEY (`idGioco`));
   
