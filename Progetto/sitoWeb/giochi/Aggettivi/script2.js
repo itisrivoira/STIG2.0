@@ -11,15 +11,15 @@ var conta = 0;
 var listaTotale=[];
 
 function caricaArray(fileCsv) {
-    
+
     for (let index = 0; index < fileCsv.length; index++) {
         var agg = fileCsv[index].aggettivo
         var tipo = fileCsv[index].tipologia
-        arrayAggettivi.push({aggettivo:agg,tipologia:tipo}) 
+        arrayAggettivi.push({aggettivo:agg,tipologia:tipo})
     }
 
-    
-    
+
+
 }
 
 
@@ -28,7 +28,7 @@ function caricaArray(fileCsv) {
 
 document.addEventListener('dragstart', function(e){
     item = e.target;
-    
+
     e.dataTransfer.setData('text', item.id);
 }, false);
 
@@ -38,9 +38,9 @@ document.addEventListener('dragover', function(e){
 
 document.addEventListener('drop', function(e){
     addAggettivo(e,item);
-    
-    
-    
+
+
+
 
 
 }, false);
@@ -50,13 +50,11 @@ document.addEventListener('dragend', function(e){}, false);
 function addAggettivo(evento,item) {
     var tipo=evento.target.getAttribute('data-draggable')
     var arrayPrima=getArrayAggettivi(evento.dataTransfer.getData('text'))
-    
+
     if (!listaTotale.includes(item)) {
         listaTotale.push(item)
-       
+
     }
-    
-  
 
     switch(tipo) {
         case "qualificativi":
@@ -87,11 +85,9 @@ function addAggettivo(evento,item) {
             aggiungiAggettivo(evento,arrayInterrogativi,arrayPrima);
             controllaAggettivo(item, "interrogativi")
             break;
-
-       
       }
 
-      
+
 
 
 function getArrayAggettivi(agg) {
@@ -120,10 +116,10 @@ function getArrayAggettivi(agg) {
         return 0;
     }
 
-   
+
 }
 
-    
+
 }
 
 
@@ -132,17 +128,17 @@ function aggiungiAggettivo(e,arrayPUSH,arrayRM){
     if(!arrayPUSH.includes(agg) ){
         if (arrayRM!=0 /* lista degli array */) {
             arrayRM.splice(arrayRM.indexOf(agg),1);
-        } 
+        }
         arrayPUSH.push(agg);
     }
     e.target.appendChild(item);
     e.preventDefault();
-    
+
 }
 
 
 function controllaAggettivo(item,tipo){
-   
+
     var trovato = 0
 
     arrayAggettivi.forEach(element => {
@@ -150,7 +146,7 @@ function controllaAggettivo(item,tipo){
             if(element.tipologia == tipo){
                 var string1 = item.getAttribute("id")
                 var string2 = element.aggettivo
-                
+
                 var res = string1.localeCompare(string2)
                 if(res==0){
                     item.style.backgroundColor = "green"
@@ -171,21 +167,19 @@ function controllaAggettivo(item,tipo){
                            }
                         });
                     }
-                    
+
 
                 }else{
                     item.style.backgroundColor = "red"
                 }
-                
+
             }
 
         }
-        
-       
+
+
     });
 
 
-    
+
 }
-
-

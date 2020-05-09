@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -30,7 +28,7 @@
     background-repeat:no-repeat;
     background-size: 90% 20%;
     background-position: center;
-    
+
 }
 
 .altezza {
@@ -41,30 +39,30 @@
 
 #rcorners1 {
   border-radius: 25px;
-  
+
 }
 
 #rcorners2 {
   border-radius: 20px 0px 0px 0px;
-  
+
 }
 #rcorners3 {
   border-radius:  0px 20px 0px 0px;
-  
+
 }
 
 #rcorners4 {
   border-radius:  0px  0px 0px 20px;
-  
+
 }
 
 #rcorners5 {
   border-radius:  0px  0px 20px 0px ;
-  
+
 }
 
 
-  
+
   .custom {
     width: 45px !important;
 }
@@ -90,10 +88,8 @@
 
 </style>
 
+<body id="page-top" onload="loadDifficolta()" >
 
-
-<body id="page-top"onload="loadDifficolta()" >
-  
 
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
@@ -106,15 +102,15 @@
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item mx-0 mx-lg-1">
-           <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="../../utente/utente.html#giochi">Giochi</a> <!-- Icone dei vari giochi -->
+           <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="../../utente/utente.php#giochi">Giochi</a> <!-- Icone dei vari giochi -->
           </li>
           <li class="nav-item mx-0 mx-lg-1">
-            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="../../utente/profilo.html">Profilo</a>
+            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="../../utente/profilo.php">Profilo</a>
           </li>
           <li class="nav-item mx-0 mx-lg-1 regole">
             <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" onclick="regole()">Regole</a>
           </li>
-          
+
         </ul>
       </div>
     </div>
@@ -134,7 +130,7 @@
   </div>
 
 
-  
+
 
     <!-- Modal Livello -->
   <div class="modal" id="modalLivello" tabindex="-1" role="dialog" aria-labelledby="portfolioModal2Label" aria-hidden="true">
@@ -160,7 +156,7 @@
                 <button  type="submit" class="btn btn-warning btn-lg btn-block text-uppercase" name="difficolta" value="2" >medio</button>
                 <button  type="submit" class="btn btn-danger btn-lg btn-block text-uppercase" name="difficolta" value="3" >difficile</button>
                 </form>
-                
+
               </div>
             </div>
           </div>
@@ -198,13 +194,13 @@
         </div>
       </div>
 
-  
+
 
 
 
   <!-- Bootstrap core JavaScript -->
-  <script src="../vendor/jquery/jquery.min.js"></script>
-  <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../../vendor/jquery/jquery.min.js"></script>
+  <script src="../../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
   <!-- Plugin JavaScript -->
   <script src="../../vendor/jquery-easing/jquery.easing.min.js"></script>
@@ -214,21 +210,26 @@
 
   <!-- Custom scripts for this template -->
   <script src="../../js/freelancer.min.js"></script>
+  
+  <script type="text/javascript">
+    function loadDifficolta(){ document.getElementById("modalLivello").style.display = "block"; }
+
+  </script>
 
   <script>
     var fileCsv = <?php echo json_encode($csv); ?>;
-    caricaArray(fileCsv)
-    
+    caricaArray(fileCsv);
 
 
 
-   
 
 
-    
+
+
+
     function loadDifficolta(){ document.getElementById("modalLivello").style.display = "block"; }
-    
-    function nuovoGioco(){ window.open("../../utente/utente.html#giochi", target="_self"); }
+
+    function nuovoGioco(){ window.open("../../utente/utente.php#giochi", target="_self"); }
 
     function giocaAncora(){ window.location.reload(); }
 

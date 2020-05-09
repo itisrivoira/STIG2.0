@@ -30,7 +30,7 @@
     background-repeat:no-repeat;
     background-size: 90% 20%;
     background-position: center;
-    
+
 }
 
 .altezza {
@@ -41,30 +41,30 @@
 
 #rcorners1 {
   border-radius: 25px;
-  
+
 }
 
 #rcorners2 {
   border-radius: 20px 0px 0px 0px;
-  
+
 }
 #rcorners3 {
   border-radius:  0px 20px 0px 0px;
-  
+
 }
 
 #rcorners4 {
   border-radius:  0px  0px 0px 20px;
-  
+
 }
 
 #rcorners5 {
   border-radius:  0px  0px 20px 0px ;
-  
+
 }
 
 
-  
+
   .custom {
     width: 45px !important;
 }
@@ -93,7 +93,7 @@
 
 
 <body id="page-top" >
-  
+
 
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
@@ -138,38 +138,38 @@
 
   <!-- Gioco -->
   <div class="container mb-5">
-    
+
     <div class="row justify-content-center mb-4">
-      <div class="col-9 " > 
+      <div class="col-9 " >
         <div class=" mx-auto p-2" id="rcorners1" >
           <div class="row" >
 
           <?php
 
-            
-          
+
+
             $rows   = array_map('str_getcsv', file('listaAggettivi.csv'));
             $header = array_shift($rows);
             $csv    = array();
             foreach($rows as $row) {
                 $csv[] = array_combine($header, $row);
-                
+
             }
-            
-            
+
+
             include "stampaGioco.php";
-            
-          
+
+
           ?>
 
 
 
 
-          
+
 
           </div>
-          
-          
+
+
         </div>
       </div>
     </div>
@@ -187,17 +187,17 @@
       <div class="col-4 " > <div class="border altezza  bgimg border-success px-5" data-draggable="dimostrativi" draggable="false" style="height: 100%; background-image: url(img/dimo.png);"></div></div>
       <div class="col-4 " > <div class="border altezza bgimg border-danger px-5" data-draggable="qualificativi" draggable="false" id="rcorners1" style="height: 100%; background-image: url(img/qual.png);" ></div></div>
       <div class="col-4  " > <div class="border altezza bgimg border-warning px-5 " data-draggable="esclamativi" draggable="false"  style="height: 100%; background-image: url(img/escl.png);"></div></div>
-    
+
     </div>
-    
+
     <div class="row mb-3">
       <div class="col-4 " > <div class="border altezza bgimg border-secondary px-5" data-draggable="numerali" draggable="false" id="rcorners4" style="height: 100%; background-image: url(img/num.png);"></div></div>
       <div class="col-4 " > </div>
       <div class="col-4  " > <div class="border altezza bgimg border-dark px-5" data-draggable="interrogativi" draggable="false" id="rcorners5" style="height: 100%; background-image: url(img/interr.png);"></div></div>
     </div>
-    
-    
-    
+
+
+
   </div>
 
   <!-- Modal fine gioco -->
@@ -255,7 +255,7 @@
                 <button  type="submit" class="btn btn-warning btn-lg btn-block text-uppercase" name="difficolta" value="2" >medio</button>
                 <button  type="submit" class="btn btn-danger btn-lg btn-block text-uppercase" name="difficolta" value="3" >difficile</button>
                 </form>
-                
+
               </div>
             </div>
           </div>
@@ -325,8 +325,8 @@
 
 
   <!-- Bootstrap core JavaScript -->
-  <script src="../vendor/jquery/jquery.min.js"></script>
-  <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../../vendor/jquery/jquery.min.js"></script>
+  <script src="../../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
   <!-- Plugin JavaScript -->
   <script src="../../vendor/jquery-easing/jquery.easing.min.js"></script>
@@ -343,12 +343,12 @@
 
 
 
-   
 
 
-    
+
+
     function loadDifficolta(){ document.getElementById("modalLivello").style.display = "block"; }
-    
+
     function nuovoGioco(){ window.open("../../utente/utente.html#giochi", target="_self"); }
 
     function giocaAncora(){ window.location.reload(); }
