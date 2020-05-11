@@ -6,7 +6,7 @@ var words = new Array("FACILE","SOPRA","BRUTTO","PICCOLO","SBAGLIATO");
 var to_guess = "";
 var display_word = "";
 var used_letters = "";
-var wrong_guesses = 0;
+var wrong_guesses = 3;
 
 const queryString = window.location.search;
 const urlParametri = new URLSearchParams(queryString);
@@ -52,37 +52,15 @@ function selectLetter(l){
             modal.style.display = "block";
             txtModal.style.color="green";
             document.getElementById("txtModal").innerText="hai vinto!";
+            document.getElementById("txtModalWord").innerText="La parola è: "+ to_guess;
+
             can_play = false;
         }
     }else{
         // incortect letter guess
         wrong_guesses += 1;
         eval("document.hm.src=\"./img/hm" + wrong_guesses + ".gif\"");
-        if (livello == 1 && wrong_guesses == 6) {
-          // lost
-          var modal = document.getElementById("myModal");
-          modal.style.display = "block";
-
-
-          txtModal.style.color="red";
-          document.getElementById("txtModalWord").innerText="Parola --> "+to_guess;
-          document.getElementById("txtModal").innerText="hai Perso!";
-
-          can_play = false;
-        }
-        if (livello == 2 && wrong_guesses == 8) {
-          // lost
-          var modal = document.getElementById("myModal");
-          modal.style.display = "block";
-
-
-          txtModal.style.color="red";
-          document.getElementById("txtModalWord").innerText="Parola --> "+to_guess;
-          document.getElementById("txtModal").innerText="hai Perso!";
-
-          can_play = false;
-        }
-        if (livello == 3 && wrong_guesses == 10) {
+        if (wrong_guesses == 10) {
           // lost
           var modal = document.getElementById("myModal");
           modal.style.display = "block";
@@ -102,8 +80,8 @@ function reset()
 
 document.game.usedLetters.value = "";
 used_letters = "";
-wrong_guesses = 0;
-document.hm.src="./img/hmstart.gif";
+wrong_guesses = 3;
+document.hm.src="./img/hm3.gif";
 document.getElementById("modalLivello").style.display = "block";
 }
 
@@ -121,17 +99,6 @@ function selectWord(){
 }
 
 function selectWord(diff){
-// can_play = true;
-// if (diff==0) {
-//     random_number = Math.round(Math.random() * (facile.length - 1));
-//     to_guess = listaParole[random_number];
-//
-// }else if (diff==1) {
-//     random_number = Math.round(Math.random() * (medio.length - 1));
-//     to_guess = listaParole[random_number];
-// }else{
-//     random_number = Math.round(Math.random() * (difficile.length - 1));
-//     to_guess = listaParole[random_number];
   can_play = true;
   var parolaCorrente = document.querySelector("#sinonimoOcontrario").getAttribute("value");
   var posizione = listaParole.indexOf(parolaCorrente);

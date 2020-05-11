@@ -221,8 +221,15 @@
                   </div>
                   <div class="divider-custom-line"></div>
                 </div>
-                <!-- Portfolio Modal - Text -->
                 <h4 class="mb-5" id="txtModal"></h4>
+                <!-- Portfolio Modal - Text -->
+                <div class="row">
+                  <div class="col-2"></div>
+                  <div class="col-8">
+                    <h5 class="mb-5 text-left" id="modalFrasi"></h5>
+                  </div>
+                  <div class="col-2"></div>     
+                </div>               
                 <button type="button" onclick="giocaAncora()" class="btn btn-secondary float-left ">Gioca Ancora</button>
                 <button type="button" onclick="nuovoGioco()" class="btn btn-secondary float-right">Altro gioco</button>
               </div>
@@ -285,9 +292,9 @@
                   <div class="divider-custom-line"></div>
                 </div>
                 <!-- Portfolio Modal - Text -->
-                <button onclick="setDifficolta(0)" type="button" class="btn btn-success btn-lg btn-block text-uppercase">facile</button>
-                <button onclick="setDifficolta(1)" type="button" class="btn btn-warning text-white btn-lg btn-block text-uppercase">normale</button>
-                <button onclick="setDifficolta(2)" type="button" class="btn btn-danger btn-lg btn-block text-uppercase">difficile</button>
+                <button onclick="setDifficolta(1)" type="button" class="btn btn-success btn-lg btn-block text-uppercase">facile</button>
+                <button onclick="setDifficolta(2)" type="button" class="btn btn-warning text-white btn-lg btn-block text-uppercase">normale</button>
+                <button onclick="setDifficolta(3)" type="button" class="btn btn-danger btn-lg btn-block text-uppercase">difficile</button>
               </div>
             </div>
           </div>
@@ -347,14 +354,20 @@
 
     <script>
 
-      //$('#modalLivello').modal('show'); 
+      <?php
+        //Connessione
+        include_once(__DIR__.'/../../Connessione.php');
+        $connessione = Connessione::apriConnessione();
+      ?>
+
+      $('#modalLivello').modal('show'); 
       var classeTitolo=titModal.className;
 
       function selezione(e){
         if (!e) var e = window.event;
         if (e.stopPropagation) e.stopPropagation();
         
-        if (numFrasi==0) fineGioco(" text-success","hai vinto!","Hai inserito tutte le preposizioni giuste");
+        if (numFrasi==1) fineGioco(" text-success","hai vinto!","Hai inserito tutte le preposizioni giuste");
         else{
           if(frase["preposizione"]==e.target.id) {
             numFrasi--;
@@ -375,6 +388,10 @@
         titModal.className=classeTitolo+colore;
         titModal.innerText=titolo;
         txtModal.innerText=testo;
+        frasi.forEach(frase => {
+          var s=frase['frase'].split("______");
+          document.getElementById('modalFrasi').innerHTML+='- '+s[0]+'<span class="text-info text-uppercase"> '+frase["preposizione"]+'</span>'+s[1]+'<br/>';
+        });
         $('#myModal').modal('show');
       }
 
@@ -396,19 +413,55 @@
           document.getElementById("vita"+i).style.display="inline";
           document.getElementById("vita"+i).style.opacity=1;
         }
-        if(difficolta==0) { // facile
-          frasi=[{"frase":"l'istinto ______ animali","preposizione":"degli"},{"frase":"Nella maggior parte ______ casi","preposizione":"dei"},{"frase":"Bisogna dare da magiare ______ cani","preposizione":"ai"}];
-          numFrasi=2;
+        if(difficolta==1) {
+          //Facile
+          frasi=[];
+          <?php
+            //Frasi
+            $querypreposizioni="SELECT DomandaPrep.testo, RispostaPrep.testoRisposta FROM DomandaPrep, RispostaPrep WHERE DomandaPrep.difficolta=1 AND DomandaPrep.idDomandaPrep=RispostaPrep.idDomandaPrep AND RispostaPrep.flagPrep=true"; 
+            $risultato1=$connessione->query($querypreposizioni);
+            while($tab=$risultato1->fetch_array(MYSQLI_NUM)){
+              echo 'frasi.push({"frase":"'.$tab[0].'","preposizione":"'.$tab[1].'"});';
+            }
+            //Numero di Frasi
+            $querypreposizioni="SELECT count(DomandaPrep.testo) FROM DomandaPrep WHERE DomandaPrep.difficolta=1"; 
+            $risultato1=$connessione->query($querypreposizioni);
+            while($tab=$risultato1->fetch_array(MYSQLI_NUM)) echo 'numFrasi='.$tab[0];
+          ?> 
           tentativi=5;
-        }else if(difficolta==1){ // normale
+        }else if(difficolta==2){ 
+          //Normale
+          frasi=[];
+          <?php
+            //Frasi
+            $querypreposizioni="SELECT DomandaPrep.testo, RispostaPrep.testoRisposta FROM DomandaPrep, RispostaPrep WHERE DomandaPrep.difficolta=2 AND DomandaPrep.idDomandaPrep=RispostaPrep.idDomandaPrep AND RispostaPrep.flagPrep=true"; 
+            $risultato1=$connessione->query($querypreposizioni);
+            while($tab=$risultato1->fetch_array(MYSQLI_NUM)) echo 'frasi.push({"frase":"'.$tab[0].'","preposizione":"'.$tab[1].'"});';
+            //Numero di Frasi
+            $querypreposizioni="SELECT count(DomandaPrep.testo) FROM DomandaPrep WHERE DomandaPrep.difficolta=2"; 
+            $risultato1=$connessione->query($querypreposizioni);
+            while($tab=$risultato1->fetch_array(MYSQLI_NUM)){
+              echo 'numFrasi='.$tab[0];
+            }  
+          ?> 
           tentativi=3;
-          frasi=[{"frase":" Questa sedia è ______ legno.","preposizione":"di"},{"frase":"Il palazzo ______ comune","preposizione":"del"},{"frase":"Bisogna dare da magiare ______ cani","preposizione":"ai"},{"frase":"Il treno ______ milano è in partenza","preposizione":"per"},{"frase":"Non posso vivere lontano ______ mia città","preposizione":"dalla"}];
-          numFrasi=4;
           for (let i=0; i<5-tentativi; i++) document.getElementById("vita"+i).style.display="none";
-        }else{ // difficile
+        }else{ 
+          // Difficile
+          frasi=[];
+          <?php
+            //Frasi
+            $querypreposizioni="SELECT DomandaPrep.testo, RispostaPrep.testoRisposta FROM DomandaPrep, RispostaPrep WHERE DomandaPrep.difficolta=3 AND DomandaPrep.idDomandaPrep=RispostaPrep.idDomandaPrep AND RispostaPrep.flagPrep=true"; 
+            $risultato1=$connessione->query($querypreposizioni);
+            while($tab=$risultato1->fetch_array(MYSQLI_NUM)) echo 'frasi.push({"frase":"'.$tab[0].'","preposizione":"'.$tab[1].'"});';
+            //Numero di Frasi
+            $querypreposizioni="SELECT count(DomandaPrep.testo) FROM DomandaPrep WHERE DomandaPrep.difficolta=3"; 
+            $risultato1=$connessione->query($querypreposizioni);
+            while($tab=$risultato1->fetch_array(MYSQLI_NUM)){
+              echo 'numFrasi='.$tab[0];
+            }
+          ?> 
           tentativi=1 
-          frasi=[{"frase":"Questo non è il mio computer è quello ______ mio amico Gilberto","preposizione":"del"},{"frase":"Nella maggior parte ______ casi","preposizione":"dei"},{"frase":"Sandro vive ______ i suoi genitori","preposizione":"con"},{"frase":"Roma è ______ tra Firenza e Napoli","preposizione":"tra"},{"frase":"______ anno 1492 Colombo ha scoperto l’America.","preposizione":"nell"},{"frase":"La notizia è ______ tutti i giornali","preposizione":"sui"},{"frase":"Mi piace andare ______ stadio","preposizione":"allo"}];
-          numFrasi=6;
           for (let i=0; i<5-tentativi; i++) document.getElementById("vita"+i).style.display="none";
         }
         i=0;
@@ -422,3 +475,6 @@
   </body>
 
 </html>
+<?php
+  $connessione->close();
+?>

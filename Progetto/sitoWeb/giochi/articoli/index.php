@@ -130,14 +130,18 @@
           <img id="vita4" src="./img/cuore.png">
         </div>
         <ul class="text-center">
-          <li data-draggable="item" draggable="true" class="articoli text-center" id="il"> IL </li>
-          <li data-draggable="item" draggable="true" class="articoli text-center" id="lo"> LO </li>
-          <li data-draggable="item" draggable="true" class="articoli text-center" id="la"> LA </li>
-          <li data-draggable="item" draggable="true" class="articoli text-center" id="i"> I </li>
-          <li data-draggable="item" draggable="true" class="articoli text-center" id="gli"> GLI </li>
-          <li data-draggable="item" draggable="true" class="articoli text-center" id="le"> LE </li>
-          <li data-draggable="item" draggable="true" class="articoli text-center" id="uno"> UNO </li>
-          <li data-draggable="item" draggable="true" class="articoli text-center" id="una"> UNA </li>
+          <?php
+            //Connessione
+            include_once(__DIR__.'/../../Connessione.php');
+            $connessione = Connessione::apriConnessione();
+            $queryarticoli="select DomandaArticoli.testo from DomandaArticoli"; 
+            $risultato=$connessione->query($queryarticoli);
+            while($row=$risultato->fetch_array(MYSQLI_NUM)){
+                echo <<<paginaHTML
+                  <li data-draggable="item" draggable="true" class="articoli text-center text-uppercase" id="{$row[0]}"> {$row[0]} </li>
+                paginaHTML;
+            }
+          ?>
         </ul>
       </div>
     </div>
@@ -287,8 +291,19 @@
 
     <script>
 
-      var indeterminativi=['uno','una'];
-      var determinativi=['il','lo','la','i','gli','le'];
+      var indeterminativi=[];
+      var determinativi=[];
+
+      <?php
+        $queryarticoli="select DomandaArticoli.testo, RispostaArticoli.testoRisposta FROM DomandaArticoli, RispostaArticoli WHERE DomandaArticoli.idDomandaArticoli=RispostaArticoli.idDomandaArticoli AND RispostaArticoli.flagPrep=true"; 
+        $risultato=$connessione->query($queryarticoli);
+        while($tab=$risultato->fetch_array(MYSQLI_NUM)){
+            if($tab[1]=='determinativi') echo 'determinativi.push("'.$tab[0].'");';
+            else echo 'indeterminativi.push("'.$tab[0].'");';
+        }
+      ?>
+      alert(indeterminativi);
+      alert(determinativi);
       var indUtente=[];
       var detUtente=[];
       var cont=0;
@@ -325,7 +340,7 @@
 
       document.addEventListener('dragend', function(e){
         item = null;
-        if(cont==8){
+        if(cont==9){
           var vinto=true;
           var c=0;
           do{
@@ -395,3 +410,6 @@
 
   </body>
 </html>
+<?php
+  $connessione->close();
+?>
