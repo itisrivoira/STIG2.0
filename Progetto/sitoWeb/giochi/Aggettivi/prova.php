@@ -1,5 +1,5 @@
 <?php  
-$connect = mysqli_connect("localhost", "root", "", "5C_STIG");
+$connect = mysqli_connect("127.0.0.1", "root", "", "5C_STIG");
 if(isset($_POST["submit"])){
   if($_FILES['file']['name']){
     $filename = explode(".", $_FILES['file']['name']);

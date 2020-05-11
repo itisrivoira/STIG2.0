@@ -1,6 +1,7 @@
 <?php
 include_once(__DIR__.'/../../Connessione.php');
 $conn = Connessione::apriConnessione();
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -30,8 +31,8 @@ $conn = Connessione::apriConnessione();
 <style>
   .bgimg {
     background-repeat:no-repeat;
-    background-size: 90% 20%;
-    background-position: top 8% center;
+    background-size: 90% 35px;
+    background-position: top 8px center;
 
 }
 
@@ -45,7 +46,7 @@ $conn = Connessione::apriConnessione();
 .bgimgEsclInterr {
   background-image: url(img/escl.png),url(img/interr.png);
     background-repeat:no-repeat;
-    background-size: 90% 20%;
+    background-size: 90% 35px;
     background-position: 
     top 10px center ,
     bottom 10px center ;
@@ -241,7 +242,38 @@ $conn = Connessione::apriConnessione();
                   <h4 class="mb-5 text-uppercase" id="txtModal"></h4>
                   <h4 class="mb-5 text-uppercase" id="txtModalWord"></h4>
                   <button type="button" onclick="loadDifficolta()" class="btn btn-secondary float-left ">Gioca Ancora</button>
+                  <button type="button" onclick="modalClose()" class="btn btn-secondary float-center ">Visualizza Errori</button>
                   <button type="button" onclick="nuovoGioco()" class="btn btn-secondary float-right">Altro gioco</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal controllo fine -->
+  <div class="modal" id="modalFine" tabindex="-1" role="dialog" aria-labelledby="portfolioModal2Label" aria-hidden="true">
+    <div class="modal-dialog modal-xl" role="document">
+      <div class="modal-content">
+          <div class="modal-body text-center">
+            <div class="container">
+              <div class="row justify-content-center">
+                <div class="col-lg-8">
+                  <!-- Portfolio Modal - Title -->
+                  <h2 class="portfolio-modal-title text-secondary text-uppercase mb-1">inserisci tutti gli aggettivi</h2>
+                  <!-- Icon Divider -->
+                  <div class="divider-custom">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon">
+                      <i class="fas fa-star"></i>
+                    </div>
+                    <div class="divider-custom-line"></div>
+                  </div>
+                  <!-- Portfolio Modal - Text -->
+                
+                 
+                  <button type="button" onclick="hideModal()" class="btn btn-secondary float-right">OK</button>
                 </div>
               </div>
             </div>
@@ -364,9 +396,9 @@ $conn = Connessione::apriConnessione();
 
 
 
+    function modalClose(){ document.getElementById("myModal").style.display = "none"; }
 
-
-
+    function hideModal(){ document.getElementById("modalFine").style.display = "none"; }
 
     function loadDifficolta(){ document.getElementById("modalLivello").style.display = "block"; }
 

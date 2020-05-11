@@ -18,7 +18,7 @@
  </div>";
 
 if ($difficolta == 1) {
-  $arrayAggFinale=getArrayAggDaStampare(10); 
+  $arrayAggFinale=getArrayAggDaStampare(2); 
     echo "<div class='col-4 ' id='gioco'>";
     echo "<div class='row ' >";
     echo "<div class='col text-center' >";
@@ -115,66 +115,57 @@ function getArrayAggDaStampare($nAgg){
   include_once(__DIR__.'/../../Connessione.php');
   $conn = Connessione::apriConnessione();
   $conn->query("SET NAMES 'utf8'");
-  $contQualificativi=1;
-  $contIndefiniti=1;
-  $contPossessivi=1;
-  $contNumerali=1;
-  $contIntEscl=1;
-  $contDimostrativi=1;
   $arrayAggTrovati=array();
 
-  
-  for ($i=0; $i < $nAgg ; $i++) { 
-    $nRand=rand(1, 5); //cambiare al 6
-    $trovato=true;
-    
-      switch ($nRand) {
-        case 1:
-          //controllare se > 5 non entra
-          $query = getQuery("qualificativi");
-          $agg = mysqli_query($conn, $query);
-          $contQualificativi++;
-          $trovato=false;
-          break;
-        case 2:
-          $query = getQuery("dimostrativi");
-          $agg = mysqli_query($conn, $query);
-          $contDimostrativi++;
-          $trovato=false;
-          break;
-        case 3:
-          $query = getQuery("indefiniti");
-          $agg = mysqli_query($conn, $query);
-          $contIndefiniti++;
-          $trovato=false;
+  while (count($arrayAggTrovati) < $nAgg) {
+    $nRand=rand(1, 6); 
+    switch ($nRand) {
+      case 1:
+        //controllare se > 5 non entra
+        $query = getQuery("qualificativi");
+        $agg = mysqli_query($conn, $query);
+     
         break;
-        case 4:
-          $query = getQuery("numerali");
-          $agg = mysqli_query($conn, $query);
-          $contNumerali++;
-          $trovato=false;
-        break;
-        case 5:
-          $query = getQuery("possessivi");
-          $agg = mysqli_query($conn, $query);
-          $contPossessivi++;
-          $trovato=false;
-        break;
-        case 6:
-          $contIntEscl++; //da fare bene
-        break;
-      }
+      case 2:
+        $query = getQuery("dimostrativi");
+        $agg = mysqli_query($conn, $query);
+       
       
-    
+        break;
+      case 3:
+        $query = getQuery("indefiniti");
+        $agg = mysqli_query($conn, $query);
+       
+
+      break;
+      case 4:
+        $query = getQuery("numerali");
+        $agg = mysqli_query($conn, $query);
+       
    
-    while($rowAgg = mysqli_fetch_array($agg)){
-      //controllare se già presente non salva e rifare il ciclo
-      array_push($arrayAggTrovati,$rowAgg[0]);
-    break;
+      break;
+      case 5:
+        $query = getQuery("possessivi");
+        $agg = mysqli_query($conn, $query);
+       
+     
+      break;
+      case 6:
+       
+          $query = getQuery("esclamativiInterrogativi");
+          $agg = mysqli_query($conn, $query);
+       
+      break;
     }
 
-   
+    while($rowAgg = mysqli_fetch_array($agg)){
+      if (!in_array($rowAgg[0], $arrayAggTrovati)){ 
+        array_push($arrayAggTrovati,$rowAgg[0]);
+      break;
+      } 
+    }
   }
+  
 
   return $arrayAggTrovati;
 }
@@ -203,7 +194,7 @@ echo "<div class='col-4 '>
   </div>
   <div class='row justify-content-center' name='boxAggettivi'> 
     <div class='border bgimgEsclInterr altezza border-warning my-2 '  id='rcorners5' ' data-draggable='esclamativiInterrogativi' draggable='false'>
-      <div class='boxAgg  mt-5 mx-auto' ></div>
+      <div class='boxAgg  my-5 mx-auto' ></div>
     </div>
   </div>
  </div>";
