@@ -1,34 +1,21 @@
 
-var arrayAggettivi=[] //verrà caricato dagli aggettivi che chiediamo al server con funzione random
-var arrayQualificativi=[];
-var arrayDimostrativi=[];
-var arrayNumerali=[];
-var arrayIndefiniti=[];
-var arrayEsclamativi=[];
-var arrayInterrogativi=[];
-var arrayPossessivi=[];
-var conta = 0;
-var listaTotale=[];
+var arrayAssAggettivi=[] //verrà caricato dagli aggettivi che chiediamo al server con funzione random
 
-function caricaArray(fileCsv) {
 
-    for (let index = 0; index < fileCsv.length; index++) {
-        var agg = fileCsv[index].aggettivo
-        var tipo = fileCsv[index].tipologia
-        arrayAggettivi.push({aggettivo:agg,tipologia:tipo})
+function caricaArray(provaArrayPassato) {
+    
+    for (const key in provaArrayPassato) {
+        arrayAssAggettivi.push({aggettivo:key,tipologia:provaArrayPassato[key]})
     }
-
-
+   
+    
 
 }
 
 
 
-
-
 document.addEventListener('dragstart', function(e){
     item = e.target;
-
     e.dataTransfer.setData('text', item.id);
 }, false);
 
@@ -37,149 +24,98 @@ document.addEventListener('dragover', function(e){
 }, false);
 
 document.addEventListener('drop', function(e){
-    addAggettivo(e,item);
-
-
-
-
+   
+   switch (e.target.getAttribute('data-draggable')) {
+       case "possessivi":
+            var nome = "rcorners2"
+            var c=document.getElementById(nome).children
+            c[0].appendChild(item)
+        break;
+        case "dimostrativi":
+            var c=document.getElementById("dimo").children
+            c[0].appendChild(item)
+        break;
+        case "indefiniti":
+            var c=document.getElementById("rcorners4").children
+            c[0].appendChild(item)
+        break;
+        case "qualificativi":
+            var c=document.getElementById("rcorners3").children
+            c[0].appendChild(item)
+        break;
+        case "numerali":
+            var c=document.getElementById("num").children
+            c[0].appendChild(item)
+        break;
+        case "esclamativiInterrogativi":
+            var c=document.getElementById("rcorners5").children
+            c[0].appendChild(item)
+        break;
+        case "item":
+            try {
+                var a = e.target.parentElement
+                var c=document.getElementById(a.parentElement.id).children
+                c[0].appendChild(item)
+              }
+              catch(err) {
+              
+              }
+           
+        break;
+        
+   
+       default:
+           
+           break;
+   }
+    
 
 }, false);
 
 document.addEventListener('dragend', function(e){}, false);
 
-function addAggettivo(evento,item) {
-    var tipo=evento.target.getAttribute('data-draggable')
-    var arrayPrima=getArrayAggettivi(evento.dataTransfer.getData('text'))
-
-    if (!listaTotale.includes(item)) {
-        listaTotale.push(item)
-
-    }
-
-    switch(tipo) {
-        case "qualificativi":
-            aggiungiAggettivo(evento,arrayQualificativi,arrayPrima);
-            controllaAggettivo(item, "qualificativi")
-          break;
-        case "possessivi":
-            aggiungiAggettivo(evento,arrayPossessivi,arrayPrima);
-            controllaAggettivo(item, "possessivi")
-          break;
-        case "dimostrativi":
-            aggiungiAggettivo(evento,arrayDimostrativi,arrayPrima);
-            controllaAggettivo(item, "dimostrativi")
-            break;
-        case "numerali":
-            aggiungiAggettivo(evento,arrayNumerali,arrayPrima);
-            controllaAggettivo(item, "numerali")
-            break;
-        case "indefiniti":
-            aggiungiAggettivo(evento,arrayIndefiniti,arrayPrima);
-            controllaAggettivo(item, "indefiniti")
-          break;
-        case "esclamativi":
-            aggiungiAggettivo(evento,arrayEsclamativi,arrayPrima);
-            controllaAggettivo(item, "esclamativi")
-          break;
-        case "interrogativi":
-            aggiungiAggettivo(evento,arrayInterrogativi,arrayPrima);
-            controllaAggettivo(item, "interrogativi")
-            break;
-      }
 
 
+function fine() {
+    var NumAgg = 0;
+    var finito=false;
 
-
-function getArrayAggettivi(agg) {
-    if(arrayQualificativi.includes(agg) ){
-        return arrayQualificativi;
-    }
-    else if(arrayDimostrativi.includes(agg) ){
-        return arrayDimostrativi;
-    }
-    else if(arrayEsclamativi.includes(agg) ){
-        return arrayEsclamativi;
-    }
-    else if(arrayIndefiniti.includes(agg) ){
-        return arrayIndefiniti;
-    }
-    else if(arrayPossessivi.includes(agg) ){
-        return arrayPossessivi;
-    }
-    else if(arrayInterrogativi.includes(agg) ){
-        return arrayInterrogativi;
-    }
-    else if(arrayNumerali.includes(agg) ){
-        return arrayNumerali;
-    }
-    else{
-        return 0;
-    }
-
-
-}
-
-
-}
-
-
-function aggiungiAggettivo(e,arrayPUSH,arrayRM){
-    var agg = e.dataTransfer.getData('text');
-    if(!arrayPUSH.includes(agg) ){
-        if (arrayRM!=0 /* lista degli array */) {
-            arrayRM.splice(arrayRM.indexOf(agg),1);
-        }
-        arrayPUSH.push(agg);
-    }
-    e.target.appendChild(item);
-    e.preventDefault();
-
-}
-
-
-function controllaAggettivo(item,tipo){
-
-    var trovato = 0
-
-    arrayAggettivi.forEach(element => {
-        if(trovato == 0){
-            if(element.tipologia == tipo){
-                var string1 = item.getAttribute("id")
-                var string2 = element.aggettivo
-
-                var res = string1.localeCompare(string2)
-                if(res==0){
-                    item.style.backgroundColor = "green"
-                    trovato = 1
-                    var contaGiuste = 0;
-                    if(listaTotale.length == conta){
-                        listaTotale.forEach(element => {
-                           if(element.style.backgroundColor=="green"){
-                                contaGiuste++;
-                           }
-                           if(contaGiuste == conta){
-                            setTimeout(function(){
-                                var modal = document.getElementById("myModal");
-                                modal.style.display = "block";
-                                txtModal.style.color="green";
-                                document.getElementById("txtModal").innerText="hai vinto!";
-                            }, 1000);
-                           }
-                        });
-                    }
-
-
-                }else{
-                    item.style.backgroundColor = "red"
-                }
-
-            }
-
-        }
-
-
+    var contAgg = document.getElementsByName("boxAggettivi")
+    contAgg.forEach(divPadre => {
+       var nFigliFinale = divPadre.children[0].children[0].childElementCount
+       NumAgg = Number(NumAgg)+Number(nFigliFinale)
+       
     });
+    
+    var nFigliRimasti=document.getElementById("gioco").children[1].children[0];
+    console.log(nFigliRimasti.childElementCount )
+    var string1 = "divDifficile"
+    if (nFigliRimasti.childElementCount==1 && string1.localeCompare(nFigliRimasti.children[0].children[0].getAttribute("name"))==0) {
+        var contaFigliRimasti = nFigliRimasti.children[0].children[0].childElementCount
+        contaFigliRimasti = contaFigliRimasti + nFigliRimasti.children[0].children[1].childElementCount
+        if (contaFigliRimasti == 0) {
+            finito = true
+        }else{
+           //show modal
+        }
+    } else if(document.getElementById("gioco").children[1].children[0].childElementCount==0) {
+        finito = true
+    
+    }else{
+        //show modal
+    }
 
+    if(finito){
+        //controllo
+        
+    }
+    
 
 
 }
+
+
+
+
+
+

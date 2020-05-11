@@ -24,7 +24,7 @@
 <style>
 
 
-  
+
 
   ul{
     cursor: pointer;
@@ -77,10 +77,10 @@
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item mx-0 mx-lg-1">
-           <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="../../utente/utente.html#giochi">Giochi</a> <!-- Icone dei vari giochi -->
+           <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="../../utente/utente.php#giochi">Giochi</a> <!-- Icone dei vari giochi -->
           </li>
           <li class="nav-item mx-0 mx-lg-1">
-            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="../../utente/profilo.html">Profilo</a>
+            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="../../utente/profilo.php">Profilo</a>
           </li>
           <li class="nav-item mx-0 mx-lg-1 regole">
             <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" onclick="regole()">Regole</a>
@@ -116,16 +116,16 @@
       <div class="col-4 pb-5">
         <p class="mb-5"><img src="./img/hmstart.gif" height="250" width="150" name="hm"></p>
       </div>
-      
+
       <!-- div Lettere -->
       <div class="col-8 mt-5">
 
         <!-- script per il gioco -->
         <script src="script.js">
         </script>
-        
 
-        <div class="row mb-4"> 
+
+        <div class="row mb-4">
           <form name="game" class="mx-auto">
             <p class="text-uppercase text-secondary ">Parola : <input type="text" name="displayWord"></p>
             <p class="text-uppercase text-secondary ">Lettere: <input type="text" name="usedLetters"></p>
@@ -171,16 +171,16 @@
         </div>
 
         <div class="row m-4"></div>
-      
+
         <div class="row justify-content-end">
           <input type="button" value="Ricomincia" class="btn btn-secondary mx-1 " onclick="reset()"/>
         </div>
-      
 
-          
-          
+
+
+
       </div>
-    </div>  
+    </div>
   </div>
 
   <!-- Modal Livello -->
@@ -216,7 +216,7 @@
 
 
 
-    
+
 
 
 
@@ -287,9 +287,9 @@
 
 
 
-  
 
-   
+
+
 
   <!-- Footer -->
   <footer class="footer text-center">
@@ -321,6 +321,36 @@
   </footer>
 
 
+    <?php
+
+  include_once(__DIR__.'/../../Connessione.php');
+  $connessione = Connessione::apriConnessione();
+
+  //Difficoltà Facile
+  $resNomi = mysqli_query($connessione, "SELECT DomandaNomi.punti, DomandaNomi.parola, DomandaNomi.difficolta, RispostaNomi.testoRisposta FROM DomandaNomi, RispostaNomi WHERE DomandaNomi.idRispostaNomi = RispostaNomi.idRispostaNomi And DomandaNomi.difficolta = 1");
+  $arrFacile = [];
+  while($rowNomi = mysqli_fetch_array($resNomi, MYSQLI_ASSOC)){
+    array_push($arrFacile, $rowNomi['testoRisposta']);
+  }
+
+  //Difficoltà Normale
+  $resNomi = mysqli_query($connessione, "SELECT DomandaNomi.punti, DomandaNomi.parola, DomandaNomi.difficolta, RispostaNomi.testoRisposta FROM DomandaNomi, RispostaNomi WHERE DomandaNomi.idRispostaNomi = RispostaNomi.idRispostaNomi And DomandaNomi.difficolta = 2");
+  $arrMedio = [];
+  while($rowNomi = mysqli_fetch_array($resNomi, MYSQLI_ASSOC)){
+    array_push($arrMedio, $rowNomi['testoRisposta']);
+  }
+
+  //Difficoltà Difficile
+  $resNomi = mysqli_query($connessione, "SELECT DomandaNomi.punti, DomandaNomi.parola, DomandaNomi.difficolta, RispostaNomi.testoRisposta FROM DomandaNomi, RispostaNomi WHERE DomandaNomi.idRispostaNomi = RispostaNomi.idRispostaNomi And DomandaNomi.difficolta = 3");
+  $arrDifficile = [];
+  while($rowNomi = mysqli_fetch_array($resNomi, MYSQLI_ASSOC)){
+    array_push($arrDifficile, $rowNomi['testoRisposta']);
+  }
+
+   ?>
+
+
+
 
   <!-- Bootstrap core JavaScript -->
   <script src="../../vendor/jquery/jquery.min.js"></script>
@@ -335,13 +365,17 @@
   <!-- Custom scripts for this template -->
   <script src="../../js/freelancer.min.js"></script>
 
+  <script type="text/javascript">var facile =<?php echo json_encode($arrFacile); ?>;</script>
+  <script type="text/javascript">var medio =<?php echo json_encode($arrMedio); ?>;</script>
+  <script type="text/javascript">var difficile =<?php echo json_encode($arrDifficile); ?>;</script>
+
   <script>
-   
-   
+
+
     function difficolta(){ document.getElementById("modalLivello").style.display = "block"; }
 
-   
-    function nuovoGioco(){ window.open("../../utente/utente.html#giochi", target="_self"); }
+
+    function nuovoGioco(){ window.open("../../utente/utente.php#giochi", target="_self"); }
 
     function giocaAncora(){ window.location.reload(); }
 

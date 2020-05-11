@@ -1,5 +1,7 @@
-
-
+<?php
+include_once(__DIR__.'/../../Connessione.php');
+$conn = Connessione::apriConnessione();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -29,13 +31,41 @@
   .bgimg {
     background-repeat:no-repeat;
     background-size: 90% 20%;
-    background-position: center;
+    background-position: top 8% center;
 
 }
 
+.dimensioni {
+  height:100%;
+  width:50%;
+   
+
+}
+
+.bgimgEsclInterr {
+  background-image: url(img/escl.png),url(img/interr.png);
+    background-repeat:no-repeat;
+    background-size: 90% 20%;
+    background-position: 
+    top 10px center ,
+    bottom 10px center ;
+    
+   
+
+}
+
+
+.boxAgg {
+  height:100%;
+  width:50%;
+  
+}
+
 .altezza {
-  height:auto;
+  height:100%;
+  width:90%;
   min-height:170px;
+
 }
 
 
@@ -109,7 +139,7 @@
            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="../../utente/utente.html#giochi">Giochi</a> <!-- Icone dei vari giochi -->
           </li>
           <li class="nav-item mx-0 mx-lg-1">
-            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="../../utente/profilo.html">Profilo</a>
+            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="../../utente/profilo.php">Profilo</a>
           </li>
           <li class="nav-item mx-0 mx-lg-1 regole">
             <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" onclick="regole()">Regole</a>
@@ -140,21 +170,29 @@
   <div class="container mb-5">
 
     <div class="row justify-content-center mb-4">
-      <div class="col-9 " >
-        <div class=" mx-auto p-2" id="rcorners1" >
+      <div class="col-11 " >
+       
           <div class="row" >
 
           <?php
+          //connessione
+          $queryAGG = " Select DomandaAgg.testo, RispostaAgg.testoRisposta 
+                        From RispostaAgg, DomandaAgg 
+                        Where RispostaAgg.idRispostaAgg = DomandaAgg.idRispostaAgg;";
 
 
+          $rs = mysqli_query($conn, $queryAGG);
+          $arrayAggTipo = array();
 
-            $rows   = array_map('str_getcsv', file('listaAggettivi.csv'));
-            $header = array_shift($rows);
-            $csv    = array();
-            foreach($rows as $row) {
-                $csv[] = array_combine($header, $row);
+         
+         
+           while ($row = mysqli_fetch_row($rs)) {
+            $arrayAggTipo[$row[0]] = $row[1];
+           }
 
-            }
+           
+
+         
 
 
             include "stampaGioco.php";
@@ -167,34 +205,15 @@
 
 
 
-          </div>
+         
 
 
         </div>
       </div>
     </div>
+  
 
 
-
-    <div class="row mb-3 mt-3">
-      <div class="col-4 " > <div class="border bgimg altezza border-primary px-5" data-draggable="possessivi" draggable="false" id="rcorners2" style="background-image: url(img/poss.png);" ></div></div>
-      <div class="col-4 "> </div>
-      <div class="col-4 " > <div class="border bgimg altezza  border-info px-5" data-draggable="indefiniti" draggable="false" id="rcorners3" style="height: 100%; background-image: url(img/indef.png); "></div></div>
-    </div>
-
-
-    <div class="row mb-3">
-      <div class="col-4 " > <div class="border altezza  bgimg border-success px-5" data-draggable="dimostrativi" draggable="false" style="height: 100%; background-image: url(img/dimo.png);"></div></div>
-      <div class="col-4 " > <div class="border altezza bgimg border-danger px-5" data-draggable="qualificativi" draggable="false" id="rcorners1" style="height: 100%; background-image: url(img/qual.png);" ></div></div>
-      <div class="col-4  " > <div class="border altezza bgimg border-warning px-5 " data-draggable="esclamativi" draggable="false"  style="height: 100%; background-image: url(img/escl.png);"></div></div>
-
-    </div>
-
-    <div class="row mb-3">
-      <div class="col-4 " > <div class="border altezza bgimg border-secondary px-5" data-draggable="numerali" draggable="false" id="rcorners4" style="height: 100%; background-image: url(img/num.png);"></div></div>
-      <div class="col-4 " > </div>
-      <div class="col-4  " > <div class="border altezza bgimg border-dark px-5" data-draggable="interrogativi" draggable="false" id="rcorners5" style="height: 100%; background-image: url(img/interr.png);"></div></div>
-    </div>
 
 
 
@@ -338,8 +357,10 @@
   <script src="../../js/freelancer.min.js"></script>
 
   <script>
-    var fileCsv = <?php echo json_encode($csv); ?>;
-    caricaArray(fileCsv)
+    var arrayAggettivi = <?php echo json_encode($arrayAggTipo); ?>;
+    caricaArray(arrayAggettivi);
+  
+    
 
 
 

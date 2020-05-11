@@ -68,20 +68,19 @@ ALTER TABLE RispoSingola ADD FOREIGN KEY (idUtente) REFERENCES Utente(idUtente);
 
 /*Tabella Aggettivi Domanda e Risposta*/
 CREATE TABLE IF NOT EXISTS `DomandaAgg` (
-  `idDomandaAgg` VARCHAR(15) NOT NULL,
+  `idDomandaAgg` INT NOT NULL AUTO_INCREMENT,
   `punti` INT NOT NULL,
   `testo` VARCHAR(30) NOT NULL,
-  `difficolta` INT NOT NULL,
   `versione` VARCHAR(15) NOT NULL,
   `idGioco` VARCHAR(15) NOT NULL,
   `idDomanda` VARCHAR(30) NOT NULL,
-  `idRispostaAgg` VARCHAR(15) NOT NULL,
+  `idRispostaAgg` INT NOT NULL,
   PRIMARY KEY (`idDomandaAgg`));
 
 CREATE TABLE IF NOT EXISTS `RispostaAgg` (
-  `idRispostaAgg` VARCHAR(15) NOT NULL,
+  `idRispostaAgg` INT NOT NULL AUTO_INCREMENT,
   `punti` INT NOT NULL,
-  `testoRisposta` VARCHAR(20) NOT NULL,
+  `testoRisposta` VARCHAR(30) NOT NULL,
   PRIMARY KEY (`idRispostaAgg`));
   
 ALTER TABLE DomandaAgg ADD FOREIGN KEY (idRispostaAgg )REFERENCES RispostaAgg(idRispostaAgg);

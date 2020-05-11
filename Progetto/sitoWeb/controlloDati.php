@@ -15,7 +15,8 @@ if (isset($_POST['submit'])) {
 		$username = $_POST['username'];
 		$password = $_POST['password'];
 
-	$rs = mysqli_query($conn, "SELECT email, Password From Utente where email='".$username."'");
+	$rs = mysqli_query($conn, "SELECT Utente.email, Utente.Password From Utente where email='".$username."'");
+
 
 		if($row = mysqli_fetch_row($rs)){ //controllo se la mail esiste nel db
 			echo $row[1];
@@ -34,5 +35,8 @@ if (isset($_POST['submit'])) {
 
 	}
 	mysqli_close($conn);
+}else{
+	$error = "Username o password non corretti";
+	header("location: index.php");
 }
 ?>
