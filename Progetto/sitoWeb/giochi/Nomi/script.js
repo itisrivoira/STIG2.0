@@ -7,7 +7,7 @@ var difficile = new Array("ZUZZURELLONE","ALBERTOFRANCO"); //sostantivi con tant
 var to_guess = "";
 var display_word = "";
 var used_letters = "";
-var wrong_guesses = 0;
+var wrong_guesses = 4;
 
 
 function selectLetter(l){
@@ -58,11 +58,12 @@ function selectLetter(l){
     }else{
         // incortect letter guess
         wrong_guesses += 1;
-        eval("document.hm.src=\"./img/hm" + wrong_guesses + ".gif\"");
+        eval("document.hm.src=\"img/hm" + wrong_guesses + ".gif\"");
                 
         if (wrong_guesses == 10){
             // lost
-            var modal = document.getElementById("myModal");
+            setTimeout(function(){
+                var modal = document.getElementById("myModal");
             modal.style.display = "block";
 
             
@@ -71,6 +72,8 @@ function selectLetter(l){
             document.getElementById("txtModal").innerText="hai Perso!";
                     
             can_play = false;
+            }, 1000);
+            
         }
     }
 }
@@ -80,8 +83,8 @@ function reset()
 
 document.game.usedLetters.value = "";
 used_letters = "";
-wrong_guesses = 0;
-document.hm.src="./img/hmstart.gif";
+wrong_guesses = 4;
+document.hm.src="./img/hm4.gif";
 document.getElementById("modalLivello").style.display = "block";
 }
 

@@ -1,5 +1,5 @@
 <?php
-include_once(__DIR__.'/controlloDati.php');
+//include_once(__DIR__.'/controlloDati.php');
 if(isset($_SESSION['login_user'])){
   header("location: utente/utente.php");
 }

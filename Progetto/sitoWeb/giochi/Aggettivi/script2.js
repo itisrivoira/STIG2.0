@@ -125,7 +125,17 @@ function fine() {
                 contaGiuste++;
             }else{
                 document.getElementById(oggetto.aggettivo).style.backgroundColor="red"
-                document.getElementById(oggetto.aggettivo).innerText = oggetto.aggettivo + " > " + getAgg.tipologia
+                var agg=oggetto.aggettivo
+                var tipo = getAgg.tipologia
+                if(agg.includes("?")){
+                    document.getElementById(oggetto.aggettivo).innerText = oggetto.aggettivo + " > INTERROGATIVI"
+                }else if(agg.includes("!")){
+                    document.getElementById(oggetto.aggettivo).innerText = oggetto.aggettivo + " > ESCLAMATIVI"
+                }else{
+                    document.getElementById(oggetto.aggettivo).innerText = oggetto.aggettivo + " > " + getAgg.tipologia
+                }
+                
+                
                 
             }
             
