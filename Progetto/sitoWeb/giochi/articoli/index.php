@@ -148,16 +148,16 @@
   </div>
 
   <!-- Modal fine gioco -->
-  <div class="portfolio-modal modal fade" data-backdrop="static" data-keyboard="false"  id="myModal" tabindex="-1" role="dialog" aria-labelledby="portfolioModal2Label" aria-hidden="true">
+ <!-- <div class="portfolio-modal modal fade" data-backdrop="static" data-keyboard="false"  id="myModal" tabindex="-1" role="dialog" aria-labelledby="portfolioModal2Label" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
       <div class="modal-content">
         <div class="modal-body text-center">
           <div class="container">
             <div class="row justify-content-center">
               <div class="col-lg-8">
-                <!-- Portfolio Modal - Title -->
+
                 <h2 class="portfolio-modal-title text-uppercase mb-1" id="titModal"></h2>
-                <!-- Icon Divider -->
+
                 <div class="divider-custom mb-5">
                   <div class="divider-custom-line"></div>
                   <div class="divider-custom-icon">
@@ -165,12 +165,46 @@
                   </div>
                   <div class="divider-custom-line"></div>
                 </div>
-                <!-- Portfolio Modal - Text -->
+
                 <h4 class="mb-5" id="txtModal"></h4>
                 <button type="button" onclick="giocaAncora()" class="btn btn-secondary float-left ">Gioca Ancora</button>
                 <button type="button" onclick="nuovoGioco()" class="btn btn-secondary float-right">Altro gioco</button>
               </div>
             </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>-->
+
+  <!-- Modal fine gioco -->
+  <div class="portfolio-modal modal fade" data-backdrop="static" data-keyboard="false"  id="myModal" tabindex="-1" role="dialog" aria-labelledby="portfolioModal2Label" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+      <div class="modal-content">
+        <div class="modal-body">
+          <div class="row">
+            <!-- Portfolio Modal - Title -->
+            <h2 class="portfolio-modal-title text-uppercase mb-1 mx-auto" id="titModal"></h2>
+            <!-- Icon Divider -->
+            <div class="divider-custom mb-5">
+              <div class="divider-custom-line"></div>
+              <div class="divider-custom-icon">
+                <i class="fas fa-star"></i>
+              </div>
+              <div class="divider-custom-line"></div>
+            </div>
+          </div>
+          <div class="row text-left">
+            <!-- Portfolio Modal - Text -->
+            <div class="col-3"></div>
+            <div class="col-8">
+              <h4 class="mb-5" id="txtModal"></h4>
+              <div class="modal-footer p-0 m-0">
+                <button type="button" onclick="nuovoGioco()" class="btn btn-secondary text-uppercase mt-5  mr-1">Altro gioco</button>
+                <button type="button" onclick="giocaAncora()" class="btn btn-primary text-uppercase mt-5">Gioca Ancora</button>
+              </div>
+            </div>
+            <div class="col"></div>                 
           </div>
         </div>
       </div>
@@ -302,8 +336,7 @@
             else echo 'indeterminativi.push("'.$tab[0].'");';
         }
       ?>
-      alert(indeterminativi);
-      alert(determinativi);
+
       var indUtente=[];
       var detUtente=[];
       var cont=0;
@@ -370,7 +403,21 @@
       function fineGioco(colore,testo){
         titModal.className=classeTitolo+colore;
         titModal.innerText=testo;
-        txtModal.innerText="Articoli indeterminativi: "+indeterminativi+"\n\nArticoli determinativi: "+determinativi;
+        var ind="";
+        var det="";
+        var i=0;
+        indeterminativi.forEach(element => {
+          if(i!=indeterminativi.length-1) ind+='<span class="text-info text-uppercase"> '+element+'</span>, ';
+          else ind+='<span class="text-info text-uppercase"> '+element+'</span> ';
+          i++;
+        });
+        i=0;
+        determinativi.forEach(element => {
+          if(i!=determinativi.length-1) det+='<span class="text-info text-uppercase"> '+element+'</span>, ';
+          else det+='<span class="text-info text-uppercase"> '+element+'</span> ';
+          i++;
+        });
+        txtModal.innerHTML="Articoli indeterminativi: "+ind+"<br/><br/>Articoli determinativi: "+det;
         $('#myModal').modal('show');
       }
 
