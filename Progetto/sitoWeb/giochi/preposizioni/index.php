@@ -207,33 +207,31 @@
   <div class="portfolio-modal modal fade" data-backdrop="static" data-keyboard="false"  id="myModal" tabindex="-1" role="dialog" aria-labelledby="portfolioModal2Label" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
       <div class="modal-content">
-        <div class="modal-body text-center">
-          <div class="container">
-            <div class="row justify-content-center">
-              <div class="col-lg-8">
-                <!-- Portfolio Modal - Title -->
-                <h2 class="portfolio-modal-title text-uppercase mb-1" id="titModal"></h2>
-                <!-- Icon Divider -->
-                <div class="divider-custom mb-5">
-                  <div class="divider-custom-line"></div>
-                  <div class="divider-custom-icon">
-                    <i class="fas fa-star"></i>
-                  </div>
-                  <div class="divider-custom-line"></div>
-                </div>
-                <h4 class="mb-5" id="txtModal"></h4>
-                <!-- Portfolio Modal - Text -->
-                <div class="row">
-                  <div class="col-2"></div>
-                  <div class="col-8">
-                    <h5 class="mb-5 text-left" id="modalFrasi"></h5>
-                  </div>
-                  <div class="col-2"></div>     
-                </div>               
-                <button type="button" onclick="giocaAncora()" class="btn btn-secondary float-left ">Gioca Ancora</button>
-                <button type="button" onclick="nuovoGioco()" class="btn btn-secondary float-right">Altro gioco</button>
+        <div class="modal-body">
+          <div class="row">
+            <!-- Portfolio Modal - Title -->
+            <h2 class="portfolio-modal-title text-uppercase mb-1 mx-auto" id="titModal"></h2>
+            <!-- Icon Divider -->
+            <div class="divider-custom mb-5">
+              <div class="divider-custom-line"></div>
+              <div class="divider-custom-icon">
+                <i class="fas fa-star"></i>
+              </div>
+              <div class="divider-custom-line"></div>
+            </div>
+          </div>
+          <div class="row text-left">
+            <!-- Portfolio Modal - Text -->
+            <div class="col-3"></div>
+            <div class="col-8">
+              <h4 class="mb-5" id="txtModal"></h4>
+              <h5 class="text-left" id="modalFrasi"></h5>
+              <div class="modal-footer p-0 m-0">
+                <button type="button" onclick="nuovoGioco()" class="btn btn-secondary text-uppercase mt-5  mr-1">Altro gioco</button>
+                <button type="button" onclick="giocaAncora()" class="btn btn-primary text-uppercase mt-5">Gioca Ancora</button>
               </div>
             </div>
+            <div class="col"></div>                 
           </div>
         </div>
       </div>
@@ -390,7 +388,7 @@
         txtModal.innerText=testo;
         frasi.forEach(frase => {
           var s=frase['frase'].split("______");
-          document.getElementById('modalFrasi').innerHTML+='- '+s[0]+'<span class="text-info text-uppercase"> '+frase["preposizione"]+'</span>'+s[1]+'<br/>';
+          document.getElementById('modalFrasi').innerHTML+='- '+s[0]+'<span class="text-info text-uppercase"> '+frase["preposizione"]+'</span>'+s[1]+'<br/><br/>';
         });
         $('#myModal').modal('show');
       }
