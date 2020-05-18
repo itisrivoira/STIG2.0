@@ -327,7 +327,7 @@ if(!isset($_SESSION['login_user'])){
 Nella parte inferiore ci sono dei mattoncini, al cui interno ci sono degli articoli, determinativi e indeterminativi.
 Il tuo compito è di inserire i mattoncini all'interno della scatola corretta. Quando i mattoncini saranno finiti, apparirà un messaggio che ti dirà se hai vinto o hai perso, mostrandoti anche gli errori commessi.
 Più vai avanti con i livelli, più i mattoncini da inserire aumentano.</p>
-                <form action="../giochi/articoli/index.html">
+                <form action="../giochi/articoli/index.php">
                   <button class="btn btn-primary">
                     PLAY
                   </button>
@@ -447,7 +447,7 @@ Più vai avanti con i livelli, più i mattoncini da inserire aumentano.</p>
                 <img class="img-fluid rounded mb-5" src="../img/portfolio/safe.png" alt="">
                 <!-- Portfolio Modal - Text -->
                 <p class="mb-5">Nel gioco si trova una tabella dove le colonne corrispondono agli articoli determinativi mentre, le righe, corrispondo alle preposizioni semplici. Usando la frase che trovi nella parte superiore dello schermo, inserisci la preposizione corretta. Con qualsiasi livello di difficoltà, il tuo compito è quello di inserire correttamente tre preposizione e, più si va avanti di livello, più diminuiscono i tentativi.</p>
-                <form action="../giochi/preposizioni/index.html">
+                <form action="../giochi/preposizioni/index.php">
                   <button class="btn btn-primary">
                     PLAY
                   </button>
