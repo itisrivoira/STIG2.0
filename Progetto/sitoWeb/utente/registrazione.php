@@ -34,7 +34,7 @@ if(isset($_POST['nome']) && isset($_POST['cognome']) && isset($_POST['tipologia'
 
 
 
-include_once(__DIR__.'/../controlloDati.php');
+//include_once(__DIR__.'/../controlloDati.php');
 if(isset($_SESSION['login_user'])){
   header("location: utente/utente.php");
 }
