@@ -148,36 +148,6 @@
   </div>
 
   <!-- Modal fine gioco -->
- <!-- <div class="portfolio-modal modal fade" data-backdrop="static" data-keyboard="false"  id="myModal" tabindex="-1" role="dialog" aria-labelledby="portfolioModal2Label" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
-      <div class="modal-content">
-        <div class="modal-body text-center">
-          <div class="container">
-            <div class="row justify-content-center">
-              <div class="col-lg-8">
-
-                <h2 class="portfolio-modal-title text-uppercase mb-1" id="titModal"></h2>
-
-                <div class="divider-custom mb-5">
-                  <div class="divider-custom-line"></div>
-                  <div class="divider-custom-icon">
-                    <i class="fas fa-star"></i>
-                  </div>
-                  <div class="divider-custom-line"></div>
-                </div>
-
-                <h4 class="mb-5" id="txtModal"></h4>
-                <button type="button" onclick="giocaAncora()" class="btn btn-secondary float-left ">Gioca Ancora</button>
-                <button type="button" onclick="nuovoGioco()" class="btn btn-secondary float-right">Altro gioco</button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>-->
-
-  <!-- Modal fine gioco -->
   <div class="portfolio-modal modal fade" data-backdrop="static" data-keyboard="false"  id="myModal" tabindex="-1" role="dialog" aria-labelledby="portfolioModal2Label" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
       <div class="modal-content">
