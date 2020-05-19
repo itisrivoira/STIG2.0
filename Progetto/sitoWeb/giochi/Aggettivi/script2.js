@@ -3,7 +3,7 @@ var arrayAssAggettivi=[] //verrà caricato dagli aggettivi che chiediamo al serv
 var arrayAssAggettiviFinale=[]
 
 function caricaArray(provaArrayPassato) {
-    
+
     for (const key in provaArrayPassato) {
         arrayAssAggettivi.push({aggettivo:key,tipologia:provaArrayPassato[key]})
     }
@@ -22,15 +22,15 @@ document.addEventListener('dragover', function(e){
 }, false);
 
 document.addEventListener('drop', function(e){
-   
+
    switch (e.target.getAttribute('data-draggable')) {
        case "possessivi":
-          
+
             caricaArrayFinale("possessivi",item)
             var nome = "rcorners2"
             var c=document.getElementById(nome).children
             c[0].appendChild(item)
-            
+
         break;
         case "dimostrativi":
             caricaArrayFinale("dimostrativi",item)
@@ -63,18 +63,18 @@ document.addEventListener('drop', function(e){
                 caricaArrayFinale(a.parentElement.getAttribute("data-draggable"),item)
                 var c=document.getElementById(a.parentElement.id).children
                 c[0].appendChild(item)
-                
+
               }
               catch(err) { }
-           
+
         break;
-        
-   
+
+
        default:
-           
+
            break;
    }
-    
+
 
 }, false);
 
@@ -90,9 +90,9 @@ function fine() {
     contAgg.forEach(divPadre => {
        var nFigliFinale = divPadre.children[0].children[0].childElementCount
        NumAgg = Number(NumAgg)+Number(nFigliFinale)
-       
+
     });
-    
+
     var nFigliRimasti=document.getElementById("gioco").children[1].children[0];
     console.log(nFigliRimasti.childElementCount )
     var string1 = "divDifficile"
@@ -107,14 +107,14 @@ function fine() {
         }
     } else if(document.getElementById("gioco").children[1].children[0].childElementCount==0) {
         finito = true
-    
+
     }else{
         //quando non ha finito in modalità facile e medio
         document.getElementById("modalFine").style.display = "block";
     }
 
     if(finito){
-        //quando  ha finito 
+        //quando  ha finito
         //controllo vittoria o sconfitta
         var contaGiuste = 0;
         arrayAssAggettiviFinale.forEach(oggetto => {
@@ -123,6 +123,16 @@ function fine() {
             if (getAgg.tipologia === oggetto.tipologia) {
                 document.getElementById(oggetto.aggettivo).style.backgroundColor="green"
                 contaGiuste++;
+
+                var aggettivo = oggetto.aggettivo;
+
+                $ (document).ready(function() {
+                return $.ajax({
+                    url: 'finePhp.php',
+                    type: 'POST',
+                    data: ({aggettivo: aggettivo, punti:5}),
+                    });
+                });
             }else{
                 document.getElementById(oggetto.aggettivo).style.backgroundColor="red"
                 var agg=oggetto.aggettivo
@@ -134,44 +144,45 @@ function fine() {
                 }else{
                     document.getElementById(oggetto.aggettivo).innerText = oggetto.aggettivo + " > " + getAgg.tipologia
                 }
-                
-                
-                
+
+                var aggettivo = oggetto.aggettivo;
+
+                $ (document).ready(function() {
+                return $.ajax({
+                    url: 'finePhp.php',
+                    type: 'POST',
+                    data: ({aggettivo: aggettivo, punti:0}),
+                    });
+                });
+
+
             }
-            
+
         });
 
         if (contaGiuste==arrayAssAggettiviFinale.length) {
             setTimeout(function(){
                 var modal = document.getElementById("myModal");
                 modal.style.display = "block";
-    
-                
-                
-                document.getElementById("titModal").innerText="hai Vinto!";
-                document.getElementById("titModal").style.color="green";
-                        
-               
-                },500);
+                txtModal.style.color="green";
+                document.getElementById("txtModal").innerText="hai vinto!";
+
+            }, 500);
         }else{
             setTimeout(function(){
                 var modal = document.getElementById("myModal");
                 modal.style.display = "block";
-    
-                
-                
-                document.getElementById("titModal").innerText="hai Perso!";
-                document.getElementById("titModal").style.color="red";
-                        
-               
-                },500);
+                txtModal.style.color="red";
+                document.getElementById("txtModal").innerText="hai perso!";
+
+            }, 500);
         }
 
-        
+
     }
 
 
-    
+
 
 
 }
@@ -179,21 +190,18 @@ function fine() {
 
 function caricaArrayFinale(tipologia,item) {
     if(item.parentElement.parentElement.getAttribute('data-draggable') !== null){
-        
+
 
         var objNew = {aggettivo:item.id,tipologia:tipologia}
         var objOld = {aggettivo:item.id,tipologia:item.parentElement.parentElement.getAttribute('data-draggable')}
 
         arrayAssAggettiviFinale.splice(arrayAssAggettiviFinale.indexOf(objOld),1);
-        
+
         arrayAssAggettiviFinale.push(objNew)
 
     }else{
         arrayAssAggettiviFinale.push({aggettivo:item.id,tipologia:tipologia})
 
     }
-    
+
 }
-
-
-

@@ -18,10 +18,10 @@ function selectLetter(l){
     if (used_letters.indexOf(l) != -1){
         return;
     }
-	
+
     used_letters += l;
     document.game.usedLetters.value = used_letters;
-        
+
     if (to_guess.indexOf(l) != -1){
         // correct letter guess
         pos = 0;
@@ -29,7 +29,7 @@ function selectLetter(l){
 
         while (to_guess.indexOf(l, pos) != -1)
         {
-            pos = to_guess.indexOf(l, pos);			
+            pos = to_guess.indexOf(l, pos);
             end = pos + 1;
 
             start_text = temp_mask.substring(0, pos);
@@ -41,41 +41,55 @@ function selectLetter(l){
 
         display_word = temp_mask;
         document.game.displayWord.value= display_word;
-                
+
         if (display_word.indexOf("#") == -1)
         {
             // won
             //wait 2 sec
             setTimeout(function(){
                 var modal = document.getElementById("myModal");
-                
-                document.getElementById("txtModalWord").innerText="Parola --> "+to_guess;
-                document.getElementById("titModal").innerText="hai vinto!";
-                document.getElementById("titModal").style.color="green"
                 modal.style.display = "block";
+                txtModal.style.color="green";
+                document.getElementById("txtModal").innerText="hai vinto!";
                 can_play = false;
             }, 1000);
-           
+
+            $ (document).ready(function() {
+            return $.ajax({
+                url: 'finePhp.php',
+                type: 'POST',
+                data: ({parola: to_guess, punti:5}),
+                });
+            });
+
         }
     }else{
         // incortect letter guess
         wrong_guesses += 1;
         eval("document.hm.src=\"img/hm" + wrong_guesses + ".gif\"");
-                
-        if (wrong_guesses == 9){
+
+        if (wrong_guesses == 10){
             // lost
             setTimeout(function(){
-            var modal = document.getElementById("myModal");
+                var modal = document.getElementById("myModal");
             modal.style.display = "block";
 
-            
+
+            txtModal.style.color="red";
             document.getElementById("txtModalWord").innerText="Parola --> "+to_guess;
-            document.getElementById("titModal").innerText="hai Perso!";
-            document.getElementById("titModal").style.color="red";
-                    
+            document.getElementById("txtModal").innerText="hai Perso!";
+
+            $ (document).ready(function() {
+            return $.ajax({
+                url: 'finePhp.php',
+                type: 'POST',
+                data: ({parola: to_guess, punti:0}),
+                });
+            });
+
             can_play = false;
             }, 1000);
-            
+
         }
     }
 }
@@ -90,7 +104,7 @@ document.hm.src="./img/hm4.gif";
 document.getElementById("modalLivello").style.display = "block";
 }
 
-function setDifficolta(d){ 
+function setDifficolta(d){
     diff=d
     document.getElementById("modalLivello").style.display = "none";
     selectWord(diff);
@@ -103,7 +117,7 @@ if (diff==0) {
     random_number = Math.round(Math.random() * (facile.length - 1));
     to_guess = facile[random_number];
     alert(to_guess)
-    
+
 }else if (diff==1) {
     random_number = Math.round(Math.random() * (medio.length - 1));
     to_guess = medio[random_number];
@@ -132,4 +146,3 @@ mask += "#";
 }
 return mask;
 }
-
