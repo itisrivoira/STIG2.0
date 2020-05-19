@@ -25,7 +25,7 @@ INSERT INTO Frequenta VALUES('DENINA', '7');
 INSERT INTO Frequenta VALUES('PELLICO', '8');
 INSERT INTO Frequenta VALUES('DENINA', '9');
 
-/*Tabella DomandeTot*/ 
+/*Tabella DomandeTot*/
 
 INSERT INTO DomandeTot VALUES(1);
 INSERT INTO DomandeTot VALUES(2);
@@ -36,19 +36,19 @@ INSERT INTO DomandeTot VALUES(6);
 INSERT INTO DomandeTot VALUES(7);
 INSERT INTO DomandeTot VALUES(8);
 
-INSERT INTO DomandeTot VALUES(9); 
+INSERT INTO DomandeTot VALUES(9);
 INSERT INTO DomandeTot VALUES(10);
 INSERT INTO DomandeTot VALUES(11);
-INSERT INTO DomandeTot VALUES(12); 
+INSERT INTO DomandeTot VALUES(12);
 INSERT INTO DomandeTot VALUES(13);
 INSERT INTO DomandeTot VALUES(14);
 INSERT INTO DomandeTot VALUES(15);
 INSERT INTO DomandeTot VALUES(16);
-INSERT INTO DomandeTot VALUES(17); 
+INSERT INTO DomandeTot VALUES(17);
 INSERT INTO DomandeTot VALUES(18);
 INSERT INTO DomandeTot VALUES(19);
 INSERT INTO DomandeTot VALUES(20);
-INSERT INTO DomandeTot VALUES(21); 
+INSERT INTO DomandeTot VALUES(21);
 INSERT INTO DomandeTot VALUES(22);
 INSERT INTO DomandeTot VALUES(23);
 
@@ -181,40 +181,40 @@ INSERT INTO RispostaPrep VALUES(21, 5, 'alla', true, 21);
 
 
 /*IMPICCATO --> Nomi*/
-INSERT INTO RispostaNomi VALUES 
+INSERT INTO RispostaNomi VALUES
 	(1, 5, 'CANE'),
 	(2, 5, 'ATTO'),
 	(3, 5, 'GIORNO'),
 	(4, 5, 'ISOLA');
 
-INSERT INTO DomandaNomi VALUES 
+INSERT INTO DomandaNomi VALUES
 	(1, 5, 'Animale che abbaia', 1, 'Versione 1.0', 1, 'GiocoNomi', 25),
 	(2, 5, 'Attore senza "re"', 1, 'Versione 1.0', 2, 'GiocoNomi', 26),
 	(3, 5, 'Il contrario della notte', 2, 'Versione 1.0', 3, 'GiocoNomi', 27),
 	(4, 5, 'E tutta circondata dal mare', 3, 'Versione 1.0', 4, 'GiocoNomi', 28);
-	
+
 /*Aggettivi*/
-INSERT INTO RispostaAgg VALUES 
+INSERT INTO RispostaAgg VALUES
 	(1, 5, 'Qualificativo'),
 	(2, 5, 'Qualificativo'),
 	(3, 5, 'Possessivo'),
 	(4, 5, 'Dimostrativo');
 
-INSERT INTO DomandaAgg VALUES 
+INSERT INTO DomandaAgg VALUES
 	(1, 5, 'Bello', 1, 'Versione 1.0', 'GiocoAggettivi', 29, 1),
 	(2, 5, 'Forte', 2, 'Versione 1.0', 'GiocoAggettivi', 30, 2),
 	(3, 5, 'Vostre', 2, 'Versione 1.0', 'GiocoAggettivi', 31, 3),
 	(4, 5, 'Questo', 3, 'Versione 1.0', 'GiocoAggettivi', 32, 4);
 
-	
-/*Verbi*/	
-INSERT INTO DomandaVerb VALUES 
+
+/*Verbi*/
+INSERT INTO DomandaVerb VALUES
 	(1, 5, 'Io', 2, 'Versione 1.0', 'GiocoVerbi', 33),
 	(2, 5, 'Tu', 2, 'Versione 1.0', 'GiocoVerbi', 34),
 	(3, 5, 'Egli', 2, 'Versione 1.0', 'GiocoVerbi', 35),
 	(4, 5, 'Noi', 2, 'Versione 1.0', 'GiocoVerbi', 36);
-	
-INSERT INTO RispostaVerbi VALUES 
+
+INSERT INTO RispostaVerbi VALUES
 	(1, 5, 'Do', true, 1),
 	(2, 0, 'Dai', false, 1),
 	(3, 0, 'Da', false, 1),
@@ -227,21 +227,21 @@ INSERT INTO RispostaVerbi VALUES
 	(10, 0, 'Danno', false, 4),
 	(11, 0, 'Date', false, 4),
 	(12, 5, 'Diamo', true, 4);
-	
+
 /* SinCon */
-INSERT INTO RispostaSinCon VALUES 
+INSERT INTO RispostaSinCon VALUES
 	(1, 5, 'Brutto'),
 	(6, 5, 'Cattivo'),
 	(9, 5, 'Rapido'),
-	(12, 5, 'Esilarante ');	
-	
-INSERT INTO DomandaSinCon VALUES 
+	(12, 5, 'Esilarante ');
+
+INSERT INTO DomandaSinCon VALUES
 	(1, 5, 'Il contrario di: Bello', 2, 'Versione 1.0', 1,'GiocoSinCon', 37),
 	(2, 5, 'Il contrario di: Buono', 2, 'Versione 1.0', 6, 'GiocoSinCon', 38),
 	(3, 5, 'Un sinonimo di: Veloce', 2, 'Versione 1.0',  9, 'GiocoSinCon', 39),
 	(4, 5, 'Un sinonimo di: Divertente', 3, 'Versione 1.0', 12, 'GiocoSinCon', 40);
-	
-	
+
+
 /*RispoSingola*/
 INSERT INTO RispoSingola VALUES
 	(1, '2020-03-20', '10:30:55', 5, 29, '1'),
