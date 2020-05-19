@@ -365,20 +365,21 @@
         if (!e) var e = window.event;
         if (e.stopPropagation) e.stopPropagation();
         
-        if (numFrasi==1) fineGioco(" text-success","hai vinto!","Hai inserito tutte le preposizioni giuste");
-        else{
-          if(frase["preposizione"]==e.target.id) {
-            numFrasi--;
+        
+        if(frase["preposizione"]==e.target.id) {
+          numFrasi--;
+          if (numFrasi==0) fineGioco(" text-success","hai vinto!","Hai inserito tutte le preposizioni giuste");
+          else{
             i++;
             frase=frasi[i];
             fraseDiv=document.getElementById("frase");
             fraseDiv.innerHTML=frase["frase"];
-          }else{
-            if(tentativi>1){
-              document.getElementById("vita"+(5-tentativi)).style.opacity=0.5;
-              tentativi--;
-            }else fineGioco(" text-danger","hai perso!","Non hai inserito tutte le preposizioni giuste");
           }
+        }else{
+          if(tentativi>1){
+            document.getElementById("vita"+(5-tentativi)).style.opacity=0.5;
+            tentativi--;
+          }else fineGioco(" text-danger","hai perso!","Non hai inserito tutte le preposizioni giuste");
         }
       }
 
@@ -386,6 +387,7 @@
         titModal.className=classeTitolo+colore;
         titModal.innerText=titolo;
         txtModal.innerText=testo;
+        document.getElementById('modalFrasi').innerHTML="";
         frasi.forEach(frase => {
           var s=frase['frase'].split("______");
           document.getElementById('modalFrasi').innerHTML+='- '+s[0]+'<span class="text-info text-uppercase"> '+frase["preposizione"]+'</span>'+s[1]+'<br/><br/>';
