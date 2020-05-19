@@ -1,5 +1,5 @@
-DROP DATABASE 5C_STIG;
-CREATE DATABASE 5C_STIG;
+-- DROP DATABASE 5C_STIG;
+-- CREATE DATABASE 5C_STIG;
 USE 5C_STIG;
 
 /*Tabella Sede*/
@@ -10,7 +10,7 @@ CREATE TABLE IF NOT EXISTS `Sede` (
   `Telefono` VARCHAR(10) NULL,
   PRIMARY KEY (`idSede`));
 
-/*Tabella Utente*/  
+/*Tabella Utente*/
 CREATE TABLE IF NOT EXISTS `Utente` (
   `idUtente` INT NULL AUTO_INCREMENT,
   `Nome` VARCHAR(30) NULL,
@@ -19,13 +19,13 @@ CREATE TABLE IF NOT EXISTS `Utente` (
   `email` VARCHAR(50) NULL,
   `Password` VARCHAR(100) NOT NULL,
   PRIMARY KEY (`idUtente`));
-  
+
 /*Tabella Relazione Sede Utente*/
 CREATE TABLE IF NOT EXISTS `Frequenta` (
   `idSede` VARCHAR(30) NOT NULL,
   `idUtente` INT NOT NULL,
   PRIMARY KEY (`idUtente`,`idSede`));
-  
+
 ALTER TABLE Frequenta ADD FOREIGN KEY (idSede) REFERENCES Sede(idSede);
 ALTER TABLE Frequenta ADD FOREIGN KEY (idUtente) REFERENCES Utente(idUtente);
 
@@ -34,7 +34,7 @@ CREATE TABLE IF NOT EXISTS `Gioco` (
   `idGioco` VARCHAR(30) NOT NULL,
   `Nome` VARCHAR(30) NULL,
   PRIMARY KEY (`idGioco`));
-  
+
 /*Tabella Relazione Utente Gioco*/
 CREATE TABLE IF NOT EXISTS `Gioca` (
   `idGiocata` INT AUTO_INCREMENT NULL,
@@ -44,7 +44,7 @@ CREATE TABLE IF NOT EXISTS `Gioca` (
   `idUtente` INT NOT NULL,
   `Punteggio` INT NOT NULL,
   PRIMARY KEY (`idGiocata`));
-  
+
 ALTER TABLE Gioca ADD FOREIGN KEY (idGioco) REFERENCES Gioco(idGioco);
 ALTER TABLE Gioca ADD FOREIGN KEY (idUtente) REFERENCES Utente(idUtente);
 
@@ -83,8 +83,8 @@ CREATE TABLE IF NOT EXISTS `RispostaAgg` (
   `punti` INT NOT NULL,
   `testoRisposta` VARCHAR(50) NOT NULL,
   PRIMARY KEY (`idRispostaAgg`));
-  
-  
+
+
 ALTER TABLE DomandaAgg ADD FOREIGN KEY (idRispostaAgg )REFERENCES RispostaAgg(idRispostaAgg);
 ALTER TABLE DomandaAgg ADD FOREIGN KEY (idGioco) REFERENCES Gioco(idGioco);
 ALTER TABLE DomandaAgg ADD FOREIGN KEY (idDomanda) REFERENCES DomandeTot(idDomanda);
@@ -97,7 +97,7 @@ CREATE TABLE IF NOT EXISTS `DomandaPrep` (
   `difficolta` INT NOT NULL,
   `versione` VARCHAR(15) NOT NULL,
   `idGioco` VARCHAR(30) NOT NULL,
-  `idDomanda` INT NULL, 
+  `idDomanda` INT NULL,
   PRIMARY KEY (`idDomandaPrep`));
 
 CREATE TABLE IF NOT EXISTS `RispostaPrep` (
@@ -107,7 +107,7 @@ CREATE TABLE IF NOT EXISTS `RispostaPrep` (
   `flagPrep` BOOLEAN NOT NULL,
   `idDomandaPrep` INT NULL,
   PRIMARY KEY (`idRispostaPrep`));
-  
+
 ALTER TABLE RispostaPrep ADD FOREIGN KEY (idDomandaPrep) REFERENCES DomandaPrep(idDomandaPrep);
 ALTER TABLE DomandaPrep ADD FOREIGN KEY (idGioco) REFERENCES Gioco(idGioco);
 ALTER TABLE DomandaPrep ADD FOREIGN KEY (idDomanda) REFERENCES DomandeTot(idDomanda);
@@ -122,15 +122,15 @@ CREATE TABLE IF NOT EXISTS `DomandaVerb` (
   `idGioco` VARCHAR(30) NOT NULL,
   `idDomanda` INT NULL,
   PRIMARY KEY (`idDomandaVerb`));
- 
+
 CREATE TABLE IF NOT EXISTS `RispostaVerbi` (
   `idRispostaVerb` INT AUTO_INCREMENT NULL,
   `punti` INT NOT NULL,
-  `testoRisposta` VARCHAR(50) NOT NULL,  
+  `testoRisposta` VARCHAR(50) NOT NULL,
   `flagPrep` BOOLEAN NOT NULL,
   `idDomandaVerb` INT NULL,
   PRIMARY KEY (`idRispostaVerb`));
-  
+
 ALTER TABLE RispostaVerbi ADD FOREIGN KEY (idDomandaVerb) REFERENCES DomandaVerb(idDomandaVerb);
 ALTER TABLE DomandaVerb ADD FOREIGN KEY (IdGioco) REFERENCES Gioco(idGioco);
 ALTER TABLE DomandaVerb ADD FOREIGN KEY (idDomanda) REFERENCES DomandeTot(idDomanda);
@@ -150,9 +150,9 @@ CREATE TABLE IF NOT EXISTS `DomandaSinCon` (
 CREATE TABLE IF NOT EXISTS `RispostaSinCon` (
   `idRispostaSinCon` INT AUTO_INCREMENT NULL,
   `punti` INT NOT NULL,
-  `testoRisposta` VARCHAR(50) NOT NULL,  
+  `testoRisposta` VARCHAR(50) NOT NULL,
   PRIMARY KEY (`idRispostaSinCon`));
-  
+
 /*ALTER TABLE RispostaSinCon ADD FOREIGN KEY (idDomandaSinCon) REFERENCES DomandaSinCon(idDomandaSinCon);*/
 ALTER TABLE DomandaSinCon ADD FOREIGN KEY (idRispostaSinCon) REFERENCES RispostaSinCon(idRispostaSinCon);
 ALTER TABLE DomandaSinCon ADD FOREIGN KEY (idGioco )REFERENCES Gioco(idGioco);
@@ -175,7 +175,7 @@ CREATE TABLE IF NOT EXISTS `RispostaNomi` (
   `punti` INT NOT NULL,
   `testoRisposta` VARCHAR(50) NOT NULL,
   PRIMARY KEY (`idRispostaNomi`));
-  
+
 ALTER TABLE DomandaNomi ADD FOREIGN KEY (idRispostaNomi) REFERENCES RispostaNomi(idRispostaNomi);
 ALTER TABLE DomandaNomi ADD FOREIGN KEY (idGioco) REFERENCES Gioco(idGioco);
 ALTER TABLE DomandaNomi ADD FOREIGN KEY (idDomanda) REFERENCES DomandeTot(idDomanda);
@@ -190,15 +190,15 @@ CREATE TABLE IF NOT EXISTS `DomandaArticoli` (
   `idGioco` VARCHAR(30) NOT NULL,
   `idDomanda` INT NULL,
   PRIMARY KEY (`idDomandaArticoli`));
- 
+
 CREATE TABLE IF NOT EXISTS `RispostaArticoli` (
   `idRispostaArticoli` INT AUTO_INCREMENT NULL,
   `punti` INT NOT NULL,
-  `testoRisposta` VARCHAR(50) NOT NULL,  
+  `testoRisposta` VARCHAR(50) NOT NULL,
   `flagPrep` BOOLEAN NOT NULL,
   `idDomandaArticoli` INT NULL,
   PRIMARY KEY (`idRispostaArticoli`));
-  
+
 ALTER TABLE RispostaArticoli ADD FOREIGN KEY (idDomandaArticoli) REFERENCES DomandaArticoli(idDomandaArticoli);
 
 ALTER TABLE DomandaArticoli ADD FOREIGN KEY (idGioco) REFERENCES Gioco(idGioco);

@@ -209,24 +209,16 @@ INSERT INTO DomandaAgg VALUES
 
 /*Verbi*/
 INSERT INTO DomandaVerb VALUES
-	(1, 5, 'Io', 2, 'Versione 1.0', 'GiocoVerbi', 33),
-	(2, 5, 'Tu', 2, 'Versione 1.0', 'GiocoVerbi', 34),
-	(3, 5, 'Egli', 2, 'Versione 1.0', 'GiocoVerbi', 35),
-	(4, 5, 'Noi', 2, 'Versione 1.0', 'GiocoVerbi', 36);
+	(1, 5, 'Quali verbi sono presenti?', 2, 'Versione 1.0', 'GiocoVerbi', 33),
+	(2, 5, 'Quali verbi sono passati?', 2, 'Versione 1.0', 'GiocoVerbi', 34);
 
 INSERT INTO RispostaVerbi VALUES
-	(1, 5, 'Do', true, 1),
-	(2, 0, 'Dai', false, 1),
-	(3, 0, 'Da', false, 1),
-	(4, 0, 'Do', false, 2),
-	(5, 5, 'Dai', true, 2),
-	(6, 0, 'Da', false, 2),
-	(7, 0, 'Do', false, 3),
-	(8, 5, 'Da', true, 3),
-	(9, 0, 'Dai', false, 3),
-	(10, 0, 'Danno', false, 4),
-	(11, 0, 'Date', false, 4),
-	(12, 5, 'Diamo', true, 4);
+	(1, 5, 'Io sono', true, 1),
+	(2, 0, 'Tu sarai', false, 1),
+	(3, 0, 'Noi saremo', false, 1),
+	(4, 0, 'Io fui', true, 2),
+	(5, 5, 'Io sarò', false, 2),
+	(6, 0, 'Noi ervamo', false, 2);
 
 /* SinCon */
 INSERT INTO RispostaSinCon VALUES
