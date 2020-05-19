@@ -145,18 +145,26 @@ function fine() {
             setTimeout(function(){
                 var modal = document.getElementById("myModal");
                 modal.style.display = "block";
-                txtModal.style.color="green";
-                document.getElementById("txtModal").innerText="hai vinto!";
+    
                 
-            }, 500);
+                
+                document.getElementById("titModal").innerText="hai Vinto!";
+                document.getElementById("titModal").style.color="green";
+                        
+               
+                },500);
         }else{
             setTimeout(function(){
                 var modal = document.getElementById("myModal");
                 modal.style.display = "block";
-                txtModal.style.color="red";
-                document.getElementById("txtModal").innerText="hai perso!";
+    
                 
-            }, 500);
+                
+                document.getElementById("titModal").innerText="hai Perso!";
+                document.getElementById("titModal").style.color="red";
+                        
+               
+                },500);
         }
 
         

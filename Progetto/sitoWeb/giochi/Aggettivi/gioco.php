@@ -220,37 +220,41 @@ $conn = Connessione::apriConnessione();
 
   </div>
 
-  <!-- Modal fine gioco -->
-  <div class="modal" id="myModal" tabindex="-1" role="dialog" aria-labelledby="portfolioModal2Label" aria-hidden="true">
-    <div class="modal-dialog modal-xl" role="document">
+   <!-- Modal fine gioco -->
+   <div class="modal" id="myModal" tabindex="-1" role="dialog" aria-labelledby="portfolioModal2Label" aria-hidden="true">
+     <div class="modal-dialog  modal-xl" role="document">
       <div class="modal-content">
-          <div class="modal-body text-center">
-            <div class="container">
-              <div class="row justify-content-center">
-                <div class="col-lg-8">
-                  <!-- Portfolio Modal - Title -->
-                  <h2 class="portfolio-modal-title text-secondary text-uppercase mb-1">fine</h2>
-                  <!-- Icon Divider -->
-                  <div class="divider-custom">
-                    <div class="divider-custom-line"></div>
-                    <div class="divider-custom-icon">
-                      <i class="fas fa-star"></i>
-                    </div>
-                    <div class="divider-custom-line"></div>
-                  </div>
-                  <!-- Portfolio Modal - Text -->
-                  <h4 class="mb-5 text-uppercase" id="txtModal"></h4>
-                  <h4 class="mb-5 text-uppercase" id="txtModalWord"></h4>
-                  <button type="button" onclick="loadDifficolta()" class="btn btn-secondary float-left ">Gioca Ancora</button>
-                  <button type="button" onclick="modalClose()" class="btn btn-secondary float-center ">Visualizza Errori</button>
-                  <button type="button" onclick="nuovoGioco()" class="btn btn-secondary float-right">Altro gioco</button>
-                </div>
+        <div class="modal-body">
+          <div class="row">
+            <!-- Portfolio Modal - Title -->
+            <h2 class="portfolio-modal-title text-uppercase mb-1 mx-auto" id="titModal"></h2>
+            <!-- Icon Divider -->
+            <div class="divider-custom mb-5">
+              <div class="divider-custom-line"></div>
+              <div class="divider-custom-icon">
+                <i class="fas fa-star"></i>
+              </div>
+              <div class="divider-custom-line"></div>
+            </div>
+          </div>
+          <div class="row text-left">
+            <!-- Portfolio Modal - Text -->
+            <div class="col-2"></div>
+            <div class="col-8">
+              
+              
+              <div class="modal-footer p-0 m-0">
+              <button type="button" onclick="modalClose()" class="btn btn-secondary text-uppercase mt-5  mr-1">Risultato</button>
+                <button type="button" onclick="nuovoGioco()" class="btn btn-secondary text-uppercase mt-5  mr-1">Altro gioco</button>
+                <button type="button" onclick="loadDifficolta()" class="btn btn-primary text-uppercase mt-5">Gioca Ancora</button>
               </div>
             </div>
+            <div class="col-2"></div>                 
           </div>
         </div>
       </div>
     </div>
+  </div>
 
     <!-- Modal controllo fine -->
   <div class="modal" id="modalFine" tabindex="-1" role="dialog" aria-labelledby="portfolioModal2Label" aria-hidden="true">

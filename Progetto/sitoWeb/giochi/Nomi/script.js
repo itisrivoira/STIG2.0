@@ -48,9 +48,11 @@ function selectLetter(l){
             //wait 2 sec
             setTimeout(function(){
                 var modal = document.getElementById("myModal");
+                
+                document.getElementById("txtModalWord").innerText="Parola --> "+to_guess;
+                document.getElementById("titModal").innerText="hai vinto!";
+                document.getElementById("titModal").style.color="green"
                 modal.style.display = "block";
-                txtModal.style.color="green";
-                document.getElementById("txtModal").innerText="hai vinto!";
                 can_play = false;
             }, 1000);
            
@@ -60,16 +62,16 @@ function selectLetter(l){
         wrong_guesses += 1;
         eval("document.hm.src=\"img/hm" + wrong_guesses + ".gif\"");
                 
-        if (wrong_guesses == 10){
+        if (wrong_guesses == 9){
             // lost
             setTimeout(function(){
-                var modal = document.getElementById("myModal");
+            var modal = document.getElementById("myModal");
             modal.style.display = "block";
 
             
-            txtModal.style.color="red";
             document.getElementById("txtModalWord").innerText="Parola --> "+to_guess;
-            document.getElementById("txtModal").innerText="hai Perso!";
+            document.getElementById("titModal").innerText="hai Perso!";
+            document.getElementById("titModal").style.color="red";
                     
             can_play = false;
             }, 1000);
