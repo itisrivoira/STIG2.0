@@ -129,6 +129,13 @@
           <img id="vita3" src="./img/cuore.png">
           <img id="vita4" src="./img/cuore.png">
         </div>
+        <?php
+        include_once(__DIR__.'/../../Connessione.php');
+        $conn = Connessione::apriConnessione();
+        $query = "e";
+
+
+        ?>
         <h4 class="mb-4">Quali sono i verbi coniugati al futuro semplice?</h4>
         <ul class="text-center">
           <li data-draggable="item" draggable="true" class="articoli text-center" id="Saluterò">Saluterò</li>
