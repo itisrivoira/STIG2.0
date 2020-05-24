@@ -137,7 +137,7 @@
               <td>/</td>
               <td class="border-right">/</td>
             </tr>
-            <tr> 
+            <tr>
               <th scope="row" class="bg-dark text-white border-secondary ">LA</th>
               <td onclick="selezione()" class="selezione font-italic" id="della">DELLA</td>
               <td onclick="selezione()" class="selezione font-italic" id="alla">ALLA</td>
@@ -231,7 +231,7 @@
                 <button type="button" onclick="giocaAncora()" class="btn btn-primary text-uppercase mt-5">Gioca Ancora</button>
               </div>
             </div>
-            <div class="col"></div>                 
+            <div class="col"></div>
           </div>
         </div>
       </div>
@@ -358,14 +358,14 @@
         $connessione = Connessione::apriConnessione();
       ?>
 
-      $('#modalLivello').modal('show'); 
+      $('#modalLivello').modal('show');
       var classeTitolo=titModal.className;
 
       function selezione(e){
         if (!e) var e = window.event;
         if (e.stopPropagation) e.stopPropagation();
-        
-        
+
+
         if(frase["preposizione"]==e.target.id) {
           numFrasi--;
           if (numFrasi==0) fineGioco(" text-success","hai vinto!","Hai inserito tutte le preposizioni giuste");
@@ -402,11 +402,11 @@
         $('#myModal').modal('hide');
       }
 
-      function setDifficolta(d){ 
+      function setDifficolta(d){
         difficolta=d;
         gioca();
         $('#modalLivello').modal('hide');
-       }  
+       }
 
       function gioca(){
         for (let i=0; i<5; i++){
@@ -418,50 +418,46 @@
           frasi=[];
           <?php
             //Frasi
-            $querypreposizioni="SELECT DomandaPrep.testo, RispostaPrep.testoRisposta FROM DomandaPrep, RispostaPrep WHERE DomandaPrep.difficolta=1 AND DomandaPrep.idDomandaPrep=RispostaPrep.idDomandaPrep AND RispostaPrep.flagPrep=true"; 
+            $querypreposizioni="SELECT DomandaPrep.testo, RispostaPrep.testoRisposta FROM DomandaPrep, RispostaPrep WHERE DomandaPrep.difficolta=1 AND DomandaPrep.idDomandaPrep=RispostaPrep.idDomandaPrep AND RispostaPrep.flagPrep=true";
             $risultato1=$connessione->query($querypreposizioni);
             while($tab=$risultato1->fetch_array(MYSQLI_NUM)){
               echo 'frasi.push({"frase":"'.$tab[0].'","preposizione":"'.$tab[1].'"});';
             }
             //Numero di Frasi
-            $querypreposizioni="SELECT count(DomandaPrep.testo) FROM DomandaPrep WHERE DomandaPrep.difficolta=1"; 
+            $querypreposizioni="SELECT count(DomandaPrep.testo) FROM DomandaPrep WHERE DomandaPrep.difficolta=1";
             $risultato1=$connessione->query($querypreposizioni);
-            while($tab=$risultato1->fetch_array(MYSQLI_NUM)) echo 'numFrasi='.$tab[0];
-          ?> 
+            while($tab=$risultato1->fetch_array(MYSQLI_NUM)) echo 'numFrasi='.$tab[0].';';
+          ?>
           tentativi=5;
-        }else if(difficolta==2){ 
+        }else if(difficolta==2){
           //Normale
           frasi=[];
           <?php
             //Frasi
-            $querypreposizioni="SELECT DomandaPrep.testo, RispostaPrep.testoRisposta FROM DomandaPrep, RispostaPrep WHERE DomandaPrep.difficolta=2 AND DomandaPrep.idDomandaPrep=RispostaPrep.idDomandaPrep AND RispostaPrep.flagPrep=true"; 
+            $querypreposizioni="SELECT DomandaPrep.testo, RispostaPrep.testoRisposta FROM DomandaPrep, RispostaPrep WHERE DomandaPrep.difficolta=2 AND DomandaPrep.idDomandaPrep=RispostaPrep.idDomandaPrep AND RispostaPrep.flagPrep=true";
             $risultato1=$connessione->query($querypreposizioni);
             while($tab=$risultato1->fetch_array(MYSQLI_NUM)) echo 'frasi.push({"frase":"'.$tab[0].'","preposizione":"'.$tab[1].'"});';
             //Numero di Frasi
-            $querypreposizioni="SELECT count(DomandaPrep.testo) FROM DomandaPrep WHERE DomandaPrep.difficolta=2"; 
+            $querypreposizioni="SELECT count(DomandaPrep.testo) FROM DomandaPrep WHERE DomandaPrep.difficolta=2";
             $risultato1=$connessione->query($querypreposizioni);
-            while($tab=$risultato1->fetch_array(MYSQLI_NUM)){
-              echo 'numFrasi='.$tab[0];
-            }  
-          ?> 
+            while($tab=$risultato1->fetch_array(MYSQLI_NUM)) echo 'numFrasi='.$tab[0].';';
+          ?>
           tentativi=3;
           for (let i=0; i<5-tentativi; i++) document.getElementById("vita"+i).style.display="none";
-        }else{ 
+        }else{
           // Difficile
           frasi=[];
           <?php
             //Frasi
-            $querypreposizioni="SELECT DomandaPrep.testo, RispostaPrep.testoRisposta FROM DomandaPrep, RispostaPrep WHERE DomandaPrep.difficolta=3 AND DomandaPrep.idDomandaPrep=RispostaPrep.idDomandaPrep AND RispostaPrep.flagPrep=true"; 
+            $querypreposizioni="SELECT DomandaPrep.testo, RispostaPrep.testoRisposta FROM DomandaPrep, RispostaPrep WHERE DomandaPrep.difficolta=3 AND DomandaPrep.idDomandaPrep=RispostaPrep.idDomandaPrep AND RispostaPrep.flagPrep=true";
             $risultato1=$connessione->query($querypreposizioni);
             while($tab=$risultato1->fetch_array(MYSQLI_NUM)) echo 'frasi.push({"frase":"'.$tab[0].'","preposizione":"'.$tab[1].'"});';
             //Numero di Frasi
-            $querypreposizioni="SELECT count(DomandaPrep.testo) FROM DomandaPrep WHERE DomandaPrep.difficolta=3"; 
+            $querypreposizioni="SELECT count(DomandaPrep.testo) FROM DomandaPrep WHERE DomandaPrep.difficolta=3";
             $risultato1=$connessione->query($querypreposizioni);
-            while($tab=$risultato1->fetch_array(MYSQLI_NUM)){
-              echo 'numFrasi='.$tab[0];
-            }
-          ?> 
-          tentativi=1 
+            while($tab=$risultato1->fetch_array(MYSQLI_NUM)) echo 'numFrasi='.$tab[0].';';
+          ?>
+          tentativi=1
           for (let i=0; i<5-tentativi; i++) document.getElementById("vita"+i).style.display="none";
         }
         i=0;
