@@ -18,7 +18,7 @@
  </div>";
 
 if ($difficolta == 1) {
-  $arrayAggFinale=getArrayAggDaStampare(2); 
+  $arrayAggFinale=getArrayAggDaStampare(1); 
     echo "<div class='col-4 ' id='gioco'>";
     echo "<div class='row ' >";
     echo "<div class='col text-center' >";

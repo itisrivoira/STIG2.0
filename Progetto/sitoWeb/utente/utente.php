@@ -48,7 +48,7 @@ if(!isset($_SESSION['login_user'])){
       <a class="navbar-brand" href="#page-top">W O W</a>
         <ul class="navbar-nav ml-auto">
           <li class="nav-item mx-0 mx-lg-1">
-           <a class="nav-link py-3 px-0 px-lg-3 rounded active" href="">Giochi</a>
+           <a class="nav-link py-3 px-0 px-lg-3 rounded active" href="#giochi">Giochi</a>
           </li>
           <li class="nav-item mx-0 mx-lg-1">
            <a class="nav-link py-3 px-0 px-lg-3 rounded" href="profilo.php">Profilo</a>
@@ -86,11 +86,11 @@ if(!isset($_SESSION['login_user'])){
   </header>
 
   <!-- Portfolio Section -->
-  <section class="page-section portfolio">
+  <section class="page-section portfolio" id="giochi" >
     <div class="container">
 
       <!-- Portfolio Section Heading -->
-      <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Giochi</h2>
+      <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0 mt-3"> Giochi</h2>
 
       <!-- Icon Divider -->
       <div class="divider-custom">
@@ -102,7 +102,7 @@ if(!isset($_SESSION['login_user'])){
       </div>
 
       <!-- Portfolio Grid Items -->
-      <div class="row">
+      <div class="row" >
 
         <!-- Portfolio Item 1 -->
         <div class="col-md-6 col-lg-4">
@@ -486,7 +486,7 @@ Più vai avanti con i livelli, più i mattoncini da inserire aumentano.</p>
                 <!-- Portfolio Modal - Image -->
                 <img class="img-fluid rounded mb-5" src="../img/portfolio/submarine.png" alt="">
                 <!-- Portfolio Modal - Text -->
-                <p class="mb-5">Descrizione Gioco Aggettivi</p>
+                <p class="mb-5">Il gioco presenta alcuni aggettivi, i quali devono essere trascinati nella posizione corretta. Possono essere Qualificativi, Possessivi, Dimostrativi, Indefiniti, Numerali, Interrogativi e Esclamativi. Il punteggio viene assegnato a seconda di quanti aggettivi sono stati posizionati correttamente.</p>
                 <form action="../giochi/Aggettivi/index.php">
                   <button class="btn btn-primary">
                     PLAY

@@ -80,7 +80,8 @@ document.game.usedLetters.value = "";
 used_letters = "";
 wrong_guesses = 3;
 document.hm.src="./img/hm3.gif";
-document.getElementById("modalLivello").style.display = "block";
+document.getElementById("modalLivello").style.display = "none";
+selectWord();
 }
 
 // function selectWord(){
@@ -95,7 +96,7 @@ document.getElementById("modalLivello").style.display = "block";
 //   display_word = masked_word;
 // }
 
-function selectWord(diff){
+function selectWord(){
   can_play = true;
   to_guess = risposta;
   //document.game.theWord.value = to_guess;

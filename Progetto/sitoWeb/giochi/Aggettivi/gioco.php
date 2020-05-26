@@ -241,6 +241,7 @@ $conn = Connessione::apriConnessione();
             <!-- Portfolio Modal - Text -->
             <div class="col-2"></div>
             <div class="col-8">
+            <h4 class="mb-5 text-center" id="txtModalWord"></h4>
               
               
               <div class="modal-footer p-0 m-0">
@@ -307,7 +308,7 @@ $conn = Connessione::apriConnessione();
                 <!-- Portfolio Modal - Text -->
                 <form id="formDifficolta" action="difficolta.php" method="POST">
                 <button  type="submit" class="btn btn-success btn-lg btn-block text-uppercase" name="difficolta" value="1" >facile</button>
-                <button  type="submit" class="btn btn-warning btn-lg btn-block text-uppercase" name="difficolta" value="2" >medio</button>
+                <button  type="submit" class="btn btn-warning btn-lg btn-block text-uppercase" name="difficolta" value="2" >Normale</button>
                 <button  type="submit" class="btn btn-danger btn-lg btn-block text-uppercase" name="difficolta" value="3" >difficile</button>
                 </form>
 
@@ -404,9 +405,11 @@ $conn = Connessione::apriConnessione();
 
     function hideModal(){ document.getElementById("modalFine").style.display = "none"; }
 
-    function loadDifficolta(){ document.getElementById("modalLivello").style.display = "block"; }
+    function loadDifficolta(){ 
+      modalClose()
+      document.getElementById("modalLivello").style.display = "block"; }
 
-    function nuovoGioco(){ window.open("../../utente/utente.html#giochi", target="_self"); }
+    function nuovoGioco(){ window.open("../../utente/utente.php#giochi", target="_self"); }
 
     function giocaAncora(){ window.location.reload(); }
 

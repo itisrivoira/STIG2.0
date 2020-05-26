@@ -49,8 +49,9 @@ function selectLetter(l){
             setTimeout(function(){
                 var modal = document.getElementById("myModal");
                 modal.style.display = "block";
-                txtModal.style.color="green";
-                document.getElementById("txtModal").innerText="hai vinto!";
+                document.getElementById("titModal").style.color="green";
+                document.getElementById("titModal").innerText="hai vinto!";
+                document.getElementById("txtModalWord").innerText = "Parola --> " + to_guess;
                 can_play = false;
             }, 1000);
 
@@ -72,12 +73,11 @@ function selectLetter(l){
             // lost
             setTimeout(function(){
                 var modal = document.getElementById("myModal");
-            modal.style.display = "block";
-
-
-            txtModal.style.color="red";
-            document.getElementById("txtModalWord").innerText="Parola --> "+to_guess;
-            document.getElementById("txtModal").innerText="hai Perso!";
+                modal.style.display = "block";
+                document.getElementById("titModal").style.color="red";
+                document.getElementById("titModal").innerText="hai Perso!";
+                document.getElementById("txtModalWord").innerText = "Parola --> " + to_guess;
+                can_play = false;
 
             $ (document).ready(function() {
             return $.ajax({
@@ -96,6 +96,7 @@ function selectLetter(l){
 
 function reset()
 {
+  
 
 document.game.usedLetters.value = "";
 used_letters = "";
@@ -116,16 +117,16 @@ can_play = true;
 if (diff==0) {
     random_number = Math.round(Math.random() * (facile.length - 1));
     to_guess = facile[random_number];
-    alert(to_guess)
+    
 
 }else if (diff==1) {
     random_number = Math.round(Math.random() * (medio.length - 1));
     to_guess = medio[random_number];
-    alert(to_guess)
+   
 }else{
     random_number = Math.round(Math.random() * (difficile.length - 1));
     to_guess = difficile[random_number];
-    alert(to_guess)
+   
 }
 
 

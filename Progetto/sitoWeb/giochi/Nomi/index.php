@@ -257,11 +257,15 @@
     </div>
   </div>
 
-
   <!-- Modal regole -->
-  <div class="modal" id="modalRegole" tabindex="-1" role="dialog" aria-labelledby="portfolioModal2Label" aria-hidden="true">
-    <div class="modal-dialog modal-xl" role="document">
+  <div class="portfolio-modal modal" id="modalRegole" tabindex="-1" role="dialog" aria-labelledby="portfolioModal2Label" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
       <div class="modal-content">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="chiudi()" >
+        <span aria-hidden="true">
+        <i class="fas fa-times"></i>
+        </span>
+        </button>
         <div class="modal-body text-center">
           <div class="container">
             <div class="row justify-content-center">
@@ -278,14 +282,16 @@
                 </div>
                 <!-- Portfolio Modal - Text -->
                 <h3 class="mb-5">Il gioco presenta un patibolo e una parola da indovinare. Ad ogni turno l'utente prova ad indovinare una lettera: se ha successo questa appare nella sua posizione corrispondente. Altrimenti una parte di un omino impiccato verrà generata, partendo dalla base del patibolo. Il punto va al giocatore a seconda che la parola venga indovinata prima del completamento del disegno o no.</h3>
-                <button type="button" onclick="chiudi()" class="btn btn-secondary float-right ">Gioca</button>
-              </div>
+                </div>
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
+
+
+
 
 
 

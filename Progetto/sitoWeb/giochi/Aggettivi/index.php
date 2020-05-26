@@ -153,7 +153,7 @@
                 <!-- Portfolio Modal - Text -->
                 <form id="formDifficolta" action="difficolta.php" method="POST">
                 <button  type="submit" class="btn btn-success btn-lg btn-block text-uppercase" name="difficolta" value="1" >facile</button>
-                <button  type="submit" class="btn btn-warning btn-lg btn-block text-uppercase" name="difficolta" value="2" >medio</button>
+                <button  type="submit" class="btn btn-warning btn-lg btn-block text-uppercase" name="difficolta" value="2" >Normale</button>
                 <button  type="submit" class="btn btn-danger btn-lg btn-block text-uppercase" name="difficolta" value="3" >difficile</button>
                 </form>
 
@@ -164,6 +164,8 @@
       </div>
     </div>
   </div>
+  </div>
+
 
     <!-- Modal regole -->
     <div class="modal" id="modalRegole" tabindex="-1" role="dialog" aria-labelledby="portfolioModal2Label" aria-hidden="true">

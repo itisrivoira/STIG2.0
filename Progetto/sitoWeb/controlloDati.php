@@ -19,15 +19,18 @@ if (isset($_POST['submit'])) {
 
 
 		if($row = mysqli_fetch_row($rs)){ //controllo se la mail esiste nel db
-			echo $row[1];
+			//echo $row[1];
 			if(password_verify($password, $row[1])){ //controllo password
 				$_SESSION['login_user'] = $username;
+				//echo "ciao1";
 				header("location: utente/utente.php");
 			}else {
+				//echo "ciao2";
 				$error = "Username o password non corretti";
 				header("location: index.php");
 			}
 		}else{
+			//echo "ciao3";
 			$error = "Username o password non corretti";
 			header("location: index.php");
 		}

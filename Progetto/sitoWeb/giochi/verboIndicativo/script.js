@@ -83,7 +83,7 @@ document.addEventListener('dragend', function(e){
     };
 }, false);
 
-function nuovoGioco(){ window.open("../../utente/utente.html#giochi", target="_self"); }
+function nuovoGioco(){ window.open("../../utente/utente.php#giochi", target="_self"); }
 
 function giocaAncora(){ window.location.reload(); }
 

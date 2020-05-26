@@ -164,16 +164,19 @@ function fine() {
             setTimeout(function(){
                 var modal = document.getElementById("myModal");
                 modal.style.display = "block";
-                txtModal.style.color="green";
-                document.getElementById("txtModal").innerText="hai vinto!";
+                document.getElementById("titModal").style.color="green";
+                document.getElementById("titModal").innerText="hai vinto!";
+                document.getElementById("txtModalWord").innerHTML = "Hai abbinato correttamente tutti gli aggettivi" ;
 
             }, 500);
         }else{
             setTimeout(function(){
                 var modal = document.getElementById("myModal");
+                var modal = document.getElementById("myModal");
                 modal.style.display = "block";
-                txtModal.style.color="red";
-                document.getElementById("txtModal").innerText="hai perso!";
+                document.getElementById("titModal").style.color="red";
+                document.getElementById("titModal").innerText="hai perso!";
+                document.getElementById("txtModalWord").innerText = "NON Hai abbinato correttamente tutti gli aggettivi" ;
 
             }, 500);
         }

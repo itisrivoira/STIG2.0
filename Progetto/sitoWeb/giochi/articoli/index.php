@@ -76,10 +76,10 @@
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item mx-0 mx-lg-1">
-            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="../../utente/utente.html#giochi">Giochi</a> <!-- Icone dei vari giochi -->
+            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="../../utente/utente.php#giochi">Giochi</a> <!-- Icone dei vari giochi -->
           </li>
           <li class="nav-item mx-0 mx-lg-1">
-            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="../../utente/profilo.html">Profilo</a>
+            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="../../utente/profilo.php">Profilo</a>
           </li>
           <li class="nav-item mx-0 mx-lg-1 regole">
             <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" data-toggle="modal" data-target="#modalRegole" >Regole</a>
@@ -139,7 +139,7 @@
             while($row=$risultato->fetch_array(MYSQLI_NUM)){
                 echo <<<paginaHTML
                   <li data-draggable="item" draggable="true" class="articoli text-center text-uppercase" id="{$row[0]}"> {$row[0]} </li>
-                paginaHTML;
+paginaHTML;
             }
           ?>
         </ul>
@@ -391,7 +391,7 @@
         $('#myModal').modal('show');
       }
 
-      function nuovoGioco(){ window.open("../../utente/utente.html#giochi", target="_self"); }
+      function nuovoGioco(){ window.open("../../utente/utente.php#giochi", target="_self"); }
 
       function giocaAncora(){
         gioca();

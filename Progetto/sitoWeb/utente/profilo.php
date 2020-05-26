@@ -86,7 +86,7 @@ if(isset($_POST['nomeMod']) && isset($_POST['cognomeMod']) && isset($_POST['emai
              <a class="nav-link py-3 px-0 px-lg-3 rounded" href="./utente.php">Giochi</a>
             </li>
             <li class="nav-item mx-0 mx-lg-1">
-             <a class="nav-link py-3 px-0 px-lg-3 rounded active" href="./profilo.html">Profilo</a>
+             <a class="nav-link py-3 px-0 px-lg-3 rounded active" href="./profilo.php">Profilo</a>
             </li>
             <li class="nav-item mx-0 mx-lg-1">
              <a class="nav-link py-3 px-0 px-lg-3 rounded" href="Logout.php">logout</a>
