@@ -1,5 +1,5 @@
 -- DROP DATABASE 5C_STIG;
--- CREATE DATABASE 5C_STIG;
+CREATE DATABASE 5C_STIG;
 USE 5C_STIG;
 
 /*Tabella Sede*/
@@ -50,7 +50,7 @@ ALTER TABLE Gioca ADD FOREIGN KEY (idUtente) REFERENCES Utente(idUtente);
 
 /*Tabella DomandeTot*/
 CREATE TABLE IF NOT EXISTS `DomandeTot` (
-  `idDomanda` INT AUTO_INCREMENT NULL,
+  `idDomanda` INT NULL,
   PRIMARY KEY (`idDomanda`));
 
 /*Tabella tra Utente e DomandeTot*/

@@ -1,7 +1,5 @@
 
 var can_play = true;
-var listaParole = new Array("DIFFICILE", "SOTTO", "BELLO", "GRANDE", "GIUSTO");
-var words = new Array("FACILE","SOPRA","BRUTTO","PICCOLO","SBAGLIATO");
 
 var to_guess = "";
 var display_word = "";
@@ -85,24 +83,21 @@ document.hm.src="./img/hm3.gif";
 document.getElementById("modalLivello").style.display = "block";
 }
 
-function selectWord(){
-  can_play = true;
-  var parolaCorrente = document.querySelector("#sinonimoOcontrario").getAttribute("value");
-  var posizione = listaParole.indexOf(parolaCorrente);
-  to_guess = words[posizione];
-  //document.game.theWord.value = to_guess;
-
-  // display masked word
-  masked_word = createMask(to_guess);
-  document.game.displayWord.value = masked_word;
-  display_word = masked_word;
-}
+// function selectWord(){
+//   can_play = true;
+//   var parolaCorrente = document.querySelector("#sincont").getAttribute("value");
+//   to_guess = parolaCorrente;
+//   //document.game.theWord.value = to_guess;
+//
+//   // display masked word
+//   masked_word = createMask(to_guess);
+//   document.game.displayWord.value = masked_word;
+//   display_word = masked_word;
+// }
 
 function selectWord(diff){
   can_play = true;
-  var parolaCorrente = document.querySelector("#sinonimoOcontrario").getAttribute("value");
-  var posizione = listaParole.indexOf(parolaCorrente);
-  to_guess = words[posizione];
+  to_guess = risposta;
   //document.game.theWord.value = to_guess;
 
   // display masked word

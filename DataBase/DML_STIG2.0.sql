@@ -1,8 +1,8 @@
 USE 5C_STIG;
 
-INSERT INTO Sede VALUES('ITISRIVOIRA','ITIS RIVOIRA','itisrivoira@denina.gov.it','017586229');
-INSERT INTO Sede VALUES('PELLICO','PELLICO','pellico@denina.gov.it', '017542458');
-INSERT INTO Sede VALUES('DENINA','CARLO DENINA','denina@denina.gov.it','017543625');
+INSERT INTO Sede (idSede, Nome, Email, Telefono) VALUES('ITISRIVOIRA','ITIS RIVOIRA','itisrivoira@denina.gov.it','017586229');
+INSERT INTO Sede (idSede, Nome, Email, Telefono) VALUES('PELLICO','PELLICO','pellico@denina.gov.it', '017542458');
+INSERT INTO Sede (idSede, Nome, Email, Telefono) VALUES('DENINA','CARLO DENINA','denina@denina.gov.it','017543625');
 
 INSERT INTO Utente (nome, cognome, tipologia, email, password) VALUES('Marco','Rossi','Alunno', 'mail1@gmail.com', 'psw');
 INSERT INTO Utente (nome, cognome, tipologia, email, password) VALUES('Pietro','Verdi', 'Insegnante', 'mail2@gmail.com', 'psw');
@@ -217,7 +217,7 @@ INSERT INTO RispostaVerbi VALUES
 	(2, 0, 'Tu sarai', false, 1),
 	(3, 0, 'Noi saremo', false, 1),
 	(4, 0, 'Io fui', true, 2),
-	(5, 5, 'Io sarò', false, 2),
+	(5, 5, 'Tu sarai', false, 2),
 	(6, 0, 'Noi ervamo', false, 2);
 
 /* SinCon */

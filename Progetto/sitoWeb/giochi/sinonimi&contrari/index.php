@@ -1,4 +1,18 @@
 <!DOCTYPE html>
+<?php
+  include_once(__DIR__.'/../../Connessione.php');
+  $connessione = Connessione::apriConnessione();
+
+  $query = "SELECT DomandaSinCon.parola, RispostaSinCon.testoRisposta FROM RispostaSinCon, DomandaSinCon WHERE RispostaSinCon.idRispostaSinCon = DomandaSinCon.idRispostaSinCon";
+  $risultato = $connessione->query($query);
+  $lista = array();
+  while($row = $risultato->fetch_assoc()){
+    array_push($lista, $row);
+  }
+  $num = array_rand($lista);
+
+?>
+
 <html lang="en">
 
 <head>
@@ -17,6 +31,7 @@
 
   <!-- Theme CSS -->
   <link href="../../css/freelancer.min.css" rel="stylesheet">
+    <script src="script.js"></script>
 
 </head>
 
@@ -76,10 +91,10 @@
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item mx-0 mx-lg-1">
-           <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="../../utente/utente.html#giochi">Giochi</a> <!-- Icone dei vari giochi -->
+           <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="../../utente/utente.php#giochi">Giochi</a> <!-- Icone dei vari giochi -->
           </li>
           <li class="nav-item mx-0 mx-lg-1">
-            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="../../utente/profilo.html">Profilo</a>
+            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="../../utente/profilo.php">Profilo</a>
           </li>
           <li class="nav-item mx-0 mx-lg-1 regole">
             <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" onclick="regole()">Regole</a>
@@ -112,18 +127,9 @@
       <!-- div Lettere -->
       <div class="col-8 mt-5">
 
-        <!-- script per il gioco -->
-        <script src="script.js">
-        </script>
-
-
         <div class="row mb-4">
           <form name="game" class="mx-auto">
-              <?php
-              $listaParole = ["DIFFICILE", "SOTTO", "BELLO", "GRANDE", "GIUSTO"];
-              $risultato = rand(0 , count($listaParole)-1);
-              ?>
-            <p class="text-uppercase text-secondary" id="sinonimoOcontrario" value="<?php echo $listaParole[$risultato]; ?>">Contrario di: <?php echo $listaParole[$risultato]; ?></p>
+            <p class="text-uppercase text-secondary" id="sincont" value="<?php echo $lista[$num]['testoRisposta']; ?>"><?php echo $lista[$num]['parola']; ?></p>
             <p class="text-uppercase text-secondary">Parola : <input type="text" name="displayWord"></p>
             <p class="text-uppercase text-secondary">Lettere: <input type="text" name="usedLetters"></p>
           </form>
@@ -310,13 +316,14 @@
   <!-- Custom scripts for this template -->
   <script src="../../js/freelancer.min.js"></script>
 
+
   <script>
 
-
+    var risposta = "<?php echo strtoupper($lista[$num]['testoRisposta']); ?>";
 
     function difficolta(){ document.getElementById("modalLivello").style.display = "block"; }
 
-    function nuovoGioco(){ window.open("../../utente/utente.html#giochi", target="_self"); }
+    function nuovoGioco(){ window.open("../../utente/utente.php#giochi", target="_self"); }
 
     function giocaAncora(){ window.location.reload(); }
 
