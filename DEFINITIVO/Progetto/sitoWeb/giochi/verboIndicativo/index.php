@@ -118,7 +118,7 @@
   <br><br><br><br><br>
 
   <div class="container">
-    <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0"><br>Drag the Article</h2>
+    <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0"><br>Sposta il verbo</h2>
     <!-- Icon Divider -->
     <div class="divider-custom">
       <div class="divider-custom-line"></div>
