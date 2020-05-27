@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">Layout</string>
+    <string name="txtTitoloMain">TITOLO</string>
+    <string name="txtTitoloIntent"> <font fgcolor='#FFFFFF'> </font></string>
+    <string name="txtTitoloHelp"><font fgcolor='#FFFFFF'>GIOCO </font></string><!-- parametro font per il colore -->
+    <string name="txtHelp"><font fgcolor='#FFFFFF'>GIOCO </font></string>
+    <string name="txtGioca"><font fgcolor='#FFFFFF'>GIOCA </font></string>
+
+    <string name="txtHelpSinonimi"><font fgcolor='#FFFFFF'>OCCHIO ALL\'IMPICCATO</font></string>
+    <string name="txtHelpVerbi"><font fgcolor='#FFFFFF'>VIAGGIO NEL TEMPO DEI VERBI</font></string>
+    <string name="txtHelpArticoli">DRAG THE ARTICLE</string>
+    <string name="txtHelpPreposizioni">THE PREPOSITION\'S TABLE</string>
+    <string name="txtHelpNomi">IMPICCANOME</string>
+    <string name="txtHelpAggettivi">RICONOSCI l\'AGGETTIVO</string>
+
+    <string name="testo_sinonimi">Il gioco presenta un patibolo e una parola da indovinare.Ad ogni turno l\'utente prova ad indovinare una lettera: se ha successo questa appare nella sua posizione corrispondente altrimenti una parte di un omino impiccato verrà generata, partendo dalla base del patibolo.Il punto va al giocatore a seconda che la parola venga indovinata prima del completamento del disegno o meno.</string>
+    <string name="testo_verbi">Nel gioco sono presenti due scatole, una per "Articoli determinativi" e l\'altra per "Articoli indeterminativi". Nella parte inferiore ci sono dei mattoncini, al cui interno ci sono degli articoli, determinativi e indeterminativi. Il tuo compito è di inserire i mattoncini all\'interno della scatola corretta. Quando i mattoncini saranno finiti, apparirà un messaggio che ti dirà se hai vinto o hai perso, mostrandoti anche gli errori commessi. Più vai avanti con i livelli, più i mattoncini da inserire aumentano.</string>
+    <string name="testo_articoli">Nel gioco sono presenti due scatole, una per "Articoli determinativi" e l\'altra per "Articoli indeterminativi".\n Nella parte inferiore ci sono dei mattoncini, al cui interno ci sono degli articoli, determinativi e indeterminativi.\n Il tuo compito è di inserire i mattoncini all\'interno della scatola corretta.\n Quando i mattoncini saranno finiti, apparirà un messaggio che ti dirà se hai vinto o hai perso, mostrandoti anche gli errori commessi.\n Più vai avanti con i livelli, più i mattoncini da inserire aumentano.</string>
+    <string name="testo_preposizioni">Nel gioco si trova una tabella dove le colonne corrispondono agli articoli determinativi mentre, le righe, corrispondo alle preposizioni semplici. Usando la frase che trovi nella parte superiore dello schermo, inserisci la preposizione corretta. Con qualsiasi livello di difficoltà, il tuo compito è quello di inserire correttamente tre preposizione e, più si va avanti di livello, più diminuiscono i tentativi.</string>
+    <string name="testo_nomi">Il gioco presenta un patibolo e una parola da indovinare. Ad ogni turno l\'utente prova ad indovinare una lettera: se ha successo questa appare nella sua posizione corrispondente. Altrimenti una parte di un omino impiccato verrà generata, partendo dalla base del patibolo. Il punto va al giocatore a seconda che la parola venga indovinata prima del completamento del disegno o no.</string>
+    <string name="testo_aggettivi">Il gioco presenta alcuni aggettivi, i quali devono essere trascinati nella posizione corretta. Possono essere Qualificativi, Possessivi, Dimostrativi, Indefiniti, Numerali, Interrogativi e Esclamativi. Il punteggio viene assegnato a seconda di quanti aggettivi sono stati posizionati correttamente.</string>
+    <string name="tu_saluterai">tu saluterai</string>
+    <string name="voi_giocherete">voi giocherete</string>
+    <string name="noi_avremo_bevuto">noi avremo bevuto</string>
+    <string name="stringaverbi">Quali sono i verbi coniugati al futuro semplice?</string>
+    <string name="io_sar">io Sarò</string>
+    <string name="io_sar_stato">Io sarò stato</string>
+    <string name="voi_avrete_amato">Voi Avrete Amato</string>
+
+</resources>
