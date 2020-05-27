@@ -1,5 +1,0 @@
-<resources>
-    <string name="app_name">TheprepositionsBattle</string>
-    <string name="titolo_istruzioni">ISTRUZIONI</string>
-    <string name="descrizione_istruzioni">Nella tabella, che trovi al centro dello schermo, le colonne corrispondono agli articoli determinativi (il, lo, la, i, gli, le) mentre, le righe, corrispondo alle preposizioni semplici (di, a, da, in, con, su, per, tra, fra). Usando la frase che trovi nella parte superiore dello schermo, inserisci la preposizione corretta. Per inserire una preposizione bisogna cliccare la cella che corrisponde alla sua formazione (ad esempio, per inserire l’articolo “del” premi la cella “il-di”). Con qualsiasi livello di difficoltà, il tuo compito è quello di inserire correttamente tre preposizione e, più si va avanti di livello, più diminuiscono i tentativi.</string>
-</resources>
