@@ -6,7 +6,7 @@ Materia di riferimento: ITALIANO
 Ogni gruppo deve realizzare 2 giochi, usando due diverse modalità 
 (ad esempio drag&drop/completamento, ecc...), sugli argomenti seguenti:
         
-        1.  Verbo indicarivo – sinonimi & contrari
+        1.  Verbo indicativo – sinonimi & contrari
         2.  Articoli - preposizioni
         3.  Nomi - aggettivi
 
